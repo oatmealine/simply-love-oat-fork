@@ -1,0 +1,181 @@
+<ActorFrame><children>
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(132/255, 204/255, 255/255, 1) -- light blue
+			samTheme_ingameFANP1 = self;
+			self:luaeffect('Update')
+			self:horizalign('right')
+			self:x(0 - 88)
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1JudgeDisplay then
+				local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local tnscore = stagestats:GetTapNoteScores(8)
+				if samTheme_p1JudgeLeadingZeroes then
+					tnscore = string.format('%4d', tnscore)
+				end
+				self:settext(tnscore)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(242/255, 255/255, 132/255, 1) -- light yellow
+			self:x(55 - 88)
+			if samTheme_p1ComboLayout == 1 then
+				self:x(-88)
+				self:y(15)
+			end
+			samTheme_ingameEXCP1 = self;
+			self:luaeffect('Update')
+			self:horizalign('right')
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1JudgeDisplay then
+				local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local tnscore = stagestats:GetTapNoteScores(7)
+				if samTheme_p1JudgeLeadingZeroes then
+					tnscore = string.format('%4d', tnscore)
+				end
+				self:settext(tnscore)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(165/255, 255/255, 132/255, 1) -- light green
+			self:y(15)
+			self:x(0 - 88)
+			if samTheme_p1ComboLayout == 1 then
+				self:y(30)
+			end
+			samTheme_ingameGREP1 = self;
+			self:luaeffect('Update')
+			self:horizalign('right')
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1JudgeDisplay then
+				local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local tnscore = stagestats:GetTapNoteScores(6)
+				if samTheme_p1JudgeLeadingZeroes then
+					tnscore = string.format('%4d', tnscore)
+				end
+				self:settext(tnscore)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(220/255, 132/255, 255/255, 1) -- light purple
+			self:y(15)
+			self:x(55 - 88)
+			if samTheme_p1ComboLayout == 1 then
+				self:y(0)
+			end
+			samTheme_ingameDECP1 = self;
+			self:luaeffect('Update')
+			self:horizalign('right')
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and (PREFSMAN:GetPreference('JudgeWindowSecondsGood') > 0.120) and samTheme_p1JudgeDisplay then
+				local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local tnscore = stagestats:GetTapNoteScores(5)
+				if samTheme_p1JudgeLeadingZeroes then
+					tnscore = string.format('%4d', tnscore)
+				end
+				self:settext(tnscore)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(255/255, 177/255, 132/255, 1) -- light orange
+			self:y(15)
+			self:x(0 - 88)
+			if samTheme_p1ComboLayout == 1 then
+				self:x(55-88)
+			end
+			samTheme_ingameWOFP1 = self;
+			self:luaeffect('Update')
+			self:horizalign('right')
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and (PREFSMAN:GetPreference('JudgeWindowSecondsBoo') > 0.136) and samTheme_p1JudgeDisplay then
+			local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+			local tnscore = stagestats:GetTapNoteScores(4)
+			if samTheme_p1JudgeLeadingZeroes then
+					tnscore = string.format('%4d', tnscore)
+				end
+			self:settext(tnscore)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(255/255, 132/255, 132/255, 1) -- light red
+			self:y(30)
+			self:x(55 - 88)
+			samTheme_ingameMISP1 = self;
+			self:luaeffect('Update')
+			self:horizalign('right')
+			if(PREFSMAN:GetPreference('JudgeWindowSecondsBoo')  < 0.180) then		-- way offs disabled
+				if (PREFSMAN:GetPreference('JudgeWindowSecondsGood') < 0.135) then	-- decents disabled too?
+					self:y(15)														-- move miss into decent slot
+					if samTheme_p1ComboLayout == 1 then
+						self:y(0)
+					end
+				else
+					self:x(-88)														-- move miss into way off slot
+					if samTheme_p1ComboLayout == 1 then
+						self:y(15)
+						self:x(55-88)
+					end
+				end
+			end
+			
+
+			
+			
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1JudgeDisplay then
+				local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local tnscore = stagestats:GetTapNoteScores(3)
+				if samTheme_p1JudgeLeadingZeroes then
+					tnscore = string.format('%4d', tnscore)
+				end
+				self:settext(tnscore)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+</children></ActorFrame>

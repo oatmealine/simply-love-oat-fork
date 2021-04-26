@@ -1,9 +1,16 @@
 <ActorFrame
-	InitCommand="zoom,0.85"
+	OnCommand="%function(self)
+	    local children = self:GetChildren()
+	    math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
+	    local fail = math.random(1, 46)
+	    local actor = children[1]
+	    actor:Load(Path('Graphics', '_grade models/fail/fail' .. fail))
+	    actor:stretchto(-25, -25, 50, 50)
+	end"
 >
 	<children>
 		<Actor
-			File="f.png"
+			File="fail/fail1"
 		/>
 	</children>
 </ActorFrame>

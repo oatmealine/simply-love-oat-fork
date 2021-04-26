@@ -1,0 +1,41 @@
+<ActorFrame><children>
+	<Layer
+		Font="_wendy white"
+		Text="MAX COMBO"
+		InitCommand="%function(self)
+			samTheme_comboTextP1 = self;
+			self:zoom(0.15)
+			self:x(-SCREEN_CENTER_X + 3)
+			self:y((6*(SCREEN_HEIGHT/8)) + 70)
+			self:horizalign('left')
+		end"
+	/>
+	
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="00000"
+		InitCommand="%function(self)
+			self:zoom(0.25)
+			self:diffuse(1, 1, 1, 1) -- white
+			samTheme_ingameMAXCP1 = self;
+			samTheme_MaxComboP1 = 0;
+			self:luaeffect('Update')
+			self:horizalign('left')
+			self:y((6*(SCREEN_HEIGHT/8)) + 70 - 15)
+			self:x(-SCREEN_CENTER_X + 2)
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1MaxCombo then
+				local stagestats = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local combo = stagestats:GetCurrentCombo()
+				if combo > samTheme_MaxComboP1 then
+					samTheme_MaxComboP1 = stagestats:GetCurrentCombo()
+				end
+				self:settext(samTheme_MaxComboP1)
+			else
+				self:hidden(1)
+				samTheme_comboTextP1:hidden(1)
+			end
+		end"
+	/>
+</children></ActorFrame>

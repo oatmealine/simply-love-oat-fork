@@ -1,4 +1,14 @@
-<ActorFrame> <children>
-	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"/>	
-	<Layer Type="Quad" OnCommand="%function(self) modRate = 1 end" />	
-</children> </ActorFrame>
+<Layer
+			Shader="shader/earthbound.frag"
+			File="_black"
+			OnCommand="%function(self) theme_earthboundShader = self:GetShader() end"
+			InitCommand="%function(self)
+			    self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			    self:hidden(0)
+			    self:diffuse(ColorRGB(0))
+			    self:effectclock('timer')
+			end"
+			ColorSelectedMessageCommand="%function(self)
+			    self:diffuse(ColorRGB(0))
+			end"
+		/>

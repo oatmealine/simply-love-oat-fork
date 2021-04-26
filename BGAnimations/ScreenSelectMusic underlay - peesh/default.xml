@@ -1,0 +1,124 @@
+<ActorFrame FOV="60"> <children>
+	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon() end" />
+	<ActorFrame Command="%function() if GAMESTATE:GetCoinMode() == 1 and not GetPref('EventMode') then rateMods = rateModsPay else rateMods = rateModsFree end end" />
+	
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,-100"
+		OnCommand="decelerate,0.5;x,0"
+	><children>
+	
+	<Layer
+		File="@'Banner'..Color()..'.png'"
+		OnCommand="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-3);y,SCREEN_CENTER_Y-138;ZoomToWidth,306;ZoomToHeight,119"
+		OffCommand=""
+	/>
+	
+	<Layer
+		Type="Quad"
+		OnCommand="diffuse,#0F1719;stretchto,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+155),SCREEN_CENTER_Y-138-59-5,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-161),368"
+	/>		
+
+	<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+150),172,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-156),220"
+	/>	
+	<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+150),245,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-156),363"
+	/>
+	<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+150),SCREEN_CENTER_Y-138-59,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-156),SCREEN_CENTER_Y-138+59"
+	/>	
+	
+	
+	<Layer 
+		Type="BitmapText"
+		Font="_misoreg small"
+		Text="ARTIST"
+		OnCommand="horizalign,right;ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+105);y,180"
+	/>
+	<Layer 
+		Type="BitmapText"
+		Font="_misoreg small"
+		Text="BPM"
+		OnCommand="horizalign,right;ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+105);y,200"
+	/>
+	<Layer 
+		Type="BitmapText"
+		Font="_misoreg small"
+		Text="LENGTH"
+		OnCommand="ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640);y,200"
+	/>
+	
+	</children></Layer>
+	
+	<Layer Type="Quad"
+		InitCommand="%function(self)
+		
+			function modulo(a, b)
+				return a - math.floor(a/b)*b;
+			end
+			
+			function randomXD(t)
+				if t == 0 then return 0.5 else
+				return modulo(math.sin(t * 3229.3) * 43758.5453, 1) end
+			end
+		
+			theme_ptime = 0
+		end"
+		OnCommand="hidden,1;queuecommand,Update"
+		UpdateCommand="%function(self)
+		
+			SCREENMAN:GetTopScreen():fov(50)
+			
+			theme_plasmaShader:uniform1f('ptime',theme_ptime)
+			
+			theme_ptime = theme_ptime+1/60
+			
+			for i=1,5 do
+				local a = _G['dop_escher_'..i]
+				if a then
+					a:addx( .06*math.sin(theme_ptime*math.pi*.1 + math.pi*2*randomXD(i*100) ) )
+					a:addy( .08*math.cos(theme_ptime*math.pi*.08 + math.pi*2*randomXD(i*100) ) )
+					a:rotationz( 10*math.sin(theme_ptime*math.pi*.06 + math.pi*2*randomXD(i*100) ) )
+				end
+			end
+			
+			self:sleep(1/60)
+			self:queuecommand('Update')
+			
+		end"
+	/>
+	
+	<ActorFrame OnCommand="fov,60;" ><children>
+	
+		<Layer Var="dop_escher_sky" File="escher/sky" OnCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;hidden,0" />
+		
+		<Layer File="tex_bayer" Var="tex_bayer" OnCommand="hidden,1" />
+		<Layer
+			Shader="shader/plasma.frag"
+			File="_black"
+			OnCommand="%function(self)
+			theme_plasmaShader = self:GetShader()
+			theme_plasmaShader:uniformTexture('bayer',tex_bayer:GetTexture())
+			end"
+			InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;hidden,0;diffusealpha,.5"
+		/>
+		
+		<Layer Type="ActorFrame" OnCommand="fov,60;hidden,0" ><children>
+			
+			<Layer File="escher/1" Var="dop_escher_1" OnCommand="xy,SCREEN_CENTER_X-90,SCREEN_CENTER_Y-110;zoom,.4;diffuse,.5,.5,.5,1;" />
+			<Layer File="escher/2" Var="dop_escher_2" OnCommand="xy,SCREEN_CENTER_X+130,SCREEN_CENTER_Y-50;zoom,.7;diffuse,.5,.5,.5,1;" />
+			<Layer File="escher/3" Var="dop_escher_3" OnCommand="xy,SCREEN_CENTER_X-180,SCREEN_CENTER_Y+20;zoom,.8;diffuse,.5,.5,.5,1;" />
+			<Layer File="escher/4" Var="dop_escher_4" OnCommand="xy,SCREEN_CENTER_X+190,SCREEN_CENTER_Y+90;zoom,.8;diffuse,.5,.5,.5,1;" />
+			
+			<Layer File="escher/5" Var="dop_escher_5" OnCommand="hidden,0;xy,SCREEN_CENTER_X-250,SCREEN_CENTER_Y-200;zoom,.9;diffuse,.5,.5,.5,1;" />
+			
+		</children></Layer>
+		
+		<Layer Type="Quad" OnCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,.5" />
+	
+	</children></ActorFrame>
+		
+	<ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" CaptureCommand="%SongInfo" CurrentSongChangedMessageCommand="queuecommand,Capture" CurrentStepsP1ChangedMessageCommand="queuecommand,Capture" CurrentStepsP2ChangedMessageCommand="queuecommand,Capture" />
+	
+</children> </ActorFrame>

@@ -1,0 +1,84 @@
+<ActorFrame><children>
+	<!-- point displays -->
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="01234"
+		InitCommand="%function(self)
+			samTheme_PointsDisplayP1 = self;
+			self:x(-SCREEN_CENTER_X + 2)
+			self:y((6*(SCREEN_HEIGHT/8)))
+			self:zoom(0.25)
+			self:luaeffect('Update')
+			self:horizalign('left')
+			self:diffuse(0.75, 0.75, 0.75, 1)	
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1PointsDisplay then
+				local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetActualDancePoints()
+				if dancepoints < 0 then
+					dancepoints = math.abs(dancepoints)
+					self:diffuse(0.75, 0, 0, 1)
+					samTheme_PointsDividerP1:diffuse(0.75, 0, 0, 1)
+					samTheme_MaxPointsDisplayP1:diffuse(0.75, 0, 0, 1)
+				else
+					self:diffuse(0.75, 0.75, 0.75, 1)
+					samTheme_PointsDividerP1:diffuse(0.75, 0.75, 0.75, 1)
+					samTheme_MaxPointsDisplayP1:diffuse(0.75, 0.75, 0.75, 1)
+				end
+				local dancepoints_string = string.format('%05d', tostring(dancepoints))
+				self:settext(dancepoints_string)
+			else
+				self:hidden(1)
+				samTheme_PointsDividerP1:hidden(1)
+			end
+		end"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			samTheme_PointsDividerP1 = self;
+			self:stretchto(
+				-SCREEN_CENTER_X + 3,
+				(6*(SCREEN_HEIGHT/8)) + 10,
+				-SCREEN_CENTER_X + 46,
+				(6*(SCREEN_HEIGHT/8)) + 12
+				)
+			self:diffuse(0.75, 0.75, 0.75, 1)
+		end"
+	/>
+	
+	<Layer
+		Font="_wendy white"
+		Text="DANCE POINTS"
+		InitCommand="%function(self)
+			samTheme_PointsTextP1 = self;
+			self:zoom(0.1)
+			self:x(-SCREEN_CENTER_X + 28)
+			self:y((6*(SCREEN_HEIGHT/8)) - 15)
+		end"
+	/>
+	
+	<Layer
+		Font="_ScreenEvaluation numbers"
+		Text="01234"
+		InitCommand="%function(self)
+			samTheme_MaxPointsDisplayP1 = self;
+			self:x(-SCREEN_CENTER_X + 2)
+			self:y((6*(SCREEN_HEIGHT/8)) + 21)
+			self:zoom(0.25)
+			self:luaeffect('Update')
+			self:horizalign('left')
+			self:diffuse(0.75, 0.75, 0.75, 1)
+		end"
+		UpdateCommand="%function(self)
+			if SCREENMAN:GetTopScreen():GetChild('ScoreP1') and samTheme_p1PointsDisplay then
+				local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPossibleDancePoints()
+				local dancepoints_string = string.format('%05d', tostring(dancepoints))
+				self:settext(dancepoints_string)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+</children></ActorFrame>

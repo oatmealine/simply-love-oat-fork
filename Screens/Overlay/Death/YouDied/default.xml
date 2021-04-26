@@ -1,4 +1,4 @@
 	<ActorFrame Name="YouDied"><children>
 		<Layer Type="Quad" />
-		<Layer File="ded" />
+		<Layer File="tenor.gif" />
 	</children></ActorFrame>

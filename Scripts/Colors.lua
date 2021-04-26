@@ -39,7 +39,7 @@ function DifficultyColor( dc )
 	if color == 2 then return "#FF3C23" end
 	if color == 3 then return "#FF003C" end
 	if color == 4 then return "#C1006F" end
-	if color == 5 then return "#8200A1" end
+	if color == 5 then return "#F75CE0" end
 	if color == 6 then return "#413AD0" end
 	if color == 7 then return "#0073FF" end
 	if color == 8 then return "#00ADC0" end

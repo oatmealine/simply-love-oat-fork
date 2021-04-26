@@ -1,6 +1,6 @@
 <ActorFrame><children>
-	<Layer Type="Quad" Command="diffuse,#FFFFFFA0;stretchto,SCREEN_LEFT,SCREEN_BOTTOM-24,SCREEN_RIGHT,SCREEN_BOTTOM;linear,.5;diffuse,#FFFFFF00"/>	
-	<Layer Type="Quad" Command="diffuse,#FFFFFFA0;stretchto,SCREEN_LEFT,SCREEN_TOP+32,SCREEN_RIGHT,SCREEN_TOP;linear,.5;diffuse,#FFFFFF00"/>	
+	<Layer Type="Quad" Command="diffuse,#111111FF;stretchto,SCREEN_LEFT,SCREEN_BOTTOM-24,SCREEN_RIGHT,SCREEN_BOTTOM;accelerate,.5;y,SCREEN_BOTTOM+12"/>	
+	<Layer Type="Quad" Command="diffuse,#111111FF;stretchto,SCREEN_LEFT,SCREEN_TOP+32,SCREEN_RIGHT,SCREEN_TOP;accelerate,.5;y,SCREEN_TOP-16"/>	
 	<Actor
 		File="../ScreenWithMenuElements underlay"
 	/>

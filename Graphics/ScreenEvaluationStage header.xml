@@ -2,9 +2,84 @@
 	<Layer File="ScreenWithMenuElements header"/>	
 	<Layer
 		Type="BitmapText"
-		Text="EVALUATION"
+		Text=""
 		File="_wendy white"
-		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,0;horizalign,left;x,15;y,16"
+		InitCommand="%function(self)
+			local lines = {'you suck', '#score-share time', 'press PRTSCR to kill a family', 'sonic the hedghehog', 'penis!!!', 'HOW', 'YOU ROCK!', 'm', 'h', ',', 'Cocke and Balls', 'haha your sync is broken', 'gaming!!', 'good job, She is proud of you', 'hacking hacker.....', 'wooow... not even an FC?? you suck', 'PENIS', '', 'wii phone', 'xbox 720', 'cant believe', 'pain', 'man', 'horse', 'cant believe they made taiko in nitg.....', 'COCK', 'pussy', 'go post this on twitter. go brag about your score', 'wouldnt it be a shame if... AV', 'good job! the game will now AV', 'music do be banging doe', 'soulja boy tell em', 'Polish toilet spin', 'SCREENMAN:GetTopScreen():vibrate()', 'h.how', 'HOW IS THIS WOMAN', 'ronaldinho soccer!!!', 'wow youre terrible', 'keyboard moment', 'glitch2.frag moment', 'it wasnt fault my game lagged', 'skewllex', 'what the Fuck', 'benis', 'weewee', 'wenis!!!!!', 'oatmealine is gay', 'tung tiied gaming', 'kfc gaming', 'Denis', 'bussy', '666 is a 14', 'bye-bye', 'skye is cute', 'wahoo', 'caulk'}
+			
+			self:settext(lines[math.random(1, #lines)])
+			self:texturefiltering(false)
+		end"
+		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
 		OffCommand="linear,0.2;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text=""
+		File="_wendy white"
+		InitCommand="%function(self)
+		    --self:stoptweening();
+		   	self:diffuse(0.8, 0.8, 0.8, 1)
+			self:zoom(.2)
+			self:shadowlength(0)
+			self:horizalign('right')
+			self:x(SCREEN_WIDTH)
+			self:y(26)
+			self:texturefiltering(false)
+			
+			if gnSongCount == nil then
+				gnSongCount = 0;
+		    end
+		    gnSongCount = gnSongCount + 1;
+		    
+		    self:sleep(0);
+			self:queuecommand('UpdateCounter');
+		end"
+		UpdateCounterCommand="%function(self)
+		--self:stoptweening();
+		
+		if gnPlaySec  == nil then gnPlaySec  = 0 end
+		if gnPlayMin  == nil then gnPlayMin  = 0 end
+		if gnPlayHour == nil then gnPlayHour = 0 end
+		
+		gnPlaySec = gnPlaySec + 1;
+		if gnPlaySec >= 60 then
+			gnPlaySec = gnPlaySec - 60;
+			gnPlayMin = gnPlayMin + 1;
+			end
+		if gnPlayMin >= 60 then
+			gnPlayMin = gnPlayMin - 60;
+			gnPlayHour = gnPlayHour + 1;
+			end
+			
+		if gnPlaySec < 10 then
+			gnPlaySecText = '0'..gnPlaySec
+			else
+			gnPlaySecText = ''..gnPlaySec
+			end
+		if gnPlayMin < 10 then
+			gnPlayMinText = '0'..gnPlayMin
+			else
+			gnPlayMinText = ''..gnPlayMin
+			end
+		if gnPlayHour < 10 then
+			gnPlayHourText = '0'..gnPlayHour
+			else
+			gnPlayHourText = ''..gnPlayHour
+			end
+			
+		if gnSongCount == nil then
+			gnSongCount = 0;
+			end
+		
+		if gnSongCount == 1 then
+		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)');
+			else
+		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Songs)');
+			end
+
+		self:sleep(1);
+		self:queuecommand('UpdateCounter');
+		end"
 	/>
 </children> </ActorFrame>

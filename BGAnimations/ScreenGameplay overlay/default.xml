@@ -1,3 +1,98 @@
-<ActorFrame> <children>
+<ActorFrame
+	InitCommand="%function(self)
+
+			-- master list of enable toggles
+			
+			-- max combo display, for each player
+			samTheme_p1MaxCombo = true
+			samTheme_p2MaxCombo = true
+			
+			-- judgement breakdown display, for each player
+			samTheme_p1JudgeDisplay = true
+			samTheme_p2JudgeDisplay = true
+			
+			-- dance points display, for each player
+			samTheme_p1PointsDisplay = true
+			samTheme_p2PointsDisplay = true
+			
+			-- CURSED CONTENT [NITG only]: combo-based scoring manager, for each player
+			--[[ dummied out because it doesn't actually *work*
+			samTheme_p1ComboBasedTorture = false
+			samTheme_p2ComboBasedTorture = false
+			]]
+			
+	
+			-- Display current song in course [code by -YOSEFU-]
+			samTheme_courseSongDisplay = true
+	
+	
+			-- setting toggles
+			samTheme_p1ComboLayout = 1
+			samTheme_p2ComboLayout = 1
+			samTheme_p1JudgeLeadingZeroes = true;
+			samTheme_p2JudgeLeadingZeroes = true;
+			
+			--[[ COMBO LAYOUTS:
+				0:
+				F E
+				G D
+				W M
+				
+				1:
+				F D
+				E W
+				G M
+			]]
+	end"
+
+> <children>
+	<!-- NOT TIED TO SPECIFIC PLAYER -->
+	
+	<Layer File="modules/PN_CourseSongDisplay.xml" />
+
+	<!-- PLAYER 1 -->
+	
+	<ActorFrame
+		InitCommand="%function(self)
+			self:xy(SCREEN_CENTER_X, SCREEN_CENTER_Y/8 + 10)
+			self:zoom(1)
+			
+		end"
+	><children>
+	
+		<!-- max combo text -->
+		<Layer File="modules/P1_MaxComboDisplay.xml" />
+		
+		<!-- point displays -->
+		<Layer File="modules/P1_DPDisplay.xml" />
+	
+		<!-- judgement numbers -->
+		<Layer File="modules/P1_JudgeDisplay.xml" />
+		
+		<!-- nITG only: combo-based scoring -->
+		<!-- <Layer File="P1_ComboScoringManager.xml" /> -->
+		
+		
+	</children></ActorFrame>
+	
+	
+	<!-- PLAYER 2 -->
+	<ActorFrame
+		InitCommand="%function(self)
+			self:xy(SCREEN_CENTER_X, SCREEN_CENTER_Y/8 + 10)
+			self:zoom(1)
+		end"
+	><children>
+	
+		<!-- max combo text -->
+		<Layer File="modules/P2_MaxComboDisplay.xml" />
+	
+		<!-- dance points display -->
+		<Layer File="modules/P2_DPDisplay.xml" />
+	
+		<!-- judgement display -->
+		<Layer File="modules/P2_JudgeDisplay.xml" />
+		
+	</children></ActorFrame>
 </children> </ActorFrame>
 

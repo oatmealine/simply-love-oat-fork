@@ -40,6 +40,12 @@ local Resolutions =
 		Ratio = 1.777777,
 		Res = { "960x540", "1280x720", "1600x900", "1920x1080" },
 	},
+	
+	["57:8"] =
+	{
+	    Ratio = 7.125,
+	    Res = { "3420x480" },
+	},
 }
 
 -- Width, then height. "640x480" -> 640, 480
@@ -89,6 +95,7 @@ function LuaSetAspectRatio()
 				if not fequ(ratio,temp_float) then
 					temp_ratio = Names[i]
 					temp_float = RatioToFloat( temp_ratio )
+					
 					MESSAGEMAN:Broadcast( "AspectRatioChanged" )
 					return
 				end

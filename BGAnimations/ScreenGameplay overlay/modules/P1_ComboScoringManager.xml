@@ -1,0 +1,111 @@
+<ActorFrame
+	InitCommand="%function(self)
+			triangleNo = function(num)
+				return (num * (num+1)) / 2
+			end
+			samTheme_p1CBTRun = 1
+	end"
+><children>
+<Actor
+	Type="Quad"
+	OnCommand="%function(self)
+		self:aux(1)
+		if FUCK_EXE and samTheme_p1ComboBasedTorture then
+			self:luaeffect('Update')
+		end
+
+	end"
+	UpdateCommand="%function(self)
+		if samTheme_p1CBTRun == 1 then
+			samTheme_p1CBTRun = 0
+			samTheme_comboOffset = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetCurrentCombo()
+			local old_dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPossibleDancePoints()
+			local dancepoints = 5 * triangleNo(old_dancepoints/5) -- uhhhhhhhhh oops
+			-- these include holds so i have to do holds stuff
+			
+			STATSMAN:GetCurStageStats():GetPlayerStageStats(0):SetPossibleDancePoints(dancepoints)
+			Trace('h')
+		end
+	end"
+	OffCommand="%function(self)
+		samTheme_p1CBTRun = nil -- clean your variables
+	end"
+	Fk_P1_W1MessageCommand="%function(self)
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetActualDancePoints()
+			local combo = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetCurrentCombo()
+			local modified_dancepoints = dancepoints + ((combo - samTheme_comboOffset - 1) * 5 )
+			STATSMAN:GetCurStageStats():GetPlayerStageStats(0):SetActualDancePoints(modified_dancepoints-5) -- erase regular fantastic points
+		end
+	end"
+	Fk_P1_W2MessageCommand="%function(self)
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetActualDancePoints()
+			local combo = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetCurrentCombo()
+			local modified_dancepoints = dancepoints + ((combo - samTheme_comboOffset - 1) * 4 )
+			STATSMAN:GetCurStageStats():GetPlayerStageStats(0):SetActualDancePoints(modified_dancepoints-4) -- erase regular excellent points
+		end
+	end"
+	Fk_P1_W3MessageCommand="%function(self)
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetActualDancePoints()
+			local combo = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetCurrentCombo()
+			local modified_dancepoints = dancepoints + ((combo - samTheme_comboOffset - 1) * 2 )
+			STATSMAN:GetCurStageStats():GetPlayerStageStats(0):SetActualDancePoints(modified_dancepoints-2) -- erase regular great points
+		end
+	end"
+	Fk_P1_W4MessageCommand="%function(self)
+		samTheme_comboOffset = 0
+	end"
+	Fk_P1_W5MessageCommand="%function(self)
+		samTheme_comboOffset = 0
+	end"
+	Fk_P1_W6MessageCommand="%function(self)
+		samTheme_comboOffset = 0
+	end"
+	Fk_P1_OK_HoldMessageCommand="%function(self)
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetActualDancePoints()
+			local combo = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetCurrentCombo()
+			local modified_dancepoints = dancepoints + ((combo - samTheme_comboOffset - 1) * 5 )
+			STATSMAN:GetCurStageStats():GetPlayerStageStats(0):SetActualDancePoints(modified_dancepoints-5) -- erase regular fantastic points
+			
+			SCREENMAN:GetTopScreen():GetChild('PlayerP1'):SetCombo(combo + 1);
+		end
+	end"
+	Fk_P1_NG_HoldMessageCommand="%function(self)
+		samTheme_comboOffset = 0
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			SCREENMAN:GetTopScreen():GetChild('PlayerP1'):SetCombo(0);
+		end
+	end"
+	Fk_P1_OK_RollMessageCommand="%function(self)
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			local dancepoints = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetActualDancePoints()
+			local combo = STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetCurrentCombo()
+			local modified_dancepoints = dancepoints + ((combo - samTheme_comboOffset - 1) * 5 )
+			STATSMAN:GetCurStageStats():GetPlayerStageStats(0):SetActualDancePoints(modified_dancepoints-5) -- erase regular fantastic points
+			
+			SCREENMAN:GetTopScreen():GetChild('PlayerP1'):SetCombo(combo + 1);
+		end
+	end"
+	Fk_P1_NG_RollMessageCommand="%function(self)
+		samTheme_comboOffset = 0
+		if FUCK_EXE and samTheme_p1ComboBasedTorture and SCREENMAN:GetTopScreen():GetChild('ScoreP1') then
+			SCREENMAN:GetTopScreen():GetChild('PlayerP1'):SetCombo(0);
+		end
+	end"
+	
+/>
+</children></ActorFrame>
+
+<!--
+
+1 = Fantastic
+2 = Excellent
+3 = Great
+4 = Decent
+etc
+8 = Mine
+
+-->

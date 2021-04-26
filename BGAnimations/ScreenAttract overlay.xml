@@ -5,7 +5,7 @@
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-15;shadowlength,0;zoom,0.5;diffuse,#FFFFFF;PlayCommand,Refresh"
 		RefreshCommand="%
 			function(self)
-				if GAMESTATE:IsEventMode() then self:settext('EVENT MODE') return end
+				if GAMESTATE:IsEventMode() then self:settext('') return end
 				if GAMESTATE:GetCoinMode()==COIN_MODE_FREE then self:settext('FREE PLAY') return end
 				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:settext('') return end
 				local coins=GAMESTATE:GetCoins()

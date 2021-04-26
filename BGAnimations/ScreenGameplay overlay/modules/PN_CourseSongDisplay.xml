@@ -1,0 +1,35 @@
+<ActorFrame><children>
+	<Layer Type="BitmapText" File="Common Normal" OnCommand="shadowlength,0;xy,SCREEN_CENTER_X,SCREEN_BOTTOM-72;zoom,0.5;maxwidth,640" Text=""
+		InitCommand="queuecommand,Update"
+		UpdateCommand="%function( self )
+
+			if GAMESTATE:IsCourseMode() and samTheme_courseSongDisplay then
+
+				local group  = string.sub( GAMESTATE:GetCurrentSong():GetSongDir(), 8, string.find( GAMESTATE:GetCurrentSong():GetSongDir(), '/', 8 ) - 1 );
+				local csong = GAMESTATE:GetCurrentSong()
+				local title  = csong:GetDisplayFullTitle();
+				local artist = csong:GetDisplayArtist();
+				local genre = csong:GetGenre();
+				if genre == '' then genre = '???' end
+				local diffnum = GAMESTATE:GetCurrentSteps(0):GetDifficulty()
+				local diffnum2 = GAMESTATE:GetCurrentSteps(0):GetMeter()
+				local difftexts = {'BG', 'EA', 'NR', 'HD', 'EX', 'ED'}
+				local difftext = difftexts[diffnum+1]
+
+				self:settext(
+					group ..
+					'\n' .. title ..
+					' by ' .. artist .. 
+					'\n Genre &quot;' .. genre ..
+					'&quot; '.. difftext .. diffnum2
+				);
+
+			end
+
+
+			self:sleep( 1 / 60 );
+			self:queuecommand( 'Update' );
+
+		end"
+	/>
+</children></ActorFrame>

@@ -19,6 +19,11 @@
 			Font="_misoreg small"
 			Text="STEPS"
 			OnCommand="y,-29;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.5"
+			SetCommand="%function(self)
+			self:diffuse(BubbleColorText(PLAYER_2))
+			end"
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
 		<Layer 
 		   Font="_misobold small"
@@ -58,6 +63,11 @@
 			Font="_misoreg small"
 			Text="STEPS"
 			OnCommand="y,29;horizalign,left;ShadowLength,0;diffuse,#000000;zoomx,0.5;zoomy,0.1;accelerate,0.3;zoom,0.5"
+			SetCommand="%function(self)
+			self:diffuse(BubbleColorText(PLAYER_2))
+			end"
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
 	</children></Layer>
 	<Layer
@@ -93,5 +103,11 @@
 	<Quad Command="stretchto,SCREEN_CENTER_X+320,SCREEN_BOTTOM,SCREEN_RIGHT,SCREEN_TOP;diffuse,#00000000" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
 	<Quad Command="stretchto,SCREEN_CENTER_X-320,SCREEN_BOTTOM,SCREEN_LEFT,SCREEN_TOP;diffuse,#00000000" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
 	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+94);y,SCREEN_CENTER_Y+25.5" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />
+	
+	
+	<Layer
+		File="groove.gif"
+		InitCommand="zoom,0.2;x,80;y,SCREEN_HEIGHT-115;effectclock,bgm;effectoffset,0.2"
+	/>
 </children> </ActorFrame>
 

@@ -13,17 +13,17 @@
 		/>
 
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,409,SCREEN_CENTER_X-5,443"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,409,SCREEN_CENTER_X-5,443;diffusealpha,0.2"
 		/>	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X-310,320,SCREEN_CENTER_X-5,409"
+			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X-310,320,SCREEN_CENTER_X-5,409;diffusealpha,0.2"
 		/>	
 	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-5,355"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-5,355;diffusealpha,0.2"
 		/>					
 		<Layer Type="Quad"
-			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-146,240"
+			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-146,240;diffusealpha,0.2"
 		/>
 	</children></ActorFrame>
 	<ActorFrame
@@ -38,17 +38,17 @@
 		/>
 
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,409,SCREEN_CENTER_X+310,443"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,409,SCREEN_CENTER_X+310,443;diffusealpha,0.2"
 		/>	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X+5,320,SCREEN_CENTER_X+310,409"
+			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X+5,320,SCREEN_CENTER_X+310,409;diffusealpha,0.2"
 		/>	
 	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,180,SCREEN_CENTER_X+310,355"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,180,SCREEN_CENTER_X+310,355;diffusealpha,0.2"
 		/>	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X+146,180,SCREEN_CENTER_X+310,240"
+			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X+146,180,SCREEN_CENTER_X+310,240;diffusealpha,0.2"
 		/>	
 	</children></ActorFrame>
 	<Layer

@@ -232,12 +232,12 @@ end"><children>
 				self:x(70 + 12)
 				self:y(-88)
 				self:zoomto(135,60)
-				self:hidden(0)
+				self:hidden(1)
 			else
 				self:x(0)
 				self:y(-88)
 				self:zoomto(305,60)
-				self:hidden(0)
+				self:hidden(1)
 			end
 		end"
 		/>
@@ -762,12 +762,12 @@ end"><children>
 				self:x(-70 - 12)
 				self:y(-88)
 				self:zoomto(135,60)
-				self:hidden(0)
+				self:hidden(1)
 			else
 				self:x(0)
 				self:y(-88)
 				self:zoomto(305,60)
-				self:hidden(0)
+				self:hidden(1)
 			end
 		end"
 		/>
