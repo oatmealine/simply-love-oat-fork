@@ -1,6 +1,6 @@
 # SIMPLY LOVE (Oat's Fork)
 
-![](BGAnimations/ScreenLove underlay/SimplyLove doubleres.png)
+![thumbnail](BGAnimations/ScreenLove underlay/SimplyLove doubleres.png)
 
 A fork of NotITG's Simply Love with more features, different graphics, theming and aesethetics. This repo mainly serves as a way to sync changes with the NotITG Simply Love fork.
 
