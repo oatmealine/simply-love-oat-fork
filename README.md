@@ -20,3 +20,9 @@ Do note this list is slightly inaccurate as I've only done this when pushing thi
 - QUICK quick play (instant song wheel)
 - 57:8 aspect ratio support (oat what)
 - *Just, in general, tons of weird meme additions and annoyances*
+
+## Screenshots
+
+![title](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot1.png "title")
+![song select](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot2.png "song list")
+![result](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot3.png "result")
