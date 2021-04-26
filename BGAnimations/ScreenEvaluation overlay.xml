@@ -122,7 +122,7 @@
 		/>
 	</children> </Layer>
 	
-	<Layer File="OffsetPlot" />
-	<!--Layer File="Couples" /-->
+	<Layer File="ScreenEvaluation widget offsetPlot" />
+	<Layer File="ScreenEvaluation widget pb" />
 	
 </children> </ActorFrame>
