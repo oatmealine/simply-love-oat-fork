@@ -1,28 +1,40 @@
-# SIMPLY LOVE (Oat's Fork)
+# SIMPLY LOVE (Oat's Fork + Rya's Edit)
+# NO I HAVE NOT PUSHED ANY EDITS YET, I'LL DO THAT "SOON" HOPEFULLY
 
-![logo time](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/BGAnimations/ScreenLove%20underlay/SimplyLove%20doubleres.png "logo")
+![logo time](https://i.jecket.xyz/ma2d0.png "logö")
 
-A fork of NotITG's Simply Love with more features, different graphics, theming and aesethetics. This repo mainly serves as a way to sync changes with the NotITG Simply Love fork.
+Rya (that's me, Jecket) stole Oat's theme to add a bit of sweet salt to it, for personal use mostly
 
-## Features
+## Additional Features
 
-Do note this list is slightly inaccurate as I've only done this when pushing this repo
+Most features are already in https://github.com/oatmealine/simply-love-oat-fork so please check that out before you get confused
 
-- **!!** I removed some Japanese/Korean/Chinese fonts that are rarely used for faster load times, but this might be what would be considered a Bad Idea
-- Changes to scatterplots to show sync-relevant info
-- Results screen now shows PB scoring and funnies on fail
-- Hide EVENT MODE (god bless)
-- Some extra animations, just for fun
-- Transparency, slight graphic changes for minor things like headers/footers and fresh theming
-- New fonts!
-- Samario's basic chart extended stats view
-- Groove Nights-like playtime
-- QUICK quick play (instant song wheel)
-- 57:8 aspect ratio support (oat what)
-- *Just, in general, tons of weird meme additions and annoyances*
+- Transparent default judgement (they're too big to get me distracted)
+- More annoyances (you'll be greeted with random messages upon selecting quickplay)
+- Restart game button because I can't be bothered to go to the settings to reload simfiles
+- Shame (art by [pixloen](https://twitter.com/pixloen)) ((anim delayed by a small bit, to be fixed))
+- Replaced some textures (Arrows, Edit USB thingy)
+- Gradient Colors (only in purple color, wrong hue too, check second screenshot)
+- Replaced few music stuff
+- rest of the "new" stuff is probably forgotten I haven't worked on this in a long time hence it's inaccurate
+- sexy af system message bar
 
-## Screenshots
+## To be added, probably
+- More color gradients
+- Misc additions for mods (?)?
+- Removing some stuff (e.g. "counts as 2 rounds")
+- METRICS WHEEL
+- Show song credit if possible
+- rainbowify
+- just more texture changes
+- **LITERALLY USING THE NEWEST VERSION I'M LIKE 900 COMMITS BEHIND**
 
-![title](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot1.png "title")
-![song select](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot2.png "song list")
-![result](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot3.png "result")
+## SCreenshot (dithered cuz compression)
+
+![random message llo](https://i.jecket.xyz/gen8l.png "rng")
+
+![mawaru shindeiru](https://i.jecket.xyz/uoj0m.png "colors")
+
+![judgments](https://i.jecket.xyz/7m0ou.png "and this cool bar")
+
+![actually judgments](https://i.jecket.xyz/vtmnr.png)
