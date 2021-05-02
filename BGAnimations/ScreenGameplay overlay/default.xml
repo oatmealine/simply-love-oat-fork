@@ -44,7 +44,68 @@
 				G M
 			]]
 	end"
-
+		OnCommand="%function(self)
+			BX_pss = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+			BX_dvt = BX_pss:GetOffsetVector()
+			BX_nrt = BX_pss:GetNoteRowVector()
+			
+			function math.clamp(val, min, max)
+				if val < min then return min end
+				if val > max then return max end
+				return val
+			end
+		end"
+		SaltyResetMessageCommand="%function(self)
+			BX_CurCustomLife = 0.5
+			BX_DispCustomLife = 0.5
+			BX_CustomLifeChanges = {{0,0.5}}
+			BX_SaltyResets = BX_SaltyResets + 1
+		end"
+		Fk_P1_Complete_W1MessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife + .008,-100,1)
+			BX_DispCustomLife = math.clamp(BX_DispCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_Complete_W2MessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife + .008,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_Complete_W3MessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife + .004,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_Complete_W4MessageCommand="%function(self)
+			BX_CurCustomLife = BX_CurCustomLife
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_Complete_W5MessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife - .05,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_W6MessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife - .1,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_OKMessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife + .008,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_NGMessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife + .08,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
+		Fk_P1_W8MessageCommand="%function(self)
+			BX_CurCustomLife = math.clamp(BX_CurCustomLife - 0.5,-100,1)
+			BX_DispCustomLife = math.clamp(BX_CurCustomLife,0,1)
+			table.insert(BX_CustomLifeChanges,{GAMESTATE:GetSongBeat(),BX_DispCustomLife})
+		end"
 > <children>
 	<!-- NOT TIED TO SPECIFIC PLAYER -->
 	
