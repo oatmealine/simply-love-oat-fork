@@ -212,14 +212,20 @@ end"><children>
 	StepP1MenuSelectMessageCommand="%function(self)
 		if BX_DisplayedGraph == 'Life' then
 			BX_DisplayedGraph = 'Timing'
-			BX_CustomLifeGraph:hidden(1)
+			BX_CustomLifeGraph_2:hidden(1)
+			BX_CustomLifeGraph_2bg:hidden(1)
+			BX_CustomLifeGraph_1:hidden(1)
+			BX_CustomLifeGraph_1bg:hidden(1)
 			BX_CustomTimingGraph:hidden(0)
 		else
 			BX_DisplayedGraph = 'Life'
-			BX_CustomLifeGraph:hidden(0)
+			BX_CustomLifeGraph_2:hidden(0)
+			BX_CustomLifeGraph_2bg:hidden(0)
+			BX_CustomLifeGraph_1:hidden(0)
+			BX_CustomLifeGraph_1bg:hidden(0)
 			BX_CustomTimingGraph:hidden(1)
 		end
-		SCREENMAN:SystemMessage('Scatterplot Now Displays Custom '..BX_DisplayedGraph..' Graph')
+		--SCREENMAN:SystemMessage('Scatterplot Now Displays Custom '..BX_DisplayedGraph..' Graph')
 	end"
 	><children>
 	
@@ -378,6 +384,172 @@ end"><children>
 		
 		<Layer Type="Quad" InitCommand="zoomto,oplot_plotWidth+oplot_plotMargin,oplot_plotHeight+oplot_plotMargin;diffuse,0.1,0.1,0.1,0.8;"/>
 		
+		<Layer Type="Polygon" DrawMode="quadstrip" 
+		Var="BX_CustomLifeGraph_1bg" 
+		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		UpdateSpellDisplayP2MessageCommand="%function(self)
+			local pn = 1
+			if curcard[pn] == 0 then
+				if BX_DisplayedGraph == 'Life' then
+					BX_CustomLifeGraph_1bg:hidden(0)
+					BX_CustomTimingGraph:hidden(1)
+				else
+					BX_CustomLifeGraph_1bg:hidden(1)
+					BX_CustomTimingGraph:hidden(0)
+				end
+			else
+				self:hidden(1)
+			end
+		end"
+		MakeAndUpdateCommand="%function(self)
+			local pn = 1
+			local ss = STATSMAN:GetCurStageStats()
+			local pss = ss:GetPlayerStageStats(pn-1)
+			local dvt = pss:GetOffsetVector()
+			local nrt = pss:GetNoteRowVector()
+			local mrt = pss.GetMineRowVector and 
+						pss:GetMineRowVector() or {}
+			local nrs = pss:GetNoteSongVector()
+			local vert = 0;
+			local totaldvt = 0
+			local avdvt = 0
+
+			local alpha = 0.3
+			
+			
+			local w, xo, s, e = nil, nil, nil, nil
+			
+			
+			local function MRC(num)
+				local colors = {}
+				--[[
+				if num > 5 then
+					colors[1] = 1-((num-5)/5)
+					colors[2] = 1
+					colors[3] = 0
+				else
+					colors[1] = 1
+					colors[2] = ((num)/5)
+					colors[3] = 0
+				end
+				]] -- looked weird with the newer background approach
+				colors = {1 - (num/5), num/5, 0}
+				return colors
+			end
+
+			if table.getn(BX_CustomLifeChanges[pn]) <= 1 then
+				self:hidden(1)
+				self:diffusealpha(0)
+			else
+				self:SetNumVertices(2)
+				local vert = 2;
+				
+					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexColor(0,1,1,1,1)
+					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexColor(1,1,1,1,1)
+					
+				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]) * 2)
+				for i,lc in pairs(BX_CustomLifeChanges[pn]) do
+					local x = oplot_fitX(lc[1])
+					local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+					local catc = MRC(lc[2]*10)
+						self:SetVertexPosition((i-1) * 2, x, y, 0)
+						self:SetVertexColor((i-1) * 2, catc[1]*.75, catc[2]*.75, 0, alpha)
+						self:SetVertexPosition((i-1) * 2 + 1, x, oplot_fitY(0) + (oplot_plotHeight/2), 0)
+						self:SetVertexColor((i-1) * 2 + 1, 1, 0, 0, alpha)
+				end
+
+				self:SetLineWidth(1)
+				--self:SetPolygonMode(1)
+			end
+		end"
+		/>
+		
+		<Layer Type="Polygon" DrawMode="LineStrip" 
+		Var="BX_CustomLifeGraph_1"
+		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		UpdateSpellDisplayP2MessageCommand="%function(self)
+			local pn = 1
+			if curcard[pn] == 0 then
+				if BX_DisplayedGraph == 'Life' then
+					BX_CustomLifeGraph_1:hidden(0)
+					BX_CustomTimingGraph:hidden(1)
+				else
+					BX_CustomLifeGraph_1:hidden(1)
+					BX_CustomTimingGraph:hidden(0)
+				end
+			else
+				self:hidden(1)
+			end
+		end"
+		MakeAndUpdateCommand="%function(self)
+			--Trace('HEY! P1 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
+			local pn = 1
+			local ss = STATSMAN:GetCurStageStats()
+			local pss = ss:GetPlayerStageStats(pn-1)
+			local dvt = pss:GetOffsetVector()
+			local nrt = pss:GetNoteRowVector()
+			local mrt = pss.GetMineRowVector and 
+						pss:GetMineRowVector() or {}
+			local nrs = pss:GetNoteSongVector()
+			local vert = 0;
+			local totaldvt = 0
+			local avdvt = 0
+
+			local alpha = 0.9
+			
+			
+			local w, xo, s, e = nil, nil, nil, nil
+			
+			
+			local function MRC(num)
+				local colors = {}
+				--[[
+				if num > 5 then
+					colors[1] = 1-((num-5)/5)
+					colors[2] = 1
+					colors[3] = 0
+				else
+					colors[1] = 1
+					colors[2] = ((num)/5)
+					colors[3] = 0
+				end
+				]] -- looked weird with the newer background approach
+				colors = {1 - (num/5), num/5, 0}
+				return colors
+			end
+		
+			if table.getn(BX_CustomLifeChanges[pn]) <= 1 then
+				self:hidden(1)
+				self:diffusealpha(0)
+			else
+				self:SetNumVertices(2)
+				local vert = 2;
+				
+					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexColor(0,1,1,1,alpha)
+					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexColor(1,1,1,1,alpha)
+					
+				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]))
+				if table.getn(BX_CustomLifeChanges[pn]) > 1 then
+					for i,lc in pairs(BX_CustomLifeChanges[pn]) do
+						local x = oplot_fitX(lc[1])
+						local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+						local catc = MRC(lc[2]*10)
+							self:SetVertexPosition(i-1,x,y,0)
+							self:SetVertexColor(i-1,catc[1]*.75,catc[2]*.75,0,alpha)
+						
+						
+					end
+					
+				end
+				self:SetLineWidth(2)
+			end
+		end"
+		/>
+
 		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,#1E282F"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
@@ -684,6 +856,30 @@ end"><children>
 			
 		end" />
 		
+		<Layer Type="BitmapText" Text="" Font="_misoreg small"
+		UpdateSpellDisplayP1MessageCommand="%function(self)
+			local pn = 1
+			if curcard[pn] == 0 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+		OnCommand="%function(self)
+			self:hidden(1)
+			self:xy(83,-74)
+			self:zoom(.5)
+			self:diffuse(1, 1, 1, 0.6)
+			self:shadowlength(0)
+			
+			if BX_SaltyResets == 0 then
+				self:hidden(1)
+				self:settext('')
+			else
+				self:settext( BX_SaltyResets .. ' resets' )
+			end
+			
+		end" />
 		
 		<Layer Type="BitmapText" Text="" Font="_misoreg small"
 		    OnCommand="%function(self)
@@ -954,17 +1150,18 @@ end"><children>
 		
 		
 		
-		<Layer Type="Polygon" DrawMode="LineStrip" 
-		Var="BX_CustomLifeGraph" 
+
+		<Layer Type="Polygon" DrawMode="quadstrip" 
+		Var="BX_CustomLifeGraph_2bg" 
 		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
 				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph:hidden(0)
+					BX_CustomLifeGraph_2bg:hidden(0)
 					BX_CustomTimingGraph:hidden(1)
 				else
-					BX_CustomLifeGraph:hidden(1)
+					BX_CustomLifeGraph_2bg:hidden(1)
 					BX_CustomTimingGraph:hidden(0)
 				end
 			else
@@ -972,7 +1169,6 @@ end"><children>
 			end
 		end"
 		MakeAndUpdateCommand="%function(self)
-			Trace('HEY! P2 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
 			local pn = 2
 			local ss = STATSMAN:GetCurStageStats()
 			local pss = ss:GetPlayerStageStats(pn-1)
@@ -984,6 +1180,8 @@ end"><children>
 			local vert = 0;
 			local totaldvt = 0
 			local avdvt = 0
+
+			local alpha = 0.3
 			
 			
 			local w, xo, s, e = nil, nil, nil, nil
@@ -991,6 +1189,7 @@ end"><children>
 			
 			local function MRC(num)
 				local colors = {}
+				--[[
 				if num > 5 then
 					colors[1] = 1-((num-5)/5)
 					colors[2] = 1
@@ -1000,33 +1199,123 @@ end"><children>
 					colors[2] = ((num)/5)
 					colors[3] = 0
 				end
+				]] -- looked weird with the newer background approach
+				colors = {1 - (num/5), num/5, 0}
 				return colors
 			end
-		
-			self:SetNumVertices(2)
-			local vert = 2;
-			
-				self:SetVertexPosition(0,0,oplot_fitY(180),1)
-				self:SetVertexColor(0,1,1,1,1)
-				self:SetVertexPosition(1,0,oplot_fitY(-180),1)
-				self:SetVertexColor(1,1,1,1,1)
+
+			if table.getn(BX_CustomLifeChanges[pn]) <= 1 then
+				self:hidden(1)
+				self:diffusealpha(0)
+			else
+				self:SetNumVertices(2)
+				local vert = 2;
 				
-			self:SetNumVertices(table.getn(BX_CustomLifeChanges))
-			if table.getn(BX_CustomLifeChanges) > 1 then
-				
-				
-				for i,lc in pairs(BX_CustomLifeChanges) do
+					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexColor(0,1,1,1,1)
+					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexColor(1,1,1,1,1)
+					
+				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]) * 2)
+				for i,lc in pairs(BX_CustomLifeChanges[pn]) do
 					local x = oplot_fitX(lc[1])
 					local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
 					local catc = MRC(lc[2]*10)
-						self:SetVertexPosition(i-1,x,y,0)
-						self:SetVertexColor(i-1,catc[1]*.75,catc[2]*.75,0,1)
+						self:SetVertexPosition((i-1) * 2, x, y, 0)
+						self:SetVertexColor((i-1) * 2, catc[1]*.75, catc[2]*.75, 0, alpha)
+						self:SetVertexPosition((i-1) * 2 + 1, x, oplot_fitY(0) + (oplot_plotHeight/2), 0)
+						self:SetVertexColor((i-1) * 2 + 1, 1, 0, 0, alpha)
+				end
+
+				self:SetLineWidth(1)
+				--self:SetPolygonMode(1)
+			end
+		end"
+		/>
+		
+		<Layer Type="Polygon" DrawMode="LineStrip" 
+		Var="BX_CustomLifeGraph_2"
+		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		UpdateSpellDisplayP2MessageCommand="%function(self)
+			local pn = 2
+			if curcard[pn] == 0 then
+				if BX_DisplayedGraph == 'Life' then
+					BX_CustomLifeGraph_2:hidden(0)
+					BX_CustomTimingGraph:hidden(1)
+				else
+					BX_CustomLifeGraph_2:hidden(1)
+					BX_CustomTimingGraph:hidden(0)
+				end
+			else
+				self:hidden(1)
+			end
+		end"
+		MakeAndUpdateCommand="%function(self)
+			--Trace('HEY! P2 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
+			local pn = 2
+			local ss = STATSMAN:GetCurStageStats()
+			local pss = ss:GetPlayerStageStats(pn-1)
+			local dvt = pss:GetOffsetVector()
+			local nrt = pss:GetNoteRowVector()
+			local mrt = pss.GetMineRowVector and 
+						pss:GetMineRowVector() or {}
+			local nrs = pss:GetNoteSongVector()
+			local vert = 0;
+			local totaldvt = 0
+			local avdvt = 0
+
+			local alpha = 0.9
+			
+			
+			local w, xo, s, e = nil, nil, nil, nil
+			
+			
+			local function MRC(num)
+				local colors = {}
+				--[[
+				if num > 5 then
+					colors[1] = 1-((num-5)/5)
+					colors[2] = 1
+					colors[3] = 0
+				else
+					colors[1] = 1
+					colors[2] = ((num)/5)
+					colors[3] = 0
+				end
+				]] -- looked weird with the newer background approach
+				colors = {1 - (num/5), num/5, 0}
+				return colors
+			end
+		
+			if table.getn(BX_CustomLifeChanges[pn]) <= 1 then
+				self:hidden(1)
+				self:diffusealpha(0)
+			else
+				self:SetNumVertices(2)
+				local vert = 2;
+				
+					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexColor(0,1,1,1,alpha)
+					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexColor(1,1,1,1,alpha)
 					
+				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]))
+				if table.getn(BX_CustomLifeChanges[pn]) > 1 then
+					
+					
+					for i,lc in pairs(BX_CustomLifeChanges[pn]) do
+						local x = oplot_fitX(lc[1])
+						local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+						local catc = MRC(lc[2]*10)
+							self:SetVertexPosition(i-1,x,y,0)
+							self:SetVertexColor(i-1,catc[1]*.75,catc[2]*.75,0,alpha)
+						
+						
+					end
 					
 				end
-				
+				self:SetLineWidth(2)
 			end
-			self:SetLineWidth(3)
 		end"
 		/>
 		
@@ -1302,10 +1591,16 @@ end"><children>
 			local pn = 2
 			if curcard[pn] == 0 then
 				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph:hidden(0)
+					BX_CustomLifeGraph_2:hidden(0)
+					BX_CustomLifeGraph_2bg:hidden(0)
+					BX_CustomLifeGraph_1:hidden(0)
+					BX_CustomLifeGraph_1bg:hidden(0)
 					BX_CustomTimingGraph:hidden(1)
 				else
-					BX_CustomLifeGraph:hidden(1)
+					BX_CustomLifeGraph_2:hidden(1)
+					BX_CustomLifeGraph_2bg:hidden(1)
+					BX_CustomLifeGraph_1:hidden(1)
+					BX_CustomLifeGraph_1bg:hidden(1)
 					BX_CustomTimingGraph:hidden(0)
 				end
 			else
@@ -1400,7 +1695,32 @@ end"><children>
 			elseif plays == 1 then
 				self:settext( 'First play' )
 			else
-				self:settext( plays .. ' plays\n+'..BX_SaltyResets..' Resets' )
+				self:settext( plays .. ' plays' )
+			end
+			
+		end" />
+		
+		<Layer Type="BitmapText" Text="" Font="_misoreg small"
+		UpdateSpellDisplayP2MessageCommand="%function(self)
+			local pn = 2
+			if curcard[pn] == 0 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+		OnCommand="%function(self)
+			self:hidden(1)
+			self:xy(-83,-74)
+			self:zoom(.5)
+			self:diffuse(1, 1, 1, 0.6)
+			self:shadowlength(0)
+			
+			if BX_SaltyResets == 0 then
+				self:hidden(1)
+				self:settext('')
+			else
+				self:settext( BX_SaltyResets .. ' resets' )
 			end
 			
 		end" />
