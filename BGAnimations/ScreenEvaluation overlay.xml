@@ -20,7 +20,7 @@
 	/>
 
 	<Layer 
-		Condition="SongOptionsLabel() ~= ''"
+		Condition="modRate ~= 1"
 		Type="Quad"
 		OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-139,153,SCREEN_CENTER_X+139,170;diffusealpha,0.85"
 	/>	
@@ -42,7 +42,7 @@
 			Font="_misobold small"
 			OnCommand="y,87;zoom,.5;shadowlength,1;diffuse,#FFFFFF"
 			InitCommand="animate,0;playcommand,Update"
-			UpdateCommand="%function(self) SongOptionsLabel(self) end"
+			UpdateCommand="%function(self) RateBPMlabel(self) end"
 		/>
 	</children> </Layer>
 
@@ -122,7 +122,9 @@
 		/>
 	</children> </Layer>
 	
+	<!--<Layer File="OffsetPlot" />-->
 	<Layer File="ScreenEvaluation widget offsetPlot" />
+	<!--<Layer File="ScreenEvaluation widget uksrtScore" />-->
 	<Layer File="ScreenEvaluation widget pb" />
 	
 </children> </ActorFrame>

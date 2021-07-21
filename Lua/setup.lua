@@ -40,10 +40,13 @@ if config.EditorShowSongTitle == nil then
     config.EditorShowSongTitle = true
 end
 
--- Use untruncated SCREEN_WIDTH and SCREEN_CENTER_X for v3.1 below / OpenITG
+--[[ Use untruncated SCREEN_WIDTH and SCREEN_CENTER_X for v3.1 below / OpenITG
 if not FUCK_EXE or tonumber(GAMESTATE:GetVersionDate()) < 20200112 then
     local disp_ratio = PREFSMAN:GetPreference('DisplayAspectRatio')
     --
     SCREEN_WIDTH = 480 * disp_ratio
     SCREEN_CENTER_X = SCREEN_WIDTH / 2
 end
+
+DISPLAY:SetWindowWidth(SCREEN_WIDTH)
+DISPLAY:SetWindowHeight(SCREEN_HEIGHT)]]

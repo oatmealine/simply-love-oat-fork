@@ -1,5 +1,15 @@
+#version 120
+
 uniform float time;
+uniform float bpm = 60.;
 uniform vec2 imageSize;
+varying vec4 color;
+
+uniform float red   = 255./255.;
+uniform float blue  = 255./255.;
+uniform float green = 255./255.;
+
+// const vec3 mainColor = vec3(106./255., 24./255., 67./255.);
 
 float sawtooth(float a, float freq) {
     if (mod(a, freq) < freq * 0.5) return mod(a, freq * 0.5);
@@ -8,11 +18,11 @@ float sawtooth(float a, float freq) {
 
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
+    vec3 mainColor = vec3(red, blue, green);
     vec2 uv = fragCoord/imageSize.xy;
     float resolutionRatio = imageSize.x / imageSize.y;
     
-    uv /= 43.0;
-    vec3 mainColor = 0.5 + 0.5*cos(time+uv.xyx+vec3(0,2,4));
+    uv /= 80.0;
     // uv fuckery !
     
     // interlacing .
@@ -27,11 +37,11 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     
     vec2 uv2 = uv;
     
-    vec3 color = vec3(0.1);
+    vec3 col = vec3(0.1);
     
     // first one (bg-ish thing??)
     
-    color = vec3(mod(abs(sawtooth(uv.x, 0.6) * resolutionRatio + sawtooth(uv.y, 0.6) + time * 0.3), 0.4)) * mainColor;
+    col = vec3(mod(abs(sawtooth(uv.x, 0.6) * resolutionRatio + sawtooth(uv.y, 0.6) + time * 0.3), 0.4)) * mainColor;
     
     // second one (stripes-like thing)
     
@@ -46,11 +56,11 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     
     if (mod(abs(uv2.x * resolutionRatio + uv2.y + time * 0.2), 0.2) < 0.1) {
         vec3 lines = vec3(cos(uv.x * 2.0 + time + uv.y * 3.0)) * mainColor * 0.7;
-        color = mix(color, lines, 0.3);
+        col = mix(col, lines, 0.3);
     }
     
     // feed the frag color .
-    fragColor = vec4(color, 1.0);
+    fragColor = vec4(col, 1.0) * color;
 }
 
 void main() {

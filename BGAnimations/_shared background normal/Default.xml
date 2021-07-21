@@ -6,7 +6,8 @@
 			    self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			    self:hidden(0)
 			    self:diffuse(ColorRGB(0))
-			    self:diffusealpha(0.5)
+				self:GetShader():uniform1f('bpm', GAMESTATE:GetCurBPM())
+				self:effectclock('bgm')
 			end"
 			ColorSelectedMessageCommand="%function(self)
 			    self:diffuse(ColorRGB(0))

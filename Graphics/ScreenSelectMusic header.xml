@@ -4,75 +4,17 @@
 		Type="BitmapText"
 		Text=""
 		File="_wendy white"
-		OnCommand="diffuse,#FFFFFFFF;zoom,.4;shadowlength,0;horizalign,left;x,15;y,16;texturefiltering,false"
-		InitCommand="%function(self) ScreenSelectMusicHeaderTextSet(self) end"
-	/>
-	<Layer File="skeedobop.png" InitCommand="%function(self)
-	  self:xywh(150, 15, 300, 30)
-	  if math.random() > 0.01 then self:hidden(1) end
-	end"/>
-	<Layer
-		Type="BitmapText"
-		Text=""
-		File="_wendy white"
 		InitCommand="%function(self)
-		    --self:stoptweening();
-			self:diffuse(0.8, 0.8, 0.8, 1)
-			self:zoom(.2)
+			self:diffuse(1, 1, 1, 1)
+			self:zoom(.4)
 			self:shadowlength(0)
-			self:horizalign('right')
-			self:x(SCREEN_WIDTH)
-			self:y(26)
-			self:texturefiltering(false)
-		    self:sleep(0);
-			self:queuecommand('UpdateCounter');
-		end"
-		UpdateCounterCommand="%function(self)
-		--self:stoptweening();
+			self:horizalign('left')
+			self:x(15)
+			self:y(16)
 		
-		if gnPlaySec  == nil then gnPlaySec  = 0 end
-		if gnPlayMin  == nil then gnPlayMin  = 0 end
-		if gnPlayHour == nil then gnPlayHour = 0 end
-		
-		gnPlaySec = gnPlaySec + 1;
-		if gnPlaySec >= 60 then
-			gnPlaySec = gnPlaySec - 60;
-			gnPlayMin = gnPlayMin + 1;
-			end
-		if gnPlayMin >= 60 then
-			gnPlayMin = gnPlayMin - 60;
-			gnPlayHour = gnPlayHour + 1;
-			end
+			local lines = {'hey hey ..... paly the big black', 'oatmealine is the only folder that matters', 'go on. select chance', 'Are You In The Groove?', 'you have 3 seconds to get in the groove', 'penis music.', 'Barack Obama', 'insert funy here', 'Cock', 'oatmealine', 'Open the !wips. Now', ':pensive:', 'huge nintendo ds', 'the burger', 'h', '             e', '', 'HOW', 'play forbidden. now', ':sunglasses:', 'play the ' .. math.random(1, 200) .. 'th pack in your collection', 'WEED'}
 			
-		if gnPlaySec < 10 then
-			gnPlaySecText = '0'..gnPlaySec
-			else
-			gnPlaySecText = ''..gnPlaySec
-			end
-		if gnPlayMin < 10 then
-			gnPlayMinText = '0'..gnPlayMin
-			else
-			gnPlayMinText = ''..gnPlayMin
-			end
-		if gnPlayHour < 10 then
-			gnPlayHourText = '0'..gnPlayHour
-			else
-			gnPlayHourText = ''..gnPlayHour
-			end
-			
-		if gnSongCount == nil then
-			gnSongCount = 0;
-			end
-		
-		if gnSongCount == 1 then
-		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)');
-			else
-		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Songs)');
-			end
-
-		self:sleep(1);
-		self:queuecommand('UpdateCounter');
+			self:settext(lines[math.random(1, #lines)])
 		end"
 	/>
-	
 </children> </ActorFrame>
