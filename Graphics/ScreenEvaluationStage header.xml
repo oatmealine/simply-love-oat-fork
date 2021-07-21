@@ -5,7 +5,7 @@
 		Text=""
 		File="_wendy white"
 		InitCommand="%function(self) ScreenEvaluationStageHeaderTextSet(self) end"
-		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16;texturefilter,false"
+		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16;texturefiltering,false"
 		OffCommand="linear,0.2;diffusealpha,0"
 	/>
 	<Layer
