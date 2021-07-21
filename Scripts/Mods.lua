@@ -94,6 +94,21 @@
 
 -- Judgment Font List
 	judgmentFontList = { 'Default' , 'Love' , 'Tactics', 'Chromatic', 'Deco', 'GrooveNights', 'ITG2' }
+	if FUCK_EXE then -- Auto load on NotITG
+		local list = { 'Default' }
+
+		local dir = string.sub(THEME:GetPath(2,'','_blank.png'),9)
+		dir = string.sub(dir,1,string.find(dir,'/')-1)
+		for _,v in pairs({ GAMESTATE:GetFileStructure('Themes/'.. dir ..'/Graphics/_Judgments/') }) do
+			local t, _, name = string.find(v, "(.+) %dx%d")
+			if t then table.insert( list, name )
+			else print('[Judgment] Error in loading ' .. v)
+			end
+		end
+
+		judgmentFontList = list
+	end
+
 
 -- Used with ThemeFiles function
 	themeDir = '_ThemeFiles'
