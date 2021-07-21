@@ -296,6 +296,23 @@
 		self:settext(s)
 		end"
 	/>
+
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Gameplay')
+
+			oat_RPC:set('title', GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+			oat_RPC:set('author', GAMESTATE:GetCurrentSong():GetDisplayArtist())
+			oat_RPC:set('pack', GAMESTATE:GetCurrentSong():GetGroupName())
+			oat_RPC:set('songstart', os.time())
+			oat_RPC:set('songend', os.time() + GAMESTATE:GetCurrentSong():MusicLengthSeconds())
+
+			oat_RPC:update()
+		end"
+	/>
 	
 	<Layer
 		Type="BitmapText"

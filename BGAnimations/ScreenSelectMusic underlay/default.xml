@@ -41,4 +41,15 @@
 		OnCommand="ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640);y,200"
 	/>
 	<ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" CaptureCommand="%SongInfo" CurrentSongChangedMessageCommand="queuecommand,Capture" CurrentStepsP1ChangedMessageCommand="queuecommand,Capture" CurrentStepsP2ChangedMessageCommand="queuecommand,Capture" />
+
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Menu')
+			oat_RPC:set('browsingsince', os.time())
+			oat_RPC:update()
+		end"
+	/>
 </children> </ActorFrame>
