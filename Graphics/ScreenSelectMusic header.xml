@@ -4,20 +4,13 @@
 		Type="BitmapText"
 		Text=""
 		File="_wendy white"
-		InitCommand="%function(self)
-			self:diffuse(1, 1, 1, 1)
-			self:zoom(.4)
-			self:shadowlength(0)
-			self:horizalign('left')
-			self:x(15)
-			self:y(16)
-			self:texturefiltering(false)
-		
-			local lines = {'hey hey ..... paly the big black', 'oatmealine is the only folder that matters', 'go on. select chance', 'Are You In The Groove?', 'you have 3 seconds to get in the groove', 'penis music.', 'Barack Obama', 'insert funy here', 'Cock', 'oatmealine', 'Open the !wips. Now', ':pensive:', 'huge nintendo ds', 'the burger', 'h', '             e', '', 'HOW', 'play forbidden. now', ':sunglasses:', 'play the ' .. math.random(1, 200) .. 'th pack in your collection', 'WEED'}
-			
-			self:settext(lines[math.random(1, #lines)])
-		end"
+		OnCommand="diffuse,#FFFFFFFF;zoom,.4;shadowlength,0;horizalign,left;x,15;y,16;texturefiltering,false"
+		InitCommand="%function(self) ScreenSelectMusicHeaderTextSet(self) end"
 	/>
+	<Layer File="skeedobop.png" InitCommand="%function(self)
+	  self:xywh(150, 15, 300, 30)
+	  if math.random() > 0.01 then self:hidden(1) end
+	end"/>
 	<Layer
 		Type="BitmapText"
 		Text=""
