@@ -4,13 +4,8 @@
 		Type="BitmapText"
 		Text=""
 		File="_wendy white"
-		InitCommand="%function(self)
-			local lines = {'you suck', '#score-share time', 'press PRTSCR to kill a family', 'sonic the hedghehog', 'penis!!!', 'HOW', 'YOU ROCK!', 'm', 'h', ',', 'Cocke and Balls', 'haha your sync is broken', 'gaming!!', 'good job, She is proud of you', 'hacking hacker.....', 'wooow... not even an FC?? you suck', 'PENIS', '', 'wii phone', 'xbox 720', 'cant believe', 'pain', 'man', 'horse', 'cant believe they made taiko in nitg.....', 'COCK', 'pussy', 'go post this on twitter. go brag about your score', 'wouldnt it be a shame if... AV', 'good job! the game will now AV', 'music do be banging doe', 'soulja boy tell em', 'Polish toilet spin', 'SCREENMAN:GetTopScreen():vibrate()', 'h.how', 'HOW IS THIS WOMAN', 'ronaldinho soccer!!!', 'wow youre terrible', 'keyboard moment', 'glitch2.frag moment', 'it wasnt fault my game lagged', 'skewllex', 'what the Fuck', 'benis', 'weewee', 'wenis!!!!!', 'oatmealine is gay', 'tung tiied gaming', 'kfc gaming', 'Denis', 'bussy', '666 is a 14', 'bye-bye', 'skye is cute', 'wahoo', 'caulk'}
-			
-			self:settext(lines[math.random(1, #lines)])
-			self:texturefiltering(false)
-		end"
-		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
+		InitCommand="%function(self) ScreenEvaluationStageHeaderTextSet(self) end"
+		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16;texturefilter,false"
 		OffCommand="linear,0.2;diffusealpha,0"
 	/>
 	<Layer
