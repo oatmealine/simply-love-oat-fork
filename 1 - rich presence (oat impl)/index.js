@@ -6,6 +6,8 @@ let client = require('discord-rich-presence')(clientid);
 
 const path = '../../../Data/StepMania.ini';
 
+const pref = 'LastSeenVideoDriver';
+
 // make sure these are the same as the ones in Scrips/RichPresence.lua
 const identifier = 'OATRPC@'
 const seperator = '@'
@@ -53,15 +55,15 @@ let lastUpdate = Date.now();
 let updateQueued = false
 function updatePresence(force) {
   let stepmaniaini = fs.readFileSync(path, 'utf8');
-  let p = stepmaniaini.split('\r\n').filter(s => s.startsWith('LastSeenVideoDriver='));
+  let p = stepmaniaini.split('\r\n').filter(s => s.startsWith(pref + '='));
 
-  if (p < 0) return console.log('W huh. no video driver prefs. weird !');
+  if (p < 0) return console.log(`W huh. no ${pref} pref. weird !`);
 
   let str = p[0].split('=').slice(1).join('=');
-  if (str === lastStr && !force) return console.log('I video driver preference hasnt changed, likely something else modifying the config');
+  if (str === lastStr && !force) return console.log(`I ${pref} preference hasnt changed, likely something else modifying the config`);
   lastStr = str;
 
-  if (!str.startsWith(identifier)) return console.log('W video driver pref isnt oatrpc standard. make sure you\'re running the theme');
+  if (!str.startsWith(identifier)) return console.log(`W ${pref} pref isnt oatrpc standard. make sure you\'re running the theme`);
 
   let rpcObj = {};
   str.split(seperator).forEach(v => {

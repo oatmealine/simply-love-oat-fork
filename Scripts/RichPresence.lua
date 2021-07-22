@@ -4,8 +4,7 @@
 oat_RPC = {}
 oat_RPC.data = {}
 
-local isNvidia = false
-local checkedVideoCard = false
+local pref = 'LastSeenVideoDriver'
 
 local identifier = 'OATRPC@'
 local seperator = '@'
@@ -34,6 +33,9 @@ local dataValues = {
   --idlesince = 'number', -- timestamp
 }
 
+local isNvidia = false
+local checkedVideoCard = false
+
 function oat_RPC:set(key, val, force)
   if dataValues[key] == type(val) then
     oat_RPC.data[key] = val
@@ -57,7 +59,7 @@ function oat_RPC:update()
   end
 
   if not checkedVideoCard then
-    isNvidia = string.find(string.lower(PREFSMAN:GetPreference('LastSeenVideoDriver')), 'nvidia') ~= nil
+    isNvidia = string.find(string.lower(PREFSMAN:GetPreference(pref)), 'nvidia') ~= nil
     checkedVideoCard = true
 
     if isNvidia then
@@ -65,5 +67,5 @@ function oat_RPC:update()
     end
   end
 
-  PREFSMAN:SetPreference('LastSeenVideoDriver', isNvidia and (s .. 'nvidia') or s)
+  PREFSMAN:SetPreference(pref, isNvidia and (s .. 'nvidia') or s)
 end
