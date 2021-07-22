@@ -64,6 +64,18 @@ function formatPresence(data) {
     presence.smallImageText = 'Title Screen';
   }
 
+  if (data.state === 'ColorSelect') {
+    presence.details = 'Selecting a color';
+    presence.smallImageKey = 'menu';
+    presence.smallImageText = 'Color Select';
+  }
+
+  if (data.state === 'Options') {
+    presence.details = 'Configuring options';
+    presence.smallImageKey = 'menu'; // todo
+    presence.smallImageText = 'Options';
+  }
+
   if (presence.details) presence.details = presence.details.slice(0, 127);
   if (presence.state) presence.state = presence.state.slice(0, 127);
 

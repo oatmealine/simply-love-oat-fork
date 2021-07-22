@@ -11,7 +11,7 @@ local seperator = '@'
 local seperator2 = ':'
 
 local dataValues = {
-  state = 'string', -- 'Menu', 'Gameplay', 'Idle', 'Results', 'Editor'
+  state = 'string', -- 'Menu', 'Gameplay', 'Idle', 'Results', 'Editor', 'ColorSelect', 'Options'
 
   -- Gameplay / Results
   title = 'string',

@@ -14,4 +14,13 @@
 		File="../_shared underlay arrows"
 		OnCommand="queuecommand,Load"
 	/>
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'ColorSelect')
+			oat_RPC:update()
+		end"
+	/>
 </children></ActorFrame>
