@@ -37,8 +37,7 @@ local dataValues = {
   selecting = 'boolean',
 }
 
-local isNvidia = false
-local checkedVideoCard = false
+local oldPref
 
 function oat_RPC:set(key, val, force)
   if dataValues[key] == type(val) then
@@ -64,14 +63,9 @@ function oat_RPC:update()
     s = s .. k .. seperator2 .. f .. seperator
   end
 
-  if not checkedVideoCard then
-    isNvidia = string.find(string.lower(PREFSMAN:GetPreference(pref)), 'nvidia') ~= nil
-    checkedVideoCard = true
-
-    if isNvidia then
-      Trace('NVIDIA card detected')
-    end
+  if not oldPref then
+    oldPref = PREFSMAN:GetPreference(pref)
   end
 
-  PREFSMAN:SetPreference(pref, isNvidia and (s .. 'nvidia') or s)
+  PREFSMAN:SetPreference(pref, s .. oldPref)
 end
