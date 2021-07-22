@@ -9,6 +9,7 @@ A fork of NotITG's Simply Love with more features, different graphics, theming a
 Do note this list is slightly inaccurate as I've only done this when pushing this repo
 
 - **!!** I removed some Japanese/Korean/Chinese fonts that are rarely used for faster load times, but this might be what would be considered a Bad Idea
+- A cross-platform Discord rich presence implementation
 - Changes to scatterplots to show sync-relevant info
 - Results screen now shows PB scoring and funnies on fail
 - Hide EVENT MODE (god bless)
@@ -26,3 +27,11 @@ Do note this list is slightly inaccurate as I've only done this when pushing thi
 ![title](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot1.png "title")
 ![song select](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot2.png "song list")
 ![result](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot3.png "result")
+
+## Rich Presence Installation
+
+Get Node.js, `cd` to `1 - rich presence (oat impl)` and run
+
+`npm install`
+
+After which, run `node index.js` each time you launch nITG (make sure to close the script once the game is closed to prevent stale RPC!)
