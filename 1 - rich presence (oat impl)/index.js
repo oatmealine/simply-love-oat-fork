@@ -38,14 +38,14 @@ function formatPresence(data) {
 
   if (data.state === 'Menu' || !data.state) {
     presence.details = 'Scrolling through songs';
-    presence.state = '(or in some other menu)';
+    if (data.pack && data.pack !== '') presence.state = `In ${data.pack}`;
     presence.smallImageKey = 'menu';
     presence.smallImageText = 'In Menus';
     presence.startTimestamp = (data.browsingsince || Date.now() / 1000) * 1000
   }
 
-  presence.details = presence.details.slice(0, 127);
-  presence.state = presence.state.slice(0, 127);
+  if (presence.details) presence.details = presence.details.slice(0, 127);
+  if (presence.state) presence.state = presence.state.slice(0, 127);
 
   return presence;
 }

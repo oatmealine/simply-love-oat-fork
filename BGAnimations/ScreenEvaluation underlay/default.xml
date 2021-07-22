@@ -69,7 +69,7 @@
 			oat_RPC:set('title', GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
 			oat_RPC:set('author', GAMESTATE:GetCurrentSong():GetDisplayArtist())
 			oat_RPC:set('pack', GAMESTATE:GetCurrentSong():GetGroupName())
-			oat_RPC:set('score', math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
+			oat_RPC:set('score', math.ceil(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
 
 			oat_RPC:update()
 		end"

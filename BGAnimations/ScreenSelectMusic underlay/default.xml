@@ -49,7 +49,20 @@
 			self:hidden(1)
 			oat_RPC:set('state', 'Menu')
 			oat_RPC:set('browsingsince', os.time())
+
+			self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			local song = GAMESTATE:GetCurrentSong()
+			if song then
+				oat_RPC:set('pack', song:GetGroupName())
+			else
+				oat_RPC:set('pack', '')
+			end
 			oat_RPC:update()
+
+			self:sleep(3)
+			self:queuecommand('Update')
 		end"
 	/>
 </children> </ActorFrame>
