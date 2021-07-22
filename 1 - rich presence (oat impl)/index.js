@@ -16,18 +16,30 @@ const updatePeriod = 5000; // time to wait between updates
 function formatPresence(data) {
   let presence = {
     largeImageKey: 'icon',
+    largeImageText: 'notitg.heysora.net',
   }
 
-  if (data.state === 'Results' || data.state === 'Gameplay') presence.details = `${data.author} - ${data.title}`;
-  if (data.state === 'Menu') presence.details = 'Scrolling through songs';
+  if (data.state === 'Results') {
+    presence.details = `${data.author} - ${data.title}`;
+    presence.state = `${data.score}%`;
+    presence.smallImageKey = 'results';
+    presence.smallImageText = 'In Results';
+  }
+  if (data.state === 'Gameplay') {
+    presence.details = `${data.author} - ${data.title}`;
+    presence.state = `From ${data.pack}`;
+    presence.smallImageKey = 'playing';
+    presence.smallImageText = 'Ingame';
+    presence.startTimestamp = data.songstart * 1000;
+    presence.endTimestamp = data.songend * 1000;
+  }
 
-  if (data.state === 'Results') presence.state = `In results | ${data.score}%`;
-  if (data.state === 'Gameplay') presence.state = `Ingame | From ${data.pack}`;
-
-  if (data.state === 'Gameplay') presence.startTimestamp = data.songstart * 1000;
-  if (data.state === 'Gameplay') presence.endTimestamp = data.songend * 1000;
-
-  if (data.state === 'Menu') presence.startTimestamp = data.browsingsince * 1000;
+  if (data.state === 'Menu') {
+    presence.details = 'Scrolling through songs';
+    presence.smallImageKey = 'menu';
+    presence.smallImageText = 'In Menus';
+    presence.startTimestamp = data.browsingsince * 1000
+  }
 
   return presence;
 }
