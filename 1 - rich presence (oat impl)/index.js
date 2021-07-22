@@ -6,46 +6,72 @@ let client = require('discord-rich-presence')(clientid);
 
 const path = '../../../Data/StepMania.ini';
 
+// make sure these are the same as the ones in Scrips/RichPresence.lua
 const identifier = 'OATRPC@'
 const seperator = '@'
 const seperator2 = ':'
 
+const updatePeriod = 5000; // time to wait between updates
+
+function formatPresence(data) {
+  let presence = {
+    largeImageKey: 'icon',
+  }
+
+  if (data.state === 'Results' || data.state === 'Gameplay') presence.details = `${data.author} - ${data.title}`;
+  if (data.state === 'Menu') presence.details = 'Scrolling through songs';
+
+  if (data.state === 'Results') presence.state = `In results | ${data.score}%`;
+  if (data.state === 'Gameplay') presence.state = `Ingame | From ${data.pack}`;
+
+  if (data.state === 'Gameplay') presence.startTimestamp = data.songstart * 1000;
+  if (data.state === 'Gameplay') presence.endTimestamp = data.songend * 1000;
+
+  if (data.state === 'Menu') presence.startTimestamp = data.browsingsince * 1000;
+
+  return presence;
+}
+
+let lastStr = '';
+let lastUpdate = Date.now();
+let updateQueued = false
+function updatePresence(force) {
+  let stepmaniaini = fs.readFileSync(path, 'utf8');
+  let p = stepmaniaini.split('\r\n').filter(s => s.startsWith('LastSeenVideoDriver='));
+
+  if (p < 0) return console.log('W huh. no video driver prefs. weird !');
+
+  let str = p[0].split('=').slice(1).join('=');
+  if (str === lastStr && !force) return console.log('I video driver preference hasnt changed, likely something else modifying the config');
+  lastStr = str;
+
+  if (!str.startsWith(identifier)) return console.log('W video driver pref isnt oatrpc standard. make sure you\'re running the theme');
+
+  let rpcObj = {};
+  str.split(seperator).forEach(v => {
+    let c = v.split(seperator2);
+    if (c[0] !== '' && c[1]) rpcObj[c[0]] = c[1];
+  });
+
+  let presence = formatPresence(rpcObj);
+
+  if ((Date.now() - lastUpdate) >= updatePeriod || force) {
+    updateQueued = false
+    lastUpdate = Date.now();
+    client.updatePresence(presence);
+  } else {
+    // queue another update as soon as we can allow
+    if (!updateQueued) {
+      updateQueued = true
+      setTimeout(() => updatePresence(true), updatePeriod - (Date.now() - lastUpdate))
+    }
+  }
+}
+
 console.log('👁️');
 gaze(path, (err, watcher) => {
-  watcher.on('all', async (event, path) => {
-    //console.log(`received ${event} at ${path}`);
-    let stepmaniaini = fs.readFileSync(path, 'utf8');
-    let p = stepmaniaini.split('\r\n').filter(s => s.startsWith('LastSeenVideoDriver='));
-
-    if (p < 0) return console.log('huh. no video driver prefs. weird !');
-
-    let str = p[0].split('=').slice(1).join('=');
-
-    if (!str.startsWith(identifier)) return console.log('video driver pref isnt oatrpc standard, it seems,');
-
-    let rpcObj = {};
-    str.split(seperator).forEach(v => {
-      let c = v.split(seperator2);
-      if (c[0] !== '' && c[1]) rpcObj[c[0]] = c[1];
-    });
-
-    let presence = {
-      largeImageKey: 'icon',
-    }
-
-    if (rpcObj.state === 'Results' || rpcObj.state === 'Gameplay') presence.details = `${rpcObj.author} - ${rpcObj.title}`;
-    if (rpcObj.state === 'Menu') presence.details = 'Scrolling through songs';
-
-    if (rpcObj.state === 'Results') presence.state = `In results | ${rpcObj.score}%`;
-    if (rpcObj.state === 'Gameplay') presence.state = `Ingame | From ${rpcObj.pack}`;
-
-    if (rpcObj.state === 'Gameplay') presence.startTimestamp = rpcObj.songstart * 1000;
-    if (rpcObj.state === 'Gameplay') presence.endTimestamp = rpcObj.songend * 1000;
-
-    if (rpcObj.state === 'Menu') presence.startTimestamp = rpcObj.browsingsince * 1000;
-
-    client.updatePresence(presence)
-
-    //console.log(rpcObj);
+  watcher.on('all', () => {
+    updatePresence();
   });
 });
+updatePresence();
