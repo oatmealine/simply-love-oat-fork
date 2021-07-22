@@ -4,6 +4,9 @@
 oat_RPC = {}
 oat_RPC.data = {}
 
+local isNvidia = false
+local checkedVideoCard = false
+
 local identifier = 'OATRPC@'
 local seperator = '@'
 local seperator2 = ':'
@@ -53,6 +56,14 @@ function oat_RPC:update()
     s = s .. k .. seperator2 .. v .. seperator
   end
 
-  --print(s)
-  PREFSMAN:SetPreference('LastSeenVideoDriver', s)
+  if not checkedVideoCard then
+    isNvidia = string.find(string.lower(PREFSMAN:GetPreference('LastSeenVideoDriver')), 'nvidia') ~= nil
+    checkedVideoCard = true
+
+    if isNvidia then
+      Trace('NVIDIA card detected')
+    end
+  end
+
+  PREFSMAN:SetPreference('LastSeenVideoDriver', isNvidia and (s .. 'nvidia') or s)
 end
