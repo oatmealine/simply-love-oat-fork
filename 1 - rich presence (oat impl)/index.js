@@ -58,6 +58,12 @@ function formatPresence(data) {
     }
   }
 
+  if (data.state === 'Idle') {
+    presence.details = 'Idling';
+    presence.smallImageKey = 'menu';
+    presence.smallImageText = 'Title Screen';
+  }
+
   if (presence.details) presence.details = presence.details.slice(0, 127);
   if (presence.state) presence.state = presence.state.slice(0, 127);
 
