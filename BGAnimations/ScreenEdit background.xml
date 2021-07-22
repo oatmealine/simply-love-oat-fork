@@ -3,5 +3,26 @@
 		<Quad 
 			OnCommand="diffuse,0,0,0,0.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT"
 		/>
+
+		<!-- rpc shenanigans -->
+		<Layer
+			Type="Quad"
+			OnCommand="%function(self)
+				self:hidden(1)
+				oat_RPC:set('state', 'Editor')
+				oat_RPC:set('selecting', false)
+				oat_RPC:update()
+				self:queuecommand('Update')
+			end"
+			UpdateCommand="%function(self)
+				local isInGameMode = (SCREENMAN:GetTopScreen():GetChild('SongForeground'):GetNumChildren() > 0) -- thanks jaezmien
+
+				oat_RPC:set('playtesting', isInGameMode)
+				oat_RPC:update()
+
+				self:sleep(3)
+				self:queuecommand('Update')
+			end"
+		/>
 	</children>
 </ActorFrame>

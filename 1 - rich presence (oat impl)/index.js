@@ -44,6 +44,20 @@ function formatPresence(data) {
     presence.startTimestamp = (data.browsingsince || Date.now() / 1000) * 1000
   }
 
+  if (data.state === 'Editor') {
+    presence.details = 'In editor';
+    presence.smallImageKey = 'menu'; // todo
+    presence.smallImageText = 'Editor';
+
+    if (data.playtesting === 'true') {
+      presence.state = 'Playtesting';
+      presence.smallImageKey = 'playing';
+    }
+    if (data.selecting === 'true') {
+      presence.state = 'Selecting a song to edit...';
+    }
+  }
+
   if (presence.details) presence.details = presence.details.slice(0, 127);
   if (presence.state) presence.state = presence.state.slice(0, 127);
 

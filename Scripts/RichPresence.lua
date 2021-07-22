@@ -11,7 +11,7 @@ local seperator = '@'
 local seperator2 = ':'
 
 local dataValues = {
-  state = 'string', -- 'Menu', 'Gameplay', 'Idle', 'Results'
+  state = 'string', -- 'Menu', 'Gameplay', 'Idle', 'Results', 'Editor'
 
   -- Gameplay / Results
   title = 'string',
@@ -31,6 +31,10 @@ local dataValues = {
 
   -- Idle
   --idlesince = 'number', -- timestamp
+
+  -- Editor
+  playtesting = 'boolean',
+  selecting = 'boolean',
 }
 
 local isNvidia = false
@@ -55,7 +59,9 @@ function oat_RPC:update()
   local s = identifier
 
   for k,v in pairs(oat_RPC.data) do
-    s = s .. k .. seperator2 .. v .. seperator
+    local f = v
+    if type(v) == 'boolean' then f = v and 'true' or 'false' end
+    s = s .. k .. seperator2 .. f .. seperator
   end
 
   if not checkedVideoCard then

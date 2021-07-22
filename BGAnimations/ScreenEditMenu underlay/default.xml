@@ -15,4 +15,14 @@
 			OnCommand="diffuse,#1E282F59;stretchto,10,350,630,410"
 		/>	
 		
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Editor')
+			oat_RPC:set('selecting', true)
+			oat_RPC:update()
+		end"
+	/>
 	</children></ActorFrame>
