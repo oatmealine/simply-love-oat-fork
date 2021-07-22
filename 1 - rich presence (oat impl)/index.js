@@ -34,12 +34,16 @@ function formatPresence(data) {
     presence.endTimestamp = data.songend * 1000;
   }
 
-  if (data.state === 'Menu') {
+  if (data.state === 'Menu' || !data.state) {
     presence.details = 'Scrolling through songs';
+    presence.state = '(or in some other menu)';
     presence.smallImageKey = 'menu';
     presence.smallImageText = 'In Menus';
-    presence.startTimestamp = data.browsingsince * 1000
+    presence.startTimestamp = (data.browsingsince || Date.now() / 1000) * 1000
   }
+
+  presence.details = presence.details.slice(0, 127);
+  presence.state = presence.state.slice(0, 127);
 
   return presence;
 }
@@ -82,8 +86,6 @@ function updatePresence(force) {
 
 console.log('👁️');
 gaze(path, (err, watcher) => {
-  watcher.on('all', () => {
-    updatePresence();
-  });
+  watcher.on('all', updatePresence);
+  updatePresence();
 });
-updatePresence();
