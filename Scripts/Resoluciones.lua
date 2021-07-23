@@ -46,6 +46,12 @@ local Resolutions =
 	    Ratio = 7.125,
 	    Res = { "3420x480" },
 	},
+	
+	["3:2"] =
+	{
+	    Ratio = 1.5,
+	    Res = { "1920x1280" },
+	},
 }
 
 -- Width, then height. "640x480" -> 640, 480
