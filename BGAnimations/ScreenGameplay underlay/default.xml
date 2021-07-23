@@ -304,17 +304,28 @@
 			self:hidden(1)
 			oat_RPC:set('state', 'Gameplay')
 
-			oat_RPC:set('title', GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
-			oat_RPC:set('author', GAMESTATE:GetCurrentSong():GetDisplayArtist())
-			oat_RPC:set('pack', GAMESTATE:GetCurrentSong():GetGroupName())
+			local song = GAMESTATE:GetCurrentSong()
+			if song then
+				oat_RPC:set('title', song:GetDisplayMainTitle())
+				oat_RPC:set('author', song:GetDisplayArtist())
+				oat_RPC:set('pack', song:GetGroupName())
+			end
 
 			self:queuecommand('Update')
 		end"
 		UpdateCommand="%function(self)
-			oat_RPC:set('score', math.ceil(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
-			oat_RPC:set('songstart', os.time() - GAMESTATE:GetSongTime())
-			oat_RPC:set('songend', os.time() + GAMESTATE:GetCurrentSong():MusicLengthSeconds() - GAMESTATE:GetSongTime())
-			oat_RPC:update()
+			local song = GAMESTATE:GetCurrentSong()
+			if song then
+				oat_RPC:set('title', song:GetDisplayMainTitle())
+				oat_RPC:set('author', song:GetDisplayArtist())
+				oat_RPC:set('pack', song:GetGroupName())
+				oat_RPC:set('marathon', GAMESTATE:IsCourseMode())
+
+				oat_RPC:set('score', math.ceil(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
+				oat_RPC:set('songstart', os.time() - GAMESTATE:GetSongTime())
+				oat_RPC:set('songend', os.time() + song:MusicLengthSeconds() - GAMESTATE:GetSongTime())
+				oat_RPC:update()
+			end
 
 			self:sleep(5)
 			self:queuecommand('Update')

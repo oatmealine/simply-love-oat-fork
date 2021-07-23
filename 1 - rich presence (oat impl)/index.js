@@ -34,6 +34,8 @@ function formatPresence(data) {
     presence.smallImageText = 'Ingame';
     presence.startTimestamp = data.songstart * 1000;
     presence.endTimestamp = data.songend * 1000;
+
+    if (data.marathon === 'true') presence.state = 'Marathon mode';
   }
 
   if (data.state === 'Menu' || !data.state) {

@@ -21,6 +21,7 @@ local dataValues = {
   -- Gameplay
   songstart = 'number', -- timestamp
   songend = 'number', -- timestamp
+  marathon = 'boolean',
 
   -- Results
   score = 'number',
