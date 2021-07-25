@@ -15,7 +15,10 @@
 				self:queuecommand('Update')
 			end"
 			UpdateCommand="%function(self)
-				local isInGameMode = (SCREENMAN:GetTopScreen():GetChild('SongForeground'):GetNumChildren() > 0) -- thanks jaezmien
+				local isInGameMode = false
+				if SCREENMAN:GetTopScreen():GetChild('SongForeground') then
+					isInGameMode = (SCREENMAN:GetTopScreen():GetChild('SongForeground'):GetNumChildren() > 0) -- thanks jaezmien
+				end
 
 				oat_RPC:set('playtesting', isInGameMode)
 				oat_RPC:update()
