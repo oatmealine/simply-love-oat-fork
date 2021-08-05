@@ -254,11 +254,20 @@
 			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
 			OffCommand="accelerate,1;diffusealpha,0"
 		/>
-		<!-- "Star", Samario and Pat | wow they all share their birthday on the same day -->
+		<!-- "Star", Samario -->
 		<AutoActor
 			Type="BitmapText"
-			Text="Happy Birthday ''Star'', Samario and Pat!\n(Woah, triple birthday !)"
+			Text="Happy Birthday ''Star'' and Samario!"
 			Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
+			Font="_wendy white"
+			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+			OffCommand="accelerate,1;diffusealpha,0"
+		/>
+		<!-- Pat -->
+		<AutoActor
+			Type="BitmapText"
+			Text="Happy Birthday Pat!"
+			Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
 			Font="_wendy white"
 			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
 			OffCommand="accelerate,1;diffusealpha,0"
