@@ -146,6 +146,8 @@
 			
 	    		self:diffusealpha(0.9)
 	    		self:texturefiltering(false)
+	    		
+	    		if not OatProfile().OATDisplayFriends then self:hidden(1) end
 		end"
 	/>
 </children> </ActorFrame>

@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+	<Layer File="ScreenWithMenuElements header"/>	
+	<Layer
+		Type="BitmapText"
+		Text="THEME OPTIONS"
+		File="_wendy white"
+		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
+		OffCommand="linear,0.2;diffusealpha,0"
+		Var="ScreenThemeOptionsHeader"
+	/>
+</children> </ActorFrame>

@@ -1,0 +1,188 @@
+
+-- randomized headers, titles, static strings, etc, get it all here
+
+ScreenTitleMenuHeaderTexts = {
+  'go on. select something',
+}
+function ScreenTitleMenuHeaderTextSet(self)
+  local t = ScreenTitleMenuHeaderTexts[math.random(1, #ScreenTitleMenuHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders ~= 1 then
+    t = ''
+  end
+  self:settext(t)
+end
+
+ScreenSelectGameHeaderTexts = {
+  'Game mode Sele c t tionnjfdhmngfgnfdmfythgnjmgfhbdxkjgsevrlbnkhj',
+}
+function ScreenSelectGameHeaderTextSet(self)
+  local t = ScreenSelectGameHeaderTexts[math.random(1, #ScreenSelectGameHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders ~= 1 then
+    t = 'SELECT GAMEMODE'
+  end
+  self:settext(t)
+end
+
+ScreenSelectColorHeaderTexts = {
+  'color time babey!!!',
+}
+function ScreenSelectColorHeaderTextSet(self)
+  local t = ScreenSelectColorHeaderTexts[math.random(1, #ScreenSelectColorHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders ~= 1 then
+    t = 'SELECT COLOR'
+  end
+  self:settext(t)
+end
+
+ScreenSelectMusicHeaderTexts = {
+  'oatmealine is the only folder that matters',
+  'go on. select chance',
+  'Are You In The Groove?',
+  'you have 3 seconds to get in the groove',
+  'penis music.',
+  'Barack Obama',
+  'insert funy here',
+  'Cock',
+  'oatmealine',
+  'Open the !wips. Now',
+  ':pensive:',
+  'huge nintendo ds',
+  'the burger',
+  'h',
+  '             e',
+  '',
+  'HOW',
+  'play forbidden. now',
+  ':sunglasses:',
+  'WEED',
+  'sussy baka',
+  'sambai ice cream',
+  'somebody scream',
+  'WE ARE BACK',
+  '1 2 3 4 5 6 do it!',
+  'you wanna hear a joke?',
+  'What wof you do if we acidebtal kiss..',
+  'NEVER FUCK ALWAYS PISS',
+  'born to shit forced to wipe',
+  'slow star kanade',
+  '??????????????? okay',
+  'cool! your point?',
+  'https://streamable.com/noooo',
+  'conflict歌います。ズォールヒ～～↑wwwwヴィヤーンタースwwwwwワース フェスツwwwwwwwルオルwwwwwプローイユクwwwwwwwダルフェ スォーイヴォーwwwwwスウェン ネwwwwヤットゥ ヴ ヒェンヴガｒジョｊゴアｊガオガオッガwwwじゃｇｊｊ',
+  'BEST BY 07 SEP 18 043 / 40',
+  'me when the uhhhhh.... me when the when',
+  'les gooo',
+  'subo',
+  'do a subo hop if u also think player cute',
+  'what the dog doin',
+  'hey check this out\n\n\n\n\n\n\n\nj',
+  'the j',
+  'why can\'t eggs have love',
+  'yop',
+}
+function ScreenSelectMusicHeaderTextSet(self)
+  local t = ScreenSelectMusicHeaderTexts[math.random(1, #ScreenSelectMusicHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders == 2 then
+    t = 'SELECT SONG | ' .. t
+  end
+  if OatProfile().OATDisplayCustomHeaders == 3 then
+    t = 'SELECT SONG'
+  end
+  self:settext(t)
+end
+
+ScreenPlayerOptionsHeaderTexts = {
+  'get some mods, its free',
+}
+function ScreenPlayerOptionsHeaderTextSet(self)
+  local t = ScreenPlayerOptionsHeaderTexts[math.random(1, #ScreenPlayerOptionsHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders ~= 1 then
+    t = 'SELECT MODS'
+  end
+  self:settext(t)
+end
+
+ScreenEvaluationStageHeaderTexts = {
+  'you suck',
+  '#score-share time',
+  'press PRTSCR to kill a family',
+  'sonic the hedghehog',
+  'penis!!!',
+  'HOW',
+  'YOU ROCK!',
+  'm',
+  'h',
+  ',',
+  'Cocke and Balls',
+  'haha your sync is broken', 'gaming!!',
+  'good job, She is proud of you',
+  'hacking hacker.....',
+  'wooow... not even an FC?? you suck',
+  'PENIS',
+  '',
+  'wii phone',
+  'xbox 720',
+  'cant believe',
+  'pain',
+  'man',
+  'horse',
+  'cant believe they made taiko in nitg.....',
+  'COCK',
+  'pussy',
+  'go post this on twitter. go brag about your score',
+  'wouldnt it be a shame if... AV',
+  'good job! the game will now AV',
+  'music do be banging doe',
+  'soulja boy tell em',
+  'Polish toilet spin',
+  'SCREENMAN:GetTopScreen():vibrate()',
+  'h.how',
+  'ronaldinho soccer!!!',
+  'wow youre terrible',
+  'keyboard moment',
+  'glitch2.frag moment',
+  'it wasnt fault my game lagged',
+  'skewllex',
+  'what the Fuck',
+  'benis',
+  'weewee',
+  'wenis!!!!!',
+  'oatmealine is gay',
+  'tung tiied gaming',
+  'kfc gaming',
+  'Denis',
+  'bussy',
+  '666 is a 14',
+  'bye-bye',
+  'skye is cute',
+  'wahoo',
+  'caulk',
+  'nice cock',
+  'thabks',
+  'i love video james',
+  'whats wrong, honey? you haven\'t even touched your jinner. did i overcook your jurger?',
+  'beep',
+  'skill issue',
+  '#score-share be like',
+}
+function ScreenEvaluationStageHeaderTextSet(self)
+  local t = ScreenEvaluationStageHeaderTexts[math.random(1, #ScreenEvaluationStageHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders == 2 then
+    t = 'RESULTS | ' .. t
+  end
+  if OatProfile().OATDisplayCustomHeaders == 3 then
+    t = 'RESULTS'
+  end
+  self:settext(t)
+end
+
+ScreenSelectMusicCourseHeaderTexts = {
+  'select cour se',
+}
+function ScreenSelectMusicCourseHeaderTextSet(self)
+  local t = ScreenSelectMusicCourseHeaderTexts[math.random(1, #ScreenSelectMusicCourseHeaderTexts)]
+  if OatProfile().OATDisplayCustomHeaders ~= 1 then
+    t = 'SELECT COURSE'
+  end
+  self:settext(t)
+end
