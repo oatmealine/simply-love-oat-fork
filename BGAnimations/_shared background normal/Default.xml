@@ -116,4 +116,37 @@
 			end
 		end"
 	/>
+
+	<Layer
+		Shader="shader/descent.frag"
+		File="_black"
+		OnCommand="%function(self) theme_descentShader = self:GetShader() end"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+
+			if OatProfile().OATBackgroundShader == 6 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+			self:effectclock('timer')
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 6 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
 </children></ActorFrame>

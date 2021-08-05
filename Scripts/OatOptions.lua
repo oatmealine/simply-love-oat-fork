@@ -79,7 +79,7 @@ end
 function OptionBackgroundShader()
   local t = OptionRowBase('BackgroundShader')
 	t.OneChoiceForAllPlayers = true
-	t.Choices = {'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag'}
+	t.Choices = {'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag', 'descent.frag'}
   t.LoadSelections = function(self, list) if OatProfile().OATBackgroundShader then list[OatProfile().OATBackgroundShader] = true else list[1] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATBackgroundShader = 1 end
@@ -87,10 +87,11 @@ function OptionBackgroundShader()
 		if list[3] then OatProfile().OATBackgroundShader = 3 end
 		if list[4] then OatProfile().OATBackgroundShader = 4 end
 		if list[5] then OatProfile().OATBackgroundShader = 5 end
+		if list[6] then OatProfile().OATBackgroundShader = 6 end
     MESSAGEMAN:Broadcast('UpdateBackgroundShader')
 
-    if list[4] then
-      ScreenThemeOptionsHeader:settext('THEME OPTIONS | !!! This is a very intensive shader!')
+    if list[4] or list[6] then
+      ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
     else
       resetHeader()
     end
