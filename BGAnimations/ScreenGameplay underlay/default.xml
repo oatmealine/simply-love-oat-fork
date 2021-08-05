@@ -327,7 +327,7 @@
 				oat_RPC:update()
 			end
 
-			self:sleep(5)
+			self:sleep(30)
 			self:queuecommand('Update')
 		end"
 	/>
