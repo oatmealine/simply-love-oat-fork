@@ -1,8 +1,10 @@
 const gaze = require('gaze');
 const fs = require('fs');
+const execSync = require('child_process').execSync;
+const RPC = require('discord-rpc');
 
 const clientid = '867550886934347816';
-let client = require('discord-rich-presence')(clientid);
+let client = new RPC.Client({transport: 'ipc'})
 
 const path = '../../../Data/StepMania.ini';
 
@@ -13,7 +15,23 @@ const identifier = 'OATRPC@'
 const seperator = '@'
 const seperator2 = ':'
 
+const executable = 'NotITG-v4.2.0';
+let running = false;
+
 const updatePeriod = 5000; // time to wait between updates
+
+function isRunning(query) {
+  let platform = process.platform;
+  let cmd = '';
+  switch (platform) {
+      case 'win32' : cmd = `tasklist`; break;
+      case 'darwin' : cmd = `ps -ax | grep ${query}`; break;
+      case 'linux' : cmd = `ps -A`; break;
+      default: break;
+  }
+  let stdout = execSync(cmd);
+  return stdout.toString().toLowerCase().indexOf(query.toLowerCase()) > -1;
+}
 
 function formatPresence(data) {
   let presence = {
@@ -88,13 +106,14 @@ let lastStr = '';
 let lastUpdate = Date.now();
 let updateQueued = false
 function updatePresence(force) {
+  if (!running) return;
   let stepmaniaini = fs.readFileSync(path, 'utf8');
   let p = stepmaniaini.split('\r\n').filter(s => s.startsWith(pref + '='));
 
   if (p < 0) return console.log(`W huh. no ${pref} pref. weird !`);
 
   let str = p[0].split('=').slice(1).join('=');
-  if (str === lastStr && !force) return console.log(`I ${pref} preference hasnt changed, likely something else modifying the config`);
+  if (str === lastStr && !force) return /*console.log(`I ${pref} preference hasnt changed, likely something else modifying the config`)*/; // got too spammy
   lastStr = str;
 
   if (!str.startsWith(identifier)) return console.log(`W ${pref} pref isnt oatrpc standard. make sure you\'re running the theme`);
@@ -110,18 +129,44 @@ function updatePresence(force) {
   if ((Date.now() - lastUpdate) >= updatePeriod || force) {
     updateQueued = false
     lastUpdate = Date.now();
-    client.updatePresence(presence);
+    client.setActivity(presence);
   } else {
     // queue another update as soon as we can allow
     if (!updateQueued) {
+      console.log('I queuing a cancelled update');
       updateQueued = true
       setTimeout(() => updatePresence(true), updatePeriod - (Date.now() - lastUpdate))
+    } else {
+      console.log('W updates are being fired at a suspiciously high rate');
     }
   }
 }
 
-console.log('👁️');
-gaze(path, (err, watcher) => {
-  watcher.on('all', updatePresence);
-  updatePresence();
-});
+console.log('logging in');
+client.login({clientId: clientid})
+  .then(() => {
+    setInterval(() => {
+      if (isRunning(executable)) {
+        if (!running) {
+          console.log('I NotITG opened');
+        }
+        running = true;
+        updatePresence();
+      } else {
+        if (running) {
+          console.log('I NotITG closed');
+          client.clearActivity();
+        }
+        running = false;
+      }
+    }, 1000);
+
+    if (!isRunning(executable)) {
+      console.log('W NotITG isn\'t running. staying silent for now');
+    }
+    console.log('👁️');
+    gaze(path, (err, watcher) => {
+      watcher.on('all', updatePresence);
+      updatePresence();
+    });
+  });
