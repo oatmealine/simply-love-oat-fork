@@ -8,7 +8,7 @@
 	      actor:Load(Path('Graphics', '_grade models/fail/fail' .. fail))
 	      actor:stretchto(-25, -25, 50, 50)
 	    else
-        actor:Load(Path('Graphics', '_grade models/f.gif'))
+	      actor:Load(Path('Graphics', '_grade models/f.gif'))
 	      actor:zoom(0.85)
 	    end
 	end"
