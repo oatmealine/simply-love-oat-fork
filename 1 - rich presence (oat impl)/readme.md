@@ -8,3 +8,13 @@ Please make sure to properly close the script, else you'll be left with a stale 
 ## running it
 
 `node index.js`
+
+alternatively, if you want it to run at all times, youll want to install `pm2`:
+
+`npm install -g pm2`
+
+then run it with
+
+`pm2 start index.js --name nitg-rich-presence`
+
+`pm2 save`
