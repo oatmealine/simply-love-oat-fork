@@ -24,12 +24,13 @@
 	'how many quotes do you think\nare oat\'s quotes',
 	'https://sudospective.net/uwu',
 	'DO YOU STILL REMBER',
-	'fuck it, *inverts your mods*',
+	'fuck it, *metainverts your mods*',
 	'',
 	'hey, type while in gameplay into the console\nSCREENMAN()\:PauseGame(true)',
 	'high class weapon theme',
 	'obama\'s... last name........... is........\n.....................................................................................joe',
 	'LOADING?\nLOAFING??',
+	'not enough memory \not enough memory  ',
 	} end" />
 	<!--<Layer Type="Quad" QPSelMessageCommand="hidden,0" QPDeSelMessageCommand="hidden,1" OnCommand="xy,SCREEN_CENTER_X,SCREEN_CENTER_Y;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0;"
 	QuickPlayFadeMessageCommand="diffusealpha,0;linear,.5;diffusealpha,1;" />-->

@@ -2,7 +2,7 @@
 	<Layer Type="ActorFrame" OnCommand="x,-70;y,-97"> <children>
 		<Layer Type="BitmapText" Font="_misobold white" Text="Fanta"	
 		InitCommand="%function(self)
-		    _G['sorae_fuck1a'] = 1
+		    sorae_fuck2a = 1
 			self:queuecommand('Update')
 		end"
 		UpdateCommand="%function(self)
@@ -32,14 +32,14 @@
 		end"
 		OnCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1;decelerate,0.5;zoom,0.35;"
         UpdateSpellDisplayP2MessageCommand="%function(self) 
-            if _G['sorae_fuck1a'] == -1 then 
+            if sorae_fuck2a == -1 then 
                 self:hidden(0) 
                 SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):hidden(0) 
             else 
                 self:hidden(1) 
                 SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):hidden(1) 
-            end
-            _G['sorae_fuck1a'] = -_G['sorae_fuck1a']
+            end; 
+            sorae_fuck2a = -sorae_fuck2a 
         end"/>
 		<Layer Type="BitmapText" Font="_misobold white" Text="Exclennet"
 		InitCommand="%function(self) sorae_fuck2b = 1 end" 

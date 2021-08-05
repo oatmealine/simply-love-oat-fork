@@ -1,7 +1,5 @@
 <ActorFrame><children>
-	<ActorFrame OnCommand="%function(self) maxClamp = 0; self:queuecommand('Increase')
-		
-	end" IncreaseCommand="%function(self) maxClamp = maxClamp + .05; if maxClamp < 1 then self:sleep(.025) self:queuecommand('Increase') end function ActorFrame() File=children[7] end end" />
+	<ActorFrame OnCommand="%function(self) maxClamp = 0; self:queuecommand('Increase') end" IncreaseCommand="%function(self) maxClamp = maxClamp + .05; if maxClamp < 1 then self:sleep(.025) self:queuecommand('Increase') end function ActorFrame() File=children[7] end end" />
 	<Layer
 		Class="AutoActor" 
 		File="../_shared underlay arrows"
@@ -12,7 +10,7 @@
 	<Layer Type="Quad" QPSelMessageCommand="hidden,0" QPDeSelMessageCommand="hidden,1" OnCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0;"
 	QuickPlayFadeMessageCommand="diffusealpha,0;linear,.5;diffusealpha,1;" />
 	
-	<Layer Type="BitmapText" File="_wendy small" InitCommand="%function(self) self:settext(_G['bigshitandrandom'][math.random(1,#_G['bigshitandrandom'])]) end" QPSelMessageCommand="hidden,0" QPDeSelMessageCommand="hidden,1" OnCommand="zoom,.75;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;"
+	<Layer Type="BitmapText" File="_wendy small" Text="LOADING" QPSelMessageCommand="hidden,0" QPDeSelMessageCommand="hidden,1" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;"
 	QuickPlayFadeMessageCommand="diffusealpha,0;sleep,.5;linear,.2;diffusealpha,1;" />
 	
 </children></ActorFrame>

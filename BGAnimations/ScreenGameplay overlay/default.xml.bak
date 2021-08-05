@@ -1,0 +1,145 @@
+<ActorFrame
+	InitCommand="%function(self)
+
+			-- master list of enable toggles
+			
+			-- max combo display, for each player
+			samTheme_p1MaxCombo = true
+			samTheme_p2MaxCombo = true
+			
+			-- judgement breakdown display, for each player
+			samTheme_p1JudgeDisplay = true
+			samTheme_p2JudgeDisplay = true
+			
+			-- dance points display, for each player
+			samTheme_p1PointsDisplay = true
+			samTheme_p2PointsDisplay = true
+			
+			-- CURSED CONTENT [NITG only]: combo-based scoring manager, for each player
+			--[[ dummied out because it doesn't actually *work*
+			samTheme_p1ComboBasedTorture = false
+			samTheme_p2ComboBasedTorture = false
+			]]
+			
+	
+			-- Display current song in course [code by -YOSEFU-]
+			samTheme_courseSongDisplay = true
+	
+	
+			-- setting toggles
+			samTheme_p1ComboLayout = 1
+			samTheme_p2ComboLayout = 1
+			samTheme_p1JudgeLeadingZeroes = true;
+			samTheme_p2JudgeLeadingZeroes = true;
+			
+			--[[ COMBO LAYOUTS:
+				0:
+				F E
+				G D
+				W M
+				
+				1:
+				F D
+				E W
+				G M
+			]]
+	end"
+		OnCommand="%function(self)
+			BX_pss = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+			BX_dvt = BX_pss:GetOffsetVector()
+			BX_nrt = BX_pss:GetNoteRowVector()
+			
+			function math.clamp(val, min, max)
+				if val < min then return min end
+				if val > max then return max end
+				return val
+			end
+
+			function BX_lifebar(pn, off, looping)
+				--[[if PREFSMAN:GetPreference('InputDuplication') and not looping then
+					Trace('duplicating judgement: ' .. pn .. ' to ' .. (3 - pn))
+					BX_lifebar(3 - pn, off, true) -- duplicate
+				end]]
+				BX_CurCustomLife[pn] = math.clamp(BX_CurCustomLife[pn] + off,-100,1)
+				BX_DispCustomLife[pn] = math.clamp(BX_CurCustomLife[pn],0,1)
+				--table.insert(BX_CustomLifeChanges[pn],{GAMESTATE:GetSongBeat(),BX_DispCustomLife[pn]})
+				table.insert(BX_CustomLifeChanges[pn],{GAMESTATE:GetSongBeat(),SCREENMAN:GetTopScreen():GetLife(pn - 1)})
+			end
+		end"
+		SaltyResetMessageCommand="%function(self)
+			BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_SaltyResets = BX_SaltyResets + 1
+		end"
+
+		Fk_P1_Complete_W1MessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_Complete_W2MessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_Complete_W3MessageCommand="%function(self) BX_lifebar(1, 0.004) end"
+		Fk_P1_Complete_W4MessageCommand="%function(self) BX_lifebar(1, 0) end"
+		Fk_P1_Complete_W5MessageCommand="%function(self) BX_lifebar(1, -0.05) end"
+		Fk_P1_Complete_W6MessageCommand="%function(self) BX_lifebar(1, -0.1) end"
+		Fk_P1_OKMessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_NGMessageCommand="%function(self) BX_lifebar(1, -0.08) end"
+		Fk_P1_W8MessageCommand="%function(self) BX_lifebar(1, -0.05) end"
+
+		Fk_P2_Complete_W1MessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_Complete_W2MessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_Complete_W3MessageCommand="%function(self) BX_lifebar(2, 0.004) end"
+		Fk_P2_Complete_W4MessageCommand="%function(self) BX_lifebar(2, 0) end"
+		Fk_P2_Complete_W5MessageCommand="%function(self) BX_lifebar(2, -0.05) end"
+		Fk_P2_Complete_W6MessageCommand="%function(self) BX_lifebar(2, -0.1) end"
+		Fk_P2_OKMessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_NGMessageCommand="%function(self) BX_lifebar(2, -0.08) end"
+		Fk_P2_W8MessageCommand="%function(self) BX_lifebar(2, -0.05) end"
+> <children>
+	<!-- NOT TIED TO SPECIFIC PLAYER -->
+	
+	<Layer File="modules/PN_CourseSongDisplay.xml" />
+
+	<!-- PLAYER 1 -->
+	
+	<ActorFrame
+		InitCommand="%function(self)
+			self:xy(SCREEN_CENTER_X, SCREEN_CENTER_Y/8 + 10)
+			self:zoom(1)
+			
+		end"
+	><children>
+	
+		<!-- max combo text -->
+		<Layer File="modules/P1_MaxComboDisplay.xml" />
+		
+		<!-- point displays -->
+		<Layer File="modules/P1_DPDisplay.xml" />
+	
+		<!-- judgement numbers -->
+		<Layer File="modules/P1_JudgeDisplay.xml" />
+		
+		<!-- nITG only: combo-based scoring -->
+		<!-- <Layer File="P1_ComboScoringManager.xml" /> -->
+		
+		
+	</children></ActorFrame>
+	
+	
+	<!-- PLAYER 2 -->
+	<ActorFrame
+		InitCommand="%function(self)
+			self:xy(SCREEN_CENTER_X, SCREEN_CENTER_Y/8 + 10)
+			self:zoom(1)
+		end"
+	><children>
+	
+		<!-- max combo text -->
+		<Layer File="modules/P2_MaxComboDisplay.xml" />
+	
+		<!-- dance points display -->
+		<Layer File="modules/P2_DPDisplay.xml" />
+	
+		<!-- judgement display -->
+		<Layer File="modules/P2_JudgeDisplay.xml" />
+		
+	</children></ActorFrame>
+</children> </ActorFrame>
+

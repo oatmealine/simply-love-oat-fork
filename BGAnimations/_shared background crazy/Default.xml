@@ -1,6 +1,6 @@
 <Layer
 			Shader="shader/earthbound.frag"
 			File="_black"
-			OnCommand="%function(self) theme_earthboundShader = self:GetShader() self:GetShader():uniform1f('bpm', GAMESTATE:GetCurBPM()) end"
+			OnCommand="%function(self) theme_earthboundShader = self:GetShader() end"
 			InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;hidden,0;diffusealpha,.5"
 		/>

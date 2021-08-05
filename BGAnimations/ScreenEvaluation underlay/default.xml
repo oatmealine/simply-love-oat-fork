@@ -57,4 +57,21 @@
 		OnCommand="ztest,1;diffusealpha,0;linear,0.6;diffusealpha,1"
 	/>
 	<Layer File="@VocalizePath()..'read.xml'" Command="sleep,3;queuecommand,Voice" />
+
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		OnCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Results')
+
+			oat_RPC:set('title', GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+			oat_RPC:set('author', GAMESTATE:GetCurrentSong():GetDisplayArtist())
+			oat_RPC:set('pack', GAMESTATE:GetCurrentSong():GetGroupName())
+			oat_RPC:set('score', math.ceil(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
+
+			oat_RPC:update()
+		end"
+	/>
 </children></ActorFrame>

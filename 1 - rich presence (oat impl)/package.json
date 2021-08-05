@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "discord-rich-presence": "^0.0.8",
+    "gaze": "^1.1.3"
+  }
+}

@@ -2,8 +2,9 @@
 	<Layer File="ScreenWithMenuElements header"/>	
 	<Layer
 		Type="BitmapText"
-		Text="Game mode Sele c t tionnjfdhmngfgnfdmfythgnjmgfhbdxkjgsevrlbnkhj"
+		Text=""
 		File="_wendy white"
+		InitCommand="%function(self) ScreenSelectGameHeaderTextSet(self) end"
 		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
 		OffCommand="linear,0.2;diffusealpha,0"
 	/>

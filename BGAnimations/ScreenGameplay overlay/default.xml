@@ -44,7 +44,55 @@
 				G M
 			]]
 	end"
+		OnCommand="%function(self)
+			BX_pss = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+			BX_dvt = BX_pss:GetOffsetVector()
+			BX_nrt = BX_pss:GetNoteRowVector()
+			
+			function math.clamp(val, min, max)
+				if val < min then return min end
+				if val > max then return max end
+				return val
+			end
 
+			function BX_lifebar(pn, off, looping)
+				--[[if PREFSMAN:GetPreference('InputDuplication') and not looping then
+					Trace('duplicating judgement: ' .. pn .. ' to ' .. (3 - pn))
+					BX_lifebar(3 - pn, off, true) -- duplicate
+				end]]
+
+				BX_CurCustomLife[pn] = math.clamp(BX_CurCustomLife[pn] + off,-100,1)
+				BX_DispCustomLife[pn] = math.clamp(BX_CurCustomLife[pn],0,1)
+				--table.insert(BX_CustomLifeChanges[pn],{GAMESTATE:GetSongBeat(),BX_DispCustomLife[pn]})
+				table.insert(BX_CustomLifeChanges[pn],{GAMESTATE:GetSongBeat(),SCREENMAN:GetTopScreen():GetLife(pn - 1)})
+			end
+		end"
+		SaltyResetMessageCommand="%function(self)
+			BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_SaltyResets = BX_SaltyResets + 1
+		end"
+
+		Fk_P1_Complete_W1MessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_Complete_W2MessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_Complete_W3MessageCommand="%function(self) BX_lifebar(1, 0.004) end"
+		Fk_P1_Complete_W4MessageCommand="%function(self) BX_lifebar(1, 0) end"
+		Fk_P1_Complete_W5MessageCommand="%function(self) BX_lifebar(1, -0.05) end"
+		Fk_P1_Complete_W6MessageCommand="%function(self) BX_lifebar(1, -0.1) end"
+		Fk_P1_OKMessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_NGMessageCommand="%function(self) BX_lifebar(1, -0.08) end"
+		Fk_P1_W8MessageCommand="%function(self) BX_lifebar(1, -0.05) end"
+
+		Fk_P2_Complete_W1MessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_Complete_W2MessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_Complete_W3MessageCommand="%function(self) BX_lifebar(2, 0.004) end"
+		Fk_P2_Complete_W4MessageCommand="%function(self) BX_lifebar(2, 0) end"
+		Fk_P2_Complete_W5MessageCommand="%function(self) BX_lifebar(2, -0.05) end"
+		Fk_P2_Complete_W6MessageCommand="%function(self) BX_lifebar(2, -0.1) end"
+		Fk_P2_OKMessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_NGMessageCommand="%function(self) BX_lifebar(2, -0.08) end"
+		Fk_P2_W8MessageCommand="%function(self) BX_lifebar(2, -0.05) end"
 > <children>
 	<!-- NOT TIED TO SPECIFIC PLAYER -->
 	

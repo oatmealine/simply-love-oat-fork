@@ -296,5 +296,98 @@
 		self:settext(s)
 		end"
 	/>
+
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Gameplay')
+
+			local song = GAMESTATE:GetCurrentSong()
+			if song then
+				oat_RPC:set('title', song:GetDisplayMainTitle())
+				oat_RPC:set('author', song:GetDisplayArtist())
+				oat_RPC:set('pack', song:GetGroupName())
+			end
+
+			self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			local song = GAMESTATE:GetCurrentSong()
+			if song then
+				oat_RPC:set('title', song:GetDisplayMainTitle())
+				oat_RPC:set('author', song:GetDisplayArtist())
+				oat_RPC:set('pack', song:GetGroupName())
+				oat_RPC:set('marathon', GAMESTATE:IsCourseMode())
+
+				oat_RPC:set('score', math.ceil(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
+				oat_RPC:set('songstart', os.time() - GAMESTATE:GetSongTime())
+				oat_RPC:set('songend', os.time() + song:MusicLengthSeconds() - GAMESTATE:GetSongTime())
+				oat_RPC:update()
+			end
+
+			self:sleep(30)
+			self:queuecommand('Update')
+		end"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Text=""
+		File="_wendy white"
+		InitCommand="%function(self)
+		    --self:stoptweening();
+			self:diffuse(0.8, 0.8, 0.8, 1)
+			self:zoom(.2)
+			self:shadowlength(0)
+			self:horizalign('right')
+			self:x(SCREEN_WIDTH)
+			self:y(26)
+			self:hidden(1)
+		    self:sleep(0);
+			self:queuecommand('UpdateCounter');
+		end"
+		UpdateCounterCommand="%function(self)
+		--self:stoptweening();
+		
+		if gnPlaySec  == nil then gnPlaySec  = 0 end
+		if gnPlayMin  == nil then gnPlayMin  = 0 end
+		if gnPlayHour == nil then gnPlayHour = 0 end
+		
+		gnPlaySec = gnPlaySec + 1;
+		if gnPlaySec >= 60 then
+			gnPlaySec = gnPlaySec - 60;
+			gnPlayMin = gnPlayMin + 1;
+			end
+		if gnPlayMin >= 60 then
+			gnPlayMin = gnPlayMin - 60;
+			gnPlayHour = gnPlayHour + 1;
+			end
+			
+		if gnPlaySec < 10 then
+			gnPlaySecText = '0'..gnPlaySec
+			else
+			gnPlaySecText = ''..gnPlaySec
+			end
+		if gnPlayMin < 10 then
+			gnPlayMinText = '0'..gnPlayMin
+			else
+			gnPlayMinText = ''..gnPlayMin
+			end
+		if gnPlayHour < 10 then
+			gnPlayHourText = '0'..gnPlayHour
+			else
+			gnPlayHourText = ''..gnPlayHour
+			end
+			
+		if gnSongCount == nil then
+			gnSongCount = 0;
+			end
+
+		self:sleep(1);
+		self:queuecommand('UpdateCounter');
+		end"
+	/>
 </children> </ActorFrame>
 

@@ -55,8 +55,8 @@
             sorae_fuck1b = -sorae_fuck1b
         end"/>
 		<Layer Type="BitmapText" Font="_misobold white" Text='"Great"'		OnCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1.5;decelerate,0.5;zoom,0.35;" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="config issue"	OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1.75;decelerate,0.5;zoom,0.35;" InitCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="Way Decent"	OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;zoom,0;sleep,2;decelerate,0.5;zoom,0.35;" InitCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Decent"	OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1.75;decelerate,0.5;zoom,0.35;" InitCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"	OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;zoom,0;sleep,2;decelerate,0.5;zoom,0.35;" InitCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
 		<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"		OnCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1;zoom,0;sleep,2.25;decelerate,3;zoom,0.35;rotationz,-1800;rotationy,7200;rotationx,-720;" />
 	</children> </Layer>
 	<Layer Type="ActorFrame" OnCommand="x,-110;y,-97"> <children>

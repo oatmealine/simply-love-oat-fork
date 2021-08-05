@@ -1,40 +1,37 @@
-# SIMPLY LOVE (Oat's Fork + Rya's Edit)
+# SIMPLY LOVE (Oat's Fork)
 
-![logo time](https://i.jecket.xyz/ma2d0.png "logö")
+![logo time](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/BGAnimations/ScreenLove%20underlay/SimplyLove%20doubleres.png "logo")
 
-Rya (that's me, Jecket) stole Oat's theme to add a bit of sweet salt to it, for personal use mostly
+A fork of NotITG's Simply Love with more features, different graphics, theming and aesethetics. This repo mainly serves as a way to sync changes with the NotITG Simply Love fork.
 
-## Additional Features
+## Features
 
-Most features are already in https://github.com/oatmealine/simply-love-oat-fork so please check that out before you get confused
+Do note this list is slightly inaccurate as I've only done this when pushing this repo
 
-- Transparent default judgement (they're too big to get me distracted)
-- More annoyances (you'll be greeted with random messages upon selecting quickplay)
-- Restart game button because I can't be bothered to go to the settings to reload simfiles (I have an ssd, sorry oats)
-- Shame (art by [pixloen](https://twitter.com/pixloen)) ((anim delayed by a small bit, to be fixed))
-- Replaced some textures (Arrows, Edit USB thingy)
-- Gradient Colors (only in purple color, wrong hue too, check second screenshot)
-- Replaced few audios/sounds
-- rest of the "new" stuff is probably forgotten I haven't worked on this in a long time hence it's inaccurate
-- sexy af system message bar
+- **!!** I removed some Japanese/Korean/Chinese fonts that are rarely used for faster load times, but this might be what would be considered a Bad Idea
+- A cross-platform Discord rich presence implementation
+- Changes to scatterplots to show sync-relevant info
+- Results screen now shows PB scoring and funnies on fail
+- Hide EVENT MODE (god bless)
+- Some extra animations, just for fun
+- Transparency, slight graphic changes for minor things like headers/footers and fresh theming
+- New fonts!
+- Samario's basic chart extended stats view
+- Groove Nights-like playtime
+- QUICK quick play (instant song wheel)
+- 57:8 aspect ratio support (oat what)
+- *Just, in general, tons of weird meme additions and annoyances*
 
-## To be added, probably
-- More color gradients
-- Misc additions for mods (?)?
-- Removing some stuff (e.g. "counts as 2 rounds")
-- METRICS WHEEL
-- Show song credit if possible
-- rainbowify
-- just more texture changes
-- **LITERALLY USING THE NEWEST VERSION I'M LIKE 900 COMMITS BEHIND**
-- cat borgar next to shame synced to the steps instead of just the song's bpm
+## Screenshots
 
-## SCreenshot (dithered cuz compression)
+![title](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot1.png "title")
+![song select](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot2.png "song list")
+![result](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot3.png "result")
 
-![random message llo](https://i.jecket.xyz/gen8l.png "rng")
+## Rich Presence Installation
 
-![mawaru shindeiru](https://i.jecket.xyz/uoj0m.png "colors")
+Get Node.js, `cd` to `1 - rich presence (oat impl)` and run
 
-![judgments](https://i.jecket.xyz/7m0ou.png "and this cool bar")
+`npm install`
 
-![actually judgments](https://i.jecket.xyz/vtmnr.png)
+After which, run `node index.js` each time you launch nITG (make sure to close the script once the game is closed to prevent stale RPC!)

@@ -46,6 +46,12 @@ local Resolutions =
 	    Ratio = 7.125,
 	    Res = { "3420x480" },
 	},
+	
+	["3:2"] =
+	{
+	    Ratio = 1.5,
+	    Res = { "1920x1280" },
+	},
 }
 
 -- Width, then height. "640x480" -> 640, 480
@@ -95,9 +101,6 @@ function LuaSetAspectRatio()
 				if not fequ(ratio,temp_float) then
 					temp_ratio = Names[i]
 					temp_float = RatioToFloat( temp_ratio )
-					
-                    DISPLAY:SetWindowWidth(SCREEN_WIDTH)
-                    DISPLAY:SetWindowHeight(SCREEN_HEIGHT)
 					
 					MESSAGEMAN:Broadcast( "AspectRatioChanged" )
 					return
@@ -151,9 +154,6 @@ function LuaSetResolution( ratio )
 				Debug( "New resolution: " .. width .. "x" .. height .. ", ratio " .. Resolutions[ratio].Ratio )
 
 				GAMESTATE:DelayedGameCommand( "reloadtheme" )
-				
-                DISPLAY:SetWindowWidth(width)
-                DISPLAY:SetWindowHeight(height)
 			end
 		end
 	end

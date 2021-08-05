@@ -6,4 +6,13 @@
 		OnCommand="draworder,301;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,.9/(FUCK_EXE and 1 or 2);diffusealpha,0;linear,0.4;diffusealpha,1" 
 	/>
 
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Idle')
+			oat_RPC:update()
+		end"
+	/>
 </children></ActorFrame>

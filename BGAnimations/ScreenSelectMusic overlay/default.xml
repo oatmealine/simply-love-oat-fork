@@ -105,13 +105,50 @@
 	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+94);y,SCREEN_CENTER_Y+25.5" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />
 	
 	
-	<!--<Layer
-		File="groove.gif"
-		InitCommand="zoom,0.2;x,80;y,SCREEN_HEIGHT-115;effectclock,bgm;effectoffset,0.2"
-	/>-->
 	<Layer
-		File="shamie.png"
-		InitCommand="zoom,0.35;x,100;y,SCREEN_HEIGHT-110.5;bounce;effectclock,bgm;effectmagnitude,0,-25,0;effectperiod,1;effectoffset,0.1"
+		File="friends/groove.gif"
+		OnCommand="%function(self)
+			self:x(120)
+			self:y(SCREEN_HEIGHT-120)
+			
+			self:effectclock('bgm')
+			self:effectoffset(0.2)
+	    		
+			local friends = {
+				{'groove.gif', 0.2},
+				{'karen.png'},
+				
+				{'pixelfriends_ayaze.png'},
+				--{'pixelfriends_forgothername.png'},
+				--{'pixelfriends_laer.png'},
+				--{'pixelfriends_mimi.png'},
+				--{'pixelfriends_peeesh.png'},
+				{'pixelfriends_shame.png'},
+			}
+	    		math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
+	    		local s = friends[math.random(1, #friends)]
+			self:Load(Path('BGAnimations', 'ScreenSelectMusic overlay/friends/' .. s[1]))
+			if s[2] then
+			  self:effectoffset(s[2])
+			else
+			  self:bounce()
+			  self:effectmagnitude(0, -30, 0)
+			  self:effectperiod(1)
+			end
+			
+			-- scaling nonsense
+			
+			local tw, th = 96, 96 -- target
+			local tex = self:GetTexture()
+			local w, h = tex:GetSourceWidth(), tex:GetSourceHeight()		
+			local size = (th / h)
+			self:zoom(size)
+			
+	    		self:diffusealpha(0.9)
+	    		self:texturefiltering(false)
+	    		
+	    		if not OatProfile().OATDisplayFriends then self:hidden(1) end
+		end"
 	/>
 </children> </ActorFrame>
 

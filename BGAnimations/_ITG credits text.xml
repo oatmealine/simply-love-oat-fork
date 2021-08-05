@@ -12,6 +12,7 @@
 		<Layer Type="BitmapText" Text="Mad Matt" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Modified by Oatmealine" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Modified by Sorae" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Life/Timing Graph by BrightXeno" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="IN THE GROOVE TEAM" File="_misobold small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#D57676;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
@@ -102,7 +103,6 @@
 		<Layer Type="BitmapText" Text="Steve Checkoway" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Sean Burke" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="XPort" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
