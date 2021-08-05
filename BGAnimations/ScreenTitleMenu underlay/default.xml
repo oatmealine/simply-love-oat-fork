@@ -392,7 +392,7 @@
 		<!-- Sorae -->
 		<AutoActor
 			Type="BitmapText"
-			Text="Happy Birthday Teri!"
+			Text="Happy Birthday Sorae!"
 			Condition="DayOfMonth() == 30 and MonthOfYear() == 8"
 			Font="_wendy white"
 			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
