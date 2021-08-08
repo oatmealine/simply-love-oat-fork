@@ -118,603 +118,586 @@
 			end"
 		/>
 		<!-- Ah look, cODE! -->
-		<!-- Jose, from which who I (rya) stole this entire thing -->
-		<!-- wait what the fuck is an AutoActor -->
-		<!-- Rya gets into NotITG (or any rhythm game in general) for the first time
-		<AutoActor
-			Type="BitmapText"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 24 and MonthOfYear() == 12"
-			InitCommand="%function(self) self:settext('It\'s been '.. math.abs(2018 - Year()) .. ' years since\nRya started playing NotITG!') end"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.2;diffusealpha,.1;x,SCREEN_RIGHT-160;y,SCREEN_CENTER_Y+150;rainbow;rotationz,-3"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/> -->
-	
-		<!--
-		<AutoActor
-			Type="BitmapText"
-			Text="@''..SLGBuildVersion()"
-			Font="Common Normal"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.5;y,SCREEN_CENTER_Y-57;x,SCREEN_LEFT+200;"
-			OffCommand="accelerate,0.7;diffusealpha,0;"
-		/>-->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Jose!"
-			Condition="DayOfMonth() == 30 and MonthOfYear() == 6"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Ky -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Ky_Dash!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 29 and MonthOfYear() == 8"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- TaroNuke -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Taro!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 29 and MonthOfYear() == 3"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,190"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Sora -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Sora!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 10 and MonthOfYear() == 6"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- PcBoy -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday PCBoy!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 26 and MonthOfYear() == 7"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Mr. ThatKid -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Mr. ThatKid!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 8 and MonthOfYear() == 8"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Daikyi -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Daikyi!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 22 and MonthOfYear() == 8"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Tetaes -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Tetaes!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- CosmicLAER -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Nil!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- BrightXeno -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday BrightXeno!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 22 and MonthOfYear() == 6"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Nhan -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Nhan!"
-			Condition="DayOfMonth() == 15 and MonthOfYear() == 1"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Chegg -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Cheggday Chegg!"
-			Condition="DayOfMonth() == 15 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;spin;effectmagnitude,0,0,100000"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Oatmealine -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Oatmealine!"
-			Condition="DayOfMonth() == 14 and MonthOfYear() == 9"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- "Star", Samario -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday ''Star'' and Samario!"
-			Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Pat -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Pat!"
-			Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Sudospective -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Sudo!"
-			Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Rya -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Rya!"
-			Condition="DayOfMonth() == 26 and MonthOfYear() == 6"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,1,(223/255),(232/255),1;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- pastel -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Pastel!"
-			Condition="DayOfMonth() == 15 and MonthOfYear() == 4"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Koneko -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Koneko!"
-			Condition="DayOfMonth() == 21 and MonthOfYear() == 2"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- ThisPersonExists -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday ThisPersonExists!"
-			Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Kirby5654 -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Kirby!"
-			Condition="DayOfMonth() == 16 and MonthOfYear() == 4"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Azurehaiku -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Azzy!"
-			Condition="DayOfMonth() == 2 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Mayflower -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Mayflower!"
-			Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- mangoafterdawn -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Mang!"
-			Condition="DayOfMonth() == 3 and MonthOfYear() == 10"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Rakkii -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Rakkii!"
-			Condition="DayOfMonth() == 11 and MonthOfYear() == 11"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- plightshift -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday plight!"
-			Condition="DayOfMonth() == 22 and MonthOfYear() == 10"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- PullThatLevel -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Pull!"
-			Condition="DayOfMonth() == 23 and MonthOfYear() == 2"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Teri -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Teri!"
-			Condition="DayOfMonth() == 10 and MonthOfYear() == 7"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Sorae -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Sorae!"
-			Condition="DayOfMonth() == 30 and MonthOfYear() == 8"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Valor + Meowsicle -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Valor and Meowsicle!"
-			Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Burby -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Burby!"
-			Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Roxanne / Betamaxloss -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Roxanne!"
-			Condition="DayOfMonth() == 6 and MonthOfYear() == 6"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Jaezmien Naejara -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Jaezmien!"
-			Condition="DayOfMonth() == 4 and MonthOfYear() == 3"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Yasmyn -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Yasmyn!"
-			Condition="DayOfMonth() == 26 and MonthOfYear() == 11"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- PokéJoshua -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday PokeJoshua!"
-			Condition="DayOfMonth() == 3 and MonthOfYear() == 2"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- CyberBlue -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Cyber!"
-			Condition="DayOfMonth() == 12 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- ori -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Ori!"
-			Condition="DayOfMonth() == 2 and MonthOfYear() == 10"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- strawberrymahou / merri | new role 7 -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Merri!"
-			Condition="DayOfMonth() == 9 and MonthOfYear() == 12"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- XeroOl -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Xero!"
-			Condition="DayOfMonth() == 9 and MonthOfYear() == 3"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- PlasticRainbow | couldn't find their birthday
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday PlasticRainbow!"
-			Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		-->
-		<!-- mrcool909090 -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday mrcool!"
-			Condition="DayOfMonth() == 28 and MonthOfYear() == 2"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Kinoseidon and Maractus | someone confirm that Kino has birthday on the 8th or 9th -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Kino and Maractus!"
-			Condition="DayOfMonth() == 8 and MonthOfYear() == 11"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- KennethLias -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Kenneth!"
-			Condition="DayOfMonth() == 6 and MonthOfYear() == 11"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- FMS_Cat -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday FMS_Cat!"
-			Condition="DayOfMonth() == 7 and MonthOfYear() == 10"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Lirodon -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Lirodon!"
-			Condition="DayOfMonth() == 29 and MonthOfYear() == 1"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- BrotherMojo | couldn't find their birthday
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday BrotherMojo!"
-			Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		 -->
-		<!-- Aura -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Aura!"
-			Condition="DayOfMonth() == 8 and MonthOfYear() == 3"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Jousway | only Xero knew, despite being a day late -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Jousway!"
-			Condition="DayOfMonth() == 25 and MonthOfYear() == 3"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- CERiNG -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday CERiNG!"
-			Condition="DayOfMonth() == 15 and MonthOfYear() == 12"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- j0e -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday j0e!"
-			Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Spartan -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Spartan!"
-			Condition="DayOfMonth() == 11 and MonthOfYear() == 3"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Halcyoniix -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Hal!"
-			Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Kath -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Kath!"
-			Condition="DayOfMonth() == 26 and MonthOfYear() == 10"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Aelteria -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Tari!"
-			Condition="DayOfMonth() == 5 and MonthOfYear() == 4"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,.2,1,.3,1;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Oranger | 
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Oranger!"
-			Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		-->
-		<!-- DrazilSpirits -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Drazil!"
-			Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- aCarson -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Carson!"
-			Condition="DayOfMonth() == 24 and MonthOfYear() == 3"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- GelloMello -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Gello!"
-			Condition="DayOfMonth() == 17 and MonthOfYear() == 6"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Pentaxel -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Pentaxel!"
-			Condition="DayOfMonth() == 22 and MonthOfYear() == 2"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Moru Zerinho -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Moru Zerinho!"
-			Condition="DayOfMonth() == 24 and MonthOfYear() == 9"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- Cooly -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Cooly!"
-			Condition="DayOfMonth() == 8 and MonthOfYear() == 1"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- YOSEFU | couldn't find their birthday
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy Birthday Yosefu!"
-			Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
-			Font="_wendy white"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		-->
-		<!-- New Year -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Happy New Year!"
-			Font="_wendy white"
-			Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
-		<!-- CHRISTMA -->
-		<AutoActor
-			Type="BitmapText"
-			Text="Merry Christmas!"
-			Font="_wendy white"
-			Condition="(DayOfMonth() == 24 or DayOfMonth() == 25) and MonthOfYear() == 12"
-			OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
-			OffCommand="accelerate,1;diffusealpha,0"
-		/>
+		<ActorFrame InitCommand="fov,45;bounce,effectmagnitude,0,0,150;effectperiod,.5"><children>
+			<!-- wait what the fuck is an AutoActor -->
+			<!-- Jose, from which who I (rya) stole this entire thing -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Jose!"
+				Condition="DayOfMonth() == 30 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Ky -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Ky_Dash!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 29 and MonthOfYear() == 8"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- TaroNuke -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Taro!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 29 and MonthOfYear() == 3"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,190"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Sora -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Sora!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 10 and MonthOfYear() == 6"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- PcBoy -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday PCBoy!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 26 and MonthOfYear() == 7"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Mr. ThatKid -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Mr. ThatKid!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 8"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Daikyi -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Daikyi!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 22 and MonthOfYear() == 8"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Tetaes -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Tetaes!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- CosmicLAER -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Nil!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- BrightXeno -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday BrightXeno!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 22 and MonthOfYear() == 6"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Nhan -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Nhan!"
+				Condition="DayOfMonth() == 15 and MonthOfYear() == 1"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Chegg -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Cheggday Chegg!"
+				Condition="DayOfMonth() == 15 and MonthOfYear() == 5"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,1,1,.25,1;spin;effectmagnitude,0,0,1000069"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Oatmealine -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Oatmealine!"
+				Condition="DayOfMonth() == 14 and MonthOfYear() == 9"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- "Star", Samario -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday ''Star'' and Samario!"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Pat -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Pat!"
+				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Sudospective -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Sudo!"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Rya -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Rya!"
+				Condition="DayOfMonth() == 26 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,1,(223/255),(232/255),1;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- pastel -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Pastel!"
+				Condition="DayOfMonth() == 15 and MonthOfYear() == 4"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Koneko -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Koneko!"
+				Condition="DayOfMonth() == 21 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- ThisPersonExists -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday ThisPersonExists!"
+				Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Kirby5654 -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Kirby!"
+				Condition="DayOfMonth() == 16 and MonthOfYear() == 4"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Azurehaiku -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Azzy!"
+				Condition="DayOfMonth() == 2 and MonthOfYear() == 5"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Mayflower -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Mayflower!"
+				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- mangoafterdawn -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Mang!"
+				Condition="DayOfMonth() == 3 and MonthOfYear() == 10"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Rakkii -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Rakkii!"
+				Condition="DayOfMonth() == 11 and MonthOfYear() == 11"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- plightshift -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday plight!"
+				Condition="DayOfMonth() == 22 and MonthOfYear() == 10"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- PullThatLevel -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Pull!"
+				Condition="DayOfMonth() == 23 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Teri -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Teri!"
+				Condition="DayOfMonth() == 10 and MonthOfYear() == 7"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Sorae -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Sorae!"
+				Condition="DayOfMonth() == 30 and MonthOfYear() == 8"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Valor + Meowsicle -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Valor and Meowsicle!"
+				Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Burby -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Burby!"
+				Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Roxanne / Betamaxloss -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Roxanne!"
+				Condition="DayOfMonth() == 6 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Jaezmien Naejara -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Jaezmien!"
+				Condition="DayOfMonth() == 4 and MonthOfYear() == 3"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Yasmyn -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Yasmyn!"
+				Condition="DayOfMonth() == 26 and MonthOfYear() == 11"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- PokéJoshua -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday PokeJoshua!"
+				Condition="DayOfMonth() == 3 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- CyberBlue -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Cyber!"
+				Condition="DayOfMonth() == 12 and MonthOfYear() == 5"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- ori -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Ori!"
+				Condition="DayOfMonth() == 2 and MonthOfYear() == 10"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- strawberrymahou / merri | new role 7 -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Merri!"
+				Condition="DayOfMonth() == 9 and MonthOfYear() == 12"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- XeroOl -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Xero!"
+				Condition="DayOfMonth() == 9 and MonthOfYear() == 3"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- PlasticRainbow | couldn't find their birthday
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday PlasticRainbow!"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			-->
+			<!-- mrcool909090 -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday mrcool!"
+				Condition="DayOfMonth() == 28 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Kinoseidon and Maractus | someone confirm that Kino has birthday on the 8th or 9th -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Kino and Maractus!"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 11"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- KennethLias -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Kenneth!"
+				Condition="DayOfMonth() == 6 and MonthOfYear() == 11"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- FMS_Cat -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday FMS_Cat!"
+				Condition="DayOfMonth() == 7 and MonthOfYear() == 10"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Lirodon -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Lirodon!"
+				Condition="DayOfMonth() == 29 and MonthOfYear() == 1"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- BrotherMojo | couldn't find their birthday
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday BrotherMojo!"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			 -->
+			<!-- Aura -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Aura!"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 3"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Jousway | only Xero knew, despite being a day late -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Jousway!"
+				Condition="DayOfMonth() == 25 and MonthOfYear() == 3"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- CERiNG -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday CERiNG!"
+				Condition="DayOfMonth() == 15 and MonthOfYear() == 12"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- j0e -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday j0e!"
+				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Spartan -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Spartan!"
+				Condition="DayOfMonth() == 11 and MonthOfYear() == 3"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Halcyoniix -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Hal!"
+				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Kath -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Kath!"
+				Condition="DayOfMonth() == 26 and MonthOfYear() == 10"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Aelteria -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Tari!"
+				Condition="DayOfMonth() == 5 and MonthOfYear() == 4"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,.2,1,.3,1;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Oranger -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Oranger!"
+				Condition="DayOfMonth() == 10 and MonthOfYear() == 9"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- DrazilSpirits -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Drazil!"
+				Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- aCarson -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Carson!"
+				Condition="DayOfMonth() == 24 and MonthOfYear() == 3"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- GelloMello -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Gello!"
+				Condition="DayOfMonth() == 17 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Pentaxel -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Pentaxel!"
+				Condition="DayOfMonth() == 22 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Moru Zerinho -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Moru Zerinho!"
+				Condition="DayOfMonth() == 24 and MonthOfYear() == 9"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Cooly -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Cooly!"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 1"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- YOSEFU | couldn't find their birthday
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Yosefu!"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
+				Font="_wendy white"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			-->
+			<!-- New Year -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy New Year!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- CHRISTMA -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Merry Christmas!"
+				Font="_wendy white"
+				Condition="(DayOfMonth() == 24 or DayOfMonth() == 25) and MonthOfYear() == 12"
+				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+		</children></ActorFrame>
 </children></ActorFrame>
