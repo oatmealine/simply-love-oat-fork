@@ -118,15 +118,15 @@
 			end"
 		/>
 		<!-- Ah look, cODE! -->
-		<ActorFrame InitCommand="fov,45;bounce,effectmagnitude,0,0,150;effectperiod,.5"><children>
+		<ActorFrame InitCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rotationz,10;rainbow;fov,45;bounce,effectmagnitude,0,0,150;effectperiod,.5;"><children>
 			<!-- wait what the fuck is an AutoActor -->
-			<!-- Jose, from which who I (rya) stole this entire thing -->
+			<!-- Jose, from which who I (rya) stole this entire thing and added like 40 more -->
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday Jose!"
 				Condition="DayOfMonth() == 30 and MonthOfYear() == 6"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Ky -->
@@ -135,7 +135,7 @@
 				Text="Happy Birthday Ky_Dash!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 29 and MonthOfYear() == 8"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- TaroNuke -->
@@ -144,7 +144,7 @@
 				Text="Happy Birthday Taro!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 29 and MonthOfYear() == 3"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,190"
+				OnCommand="rainbow;rotationz,190"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Sora -->
@@ -153,7 +153,7 @@
 				Text="Happy Birthday Sora!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 10 and MonthOfYear() == 6"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- PcBoy -->
@@ -162,7 +162,7 @@
 				Text="Happy Birthday PCBoy!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 26 and MonthOfYear() == 7"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Mr. ThatKid -->
@@ -171,7 +171,7 @@
 				Text="Happy Birthday Mr. ThatKid!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 8"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Daikyi -->
@@ -180,7 +180,7 @@
 				Text="Happy Birthday Daikyi!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 22 and MonthOfYear() == 8"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Tetaes -->
@@ -189,7 +189,7 @@
 				Text="Happy Birthday Tetaes!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- CosmicLAER -->
@@ -198,7 +198,7 @@
 				Text="Happy Birthday Nil!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- BrightXeno -->
@@ -207,7 +207,7 @@
 				Text="Happy Birthday BrightXeno!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 22 and MonthOfYear() == 6"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Nhan -->
@@ -216,7 +216,7 @@
 				Text="Happy Birthday Nhan!"
 				Condition="DayOfMonth() == 15 and MonthOfYear() == 1"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Chegg -->
@@ -225,7 +225,7 @@
 				Text="Happy Cheggday Chegg!"
 				Condition="DayOfMonth() == 15 and MonthOfYear() == 5"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,1,1,.25,1;spin;effectmagnitude,0,0,1000069"
+				OnCommand="diffuse,1,1,.25,1;spin;effectmagnitude,0,0,1000069"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Oatmealine -->
@@ -234,7 +234,7 @@
 				Text="Happy Birthday Oatmealine!"
 				Condition="DayOfMonth() == 14 and MonthOfYear() == 9"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- "Star", Samario -->
@@ -243,7 +243,7 @@
 				Text="Happy Birthday ''Star'' and Samario!"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Pat -->
@@ -252,7 +252,7 @@
 				Text="Happy Birthday Pat!"
 				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Sudospective -->
@@ -261,7 +261,7 @@
 				Text="Happy Birthday Sudo!"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Rya -->
@@ -270,7 +270,7 @@
 				Text="Happy Birthday Rya!"
 				Condition="DayOfMonth() == 26 and MonthOfYear() == 6"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,1,(223/255),(232/255),1;rotationz,10"
+				OnCommand="diffuse,1,(223/255),(232/255),1"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- pastel -->
@@ -279,7 +279,7 @@
 				Text="Happy Birthday Pastel!"
 				Condition="DayOfMonth() == 15 and MonthOfYear() == 4"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Koneko -->
@@ -288,7 +288,7 @@
 				Text="Happy Birthday Koneko!"
 				Condition="DayOfMonth() == 21 and MonthOfYear() == 2"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- ThisPersonExists -->
@@ -297,7 +297,7 @@
 				Text="Happy Birthday ThisPersonExists!"
 				Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Kirby5654 -->
@@ -306,7 +306,7 @@
 				Text="Happy Birthday Kirby!"
 				Condition="DayOfMonth() == 16 and MonthOfYear() == 4"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Azurehaiku -->
@@ -315,7 +315,7 @@
 				Text="Happy Birthday Azzy!"
 				Condition="DayOfMonth() == 2 and MonthOfYear() == 5"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Mayflower -->
@@ -324,7 +324,7 @@
 				Text="Happy Birthday Mayflower!"
 				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- mangoafterdawn -->
@@ -333,7 +333,7 @@
 				Text="Happy Birthday Mang!"
 				Condition="DayOfMonth() == 3 and MonthOfYear() == 10"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Rakkii -->
@@ -342,7 +342,7 @@
 				Text="Happy Birthday Rakkii!"
 				Condition="DayOfMonth() == 11 and MonthOfYear() == 11"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- plightshift -->
@@ -351,7 +351,7 @@
 				Text="Happy Birthday plight!"
 				Condition="DayOfMonth() == 22 and MonthOfYear() == 10"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- PullThatLevel -->
@@ -360,7 +360,7 @@
 				Text="Happy Birthday Pull!"
 				Condition="DayOfMonth() == 23 and MonthOfYear() == 2"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Teri -->
@@ -369,7 +369,7 @@
 				Text="Happy Birthday Teri!"
 				Condition="DayOfMonth() == 10 and MonthOfYear() == 7"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Sorae -->
@@ -378,7 +378,7 @@
 				Text="Happy Birthday Sorae!"
 				Condition="DayOfMonth() == 30 and MonthOfYear() == 8"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Valor + Meowsicle -->
@@ -387,7 +387,7 @@
 				Text="Happy Birthday Valor and Meowsicle!"
 				Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Burby -->
@@ -396,7 +396,7 @@
 				Text="Happy Birthday Burby!"
 				Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Roxanne / Betamaxloss -->
@@ -405,7 +405,7 @@
 				Text="Happy Birthday Roxanne!"
 				Condition="DayOfMonth() == 6 and MonthOfYear() == 6"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Jaezmien Naejara -->
@@ -414,7 +414,7 @@
 				Text="Happy Birthday Jaezmien!"
 				Condition="DayOfMonth() == 4 and MonthOfYear() == 3"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Yasmyn -->
@@ -423,7 +423,7 @@
 				Text="Happy Birthday Yasmyn!"
 				Condition="DayOfMonth() == 26 and MonthOfYear() == 11"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- PokéJoshua -->
@@ -432,7 +432,7 @@
 				Text="Happy Birthday PokeJoshua!"
 				Condition="DayOfMonth() == 3 and MonthOfYear() == 2"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- CyberBlue -->
@@ -441,7 +441,7 @@
 				Text="Happy Birthday Cyber!"
 				Condition="DayOfMonth() == 12 and MonthOfYear() == 5"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- ori -->
@@ -450,7 +450,7 @@
 				Text="Happy Birthday Ori!"
 				Condition="DayOfMonth() == 2 and MonthOfYear() == 10"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- strawberrymahou / merri | new role 7 -->
@@ -459,7 +459,7 @@
 				Text="Happy Birthday Merri!"
 				Condition="DayOfMonth() == 9 and MonthOfYear() == 12"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- XeroOl -->
@@ -468,7 +468,7 @@
 				Text="Happy Birthday Xero!"
 				Condition="DayOfMonth() == 9 and MonthOfYear() == 3"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- PlasticRainbow | couldn't find their birthday
@@ -477,7 +477,7 @@
 				Text="Happy Birthday PlasticRainbow!"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			-->
@@ -487,7 +487,7 @@
 				Text="Happy Birthday mrcool!"
 				Condition="DayOfMonth() == 28 and MonthOfYear() == 2"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Kinoseidon and Maractus | someone confirm that Kino has birthday on the 8th or 9th -->
@@ -496,7 +496,7 @@
 				Text="Happy Birthday Kino and Maractus!"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 11"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- KennethLias -->
@@ -505,7 +505,7 @@
 				Text="Happy Birthday Kenneth!"
 				Condition="DayOfMonth() == 6 and MonthOfYear() == 11"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- FMS_Cat -->
@@ -514,7 +514,7 @@
 				Text="Happy Birthday FMS_Cat!"
 				Condition="DayOfMonth() == 7 and MonthOfYear() == 10"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Lirodon -->
@@ -523,7 +523,7 @@
 				Text="Happy Birthday Lirodon!"
 				Condition="DayOfMonth() == 29 and MonthOfYear() == 1"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- BrotherMojo | couldn't find their birthday
@@ -532,7 +532,7 @@
 				Text="Happy Birthday BrotherMojo!"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			 -->
@@ -542,7 +542,7 @@
 				Text="Happy Birthday Aura!"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 3"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Jousway | only Xero knew, despite being a day late -->
@@ -551,7 +551,7 @@
 				Text="Happy Birthday Jousway!"
 				Condition="DayOfMonth() == 25 and MonthOfYear() == 3"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- CERiNG -->
@@ -560,7 +560,7 @@
 				Text="Happy Birthday CERiNG!"
 				Condition="DayOfMonth() == 15 and MonthOfYear() == 12"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- j0e -->
@@ -569,7 +569,7 @@
 				Text="Happy Birthday j0e!"
 				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Spartan -->
@@ -578,7 +578,7 @@
 				Text="Happy Birthday Spartan!"
 				Condition="DayOfMonth() == 11 and MonthOfYear() == 3"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Halcyoniix -->
@@ -587,7 +587,7 @@
 				Text="Happy Birthday Hal!"
 				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Kath -->
@@ -596,7 +596,7 @@
 				Text="Happy Birthday Kath!"
 				Condition="DayOfMonth() == 26 and MonthOfYear() == 10"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Aelteria -->
@@ -605,7 +605,7 @@
 				Text="Happy Birthday Tari!"
 				Condition="DayOfMonth() == 5 and MonthOfYear() == 4"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;diffuse,.2,1,.3,1;rotationz,10"
+				OnCommand="diffuse,.2,1,.3,1"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Oranger -->
@@ -614,7 +614,7 @@
 				Text="Happy Birthday Oranger!"
 				Condition="DayOfMonth() == 10 and MonthOfYear() == 9"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- DrazilSpirits -->
@@ -623,7 +623,7 @@
 				Text="Happy Birthday Drazil!"
 				Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- aCarson -->
@@ -632,7 +632,7 @@
 				Text="Happy Birthday Carson!"
 				Condition="DayOfMonth() == 24 and MonthOfYear() == 3"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- GelloMello -->
@@ -641,7 +641,7 @@
 				Text="Happy Birthday Gello!"
 				Condition="DayOfMonth() == 17 and MonthOfYear() == 6"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Pentaxel -->
@@ -650,7 +650,7 @@
 				Text="Happy Birthday Pentaxel!"
 				Condition="DayOfMonth() == 22 and MonthOfYear() == 2"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Moru Zerinho -->
@@ -659,7 +659,7 @@
 				Text="Happy Birthday Moru Zerinho!"
 				Condition="DayOfMonth() == 24 and MonthOfYear() == 9"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Cooly -->
@@ -668,7 +668,7 @@
 				Text="Happy Birthday Cooly!"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 1"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- YOSEFU | couldn't find their birthday
@@ -677,7 +677,7 @@
 				Text="Happy Birthday Yosefu!"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
 				Font="_wendy white"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			-->
@@ -687,7 +687,7 @@
 				Text="Happy New Year!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- CHRISTMA -->
@@ -696,7 +696,7 @@
 				Text="Merry Christmas!"
 				Font="_wendy white"
 				Condition="(DayOfMonth() == 24 or DayOfMonth() == 25) and MonthOfYear() == 12"
-				OnCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rainbow;rotationz,10"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 		</children></ActorFrame>
