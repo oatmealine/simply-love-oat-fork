@@ -1,6 +1,7 @@
 #version 120
 
 uniform float time;
+uniform float bpm = 60.;
 uniform vec2 imageSize;
 varying vec4 color;
 

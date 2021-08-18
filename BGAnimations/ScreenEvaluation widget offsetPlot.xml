@@ -884,8 +884,8 @@ end"><children>
 		<Layer Type="BitmapText" Text="" Font="_misoreg small"
 		    OnCommand="%function(self)
 			    self:hidden(0)
-			    self:xy(150,-130)
-			    self:zoom(.5)
+			    self:xy(150,-128)
+			    self:zoom(.4)
 			    self:shadowlength(0)
 			    self:horizalign('right')
 			    self:diffuse(0.9, 0.9, 0.9, 1)
@@ -1728,8 +1728,8 @@ end"><children>
 		<Layer Type="BitmapText" Text="" Font="_misoreg small"
 		    OnCommand="%function(self)
 			    self:hidden(0)
-			    self:xy(-150,-130)
-			    self:zoom(.5)
+			    self:xy(-150,-128)
+			    self:zoom(.4)
 			    self:shadowlength(0)
 			    self:horizalign('left')
 			    self:diffuse(0.9, 0.9, 0.9, 1)
