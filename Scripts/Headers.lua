@@ -186,3 +186,35 @@ function ScreenSelectMusicCourseHeaderTextSet(self)
   end
   self:settext(t)
 end
+
+ScreenTitleMenuTexts = { -- see Graphics/ScreenTitleMenu scroll choice1.xml
+  'ok gimmie a sec while I take your wallet\nthis ain\'t free gaming you ungamer',
+  '$ subo rm -rf /',
+  'once this loaded, play year of the rats',
+  '/).(\\',
+  '*mwuah* uwu',
+  'hey can I get an\nuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
+  '...i need AV',
+  'bibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibibi',
+  'i am float now goodby e',
+  'please do not the peeesh',
+  'pastel is going to murder yall',
+  'how many quotes do you think\nare oat\'s quotes',
+  'https://sudospective.net/uwu',
+  'DO YOU STILL REMBER',
+  'fuck it, *metainverts your mods*',
+  '',
+  'hey, type while in gameplay into the console\nSCREENMAN()\:PauseGame(true)',
+  'high class weapon theme',
+  'obama\'s... last name........... is........\n.....................................................................................joe',
+  'LOADING?\nLOAFING??',
+  'not enough memory \not enough memory  ',
+}
+
+function ScreenTitleMenuTextSet(self)
+  local t = ScreenTitleMenuTexts[math.random(1, #ScreenTitleMenuTexts)]
+  if OatProfile().OATDisplayCustomHeaders ~= 1 then
+    t = ''
+  end
+  self:settext(t)
+end
