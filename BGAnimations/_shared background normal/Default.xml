@@ -149,4 +149,170 @@
 			end
 		end"
 	/>
+	
+	<Layer
+		Shader="shader/rez_dubstepmyass.frag"
+		File="_black"
+		OnCommand="%function(self) theme_rezdubstepmyassShader = self:GetShader() end"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+
+			if OatProfile().OATBackgroundShader == 7 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+			self:effectclock('timer')
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 7 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	
+	<Layer
+		Shader="shader/rez_mynameisjulia.frag"
+		File="_black"
+		OnCommand="%function(self) theme_rezmynameisjuliaShader = self:GetShader() end"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+
+			if OatProfile().OATBackgroundShader == 8 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+			self:effectclock('timer')
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 8 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+
+	<Layer
+		Shader="shader/rez_roadtohell.frag"
+		File="_black"
+		OnCommand="%function(self) theme_rezroadtohellShader = self:GetShader() end"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+
+			if OatProfile().OATBackgroundShader == 9 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+			self:effectclock('timer')
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 9 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	
+	<Layer
+		Shader="shader/rez_structures.frag"
+		File="_black"
+		OnCommand="%function(self) theme_rezstructuresShader = self:GetShader() end"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+
+			if OatProfile().OATBackgroundShader == 10 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+			self:effectclock('timer')
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 10 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+	
+	<Layer
+		Shader="shader/rez_thedescent.frag"
+		File="_black"
+		OnCommand="%function(self) theme_rezthedescentShader = self:GetShader() end"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+
+			if OatProfile().OATBackgroundShader == 11 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+			self:effectclock('timer')
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+			self:GetShader():uniform3f('color2', ColorRGB(1))
+			self:GetShader():uniform3f('color3', ColorRGB(-2))
+			self:diffusealpha(0.5)
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 11 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
+
 </children></ActorFrame>
