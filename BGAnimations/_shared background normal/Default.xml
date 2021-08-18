@@ -157,8 +157,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 7 then
@@ -170,8 +168,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
@@ -190,8 +186,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 8 then
@@ -203,8 +197,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
@@ -255,9 +247,6 @@
 		OnCommand="%function(self) theme_rezstructuresShader = self:GetShader() end"
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
-			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 10 then
@@ -268,9 +257,6 @@
 			self:effectclock('timer')
 		end"
 		ColorSelectedMessageCommand="%function(self)
-			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
@@ -288,9 +274,6 @@
 		OnCommand="%function(self) theme_rezthedescentShader = self:GetShader() end"
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
-			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 11 then
@@ -301,9 +284,6 @@
 			self:effectclock('timer')
 		end"
 		ColorSelectedMessageCommand="%function(self)
-			self:diffuse(ColorRGB(0))
-			self:GetShader():uniform3f('color2', ColorRGB(1))
-			self:GetShader():uniform3f('color3', ColorRGB(-2))
 			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)

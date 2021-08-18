@@ -63,11 +63,19 @@ void main()
 	vec2 h=vec2(0.005,-0.005);
 	vec3 n=normalize(vec3(scene(hit+h.xyy),scene(hit+h.yxx),scene(hit+h.yyx)));
 	float c=(n.x*2.0+n.y+n.z)*0.25-t*0.025;
-	vec3 col=vec3(c*t*0.625-p.x*0.125,c*t*0.25+t*0.03125,c*0.375+t*0.0625+p.y*0.125);
+	
+	// add in custom colors
+	vec3 col1 = vec3(0.625, 0.25, 0.375); // this used to be the original version of the color, tucked directly into the col definition
+	                                      // thank you demoscene shaders
+	vec3 col2 = vec3(0.125, 0.03125, 0.0625);
+	
+	col1 = color.rgb;
+	
+	vec3 col=vec3(c*t*col1.r-p.x*col2.r,c*t*col1.g+t*col2.g,c*col1.b+t*col2.b+p.y*0.125);
 	col=smoothstep(0.4,0.7,c)+col*col;
 	/* post process */
 	col*=0.6+0.4*rand(p,time,43758.5453);
 	col=vec3(col.x*0.9-0.1*cos(p.x*res.x),col.y*0.95+0.05*sin(p.y*res.x/2.0),col.z*0.9+0.1*cos(PI/2.0+p.x*res.x));
 	/* return color */
-	gl_FragColor=vec4(col,1.0);
+	gl_FragColor=vec4(col,color.a);
 	}

@@ -69,6 +69,13 @@ void main() {
 	vec2 h=vec2(-0.0025,0.002); // light
 	vec3 n=normalize(vec3(draw_scene(hit+h.xyx),draw_scene(hit+h.yxy),draw_scene(hit+h.yyx)));
 	float c=(n.x+n.y+n.z)*0.35;
-	vec3 color=vec3(c,c,c)+t*0.0625;
-	gl_FragColor=vec4(vec3(c-t*0.0375+p.y*0.05,c-t*0.025-p.y*0.0625,c+t*0.025-p.y*0.025)+color*color,1.0);
+	vec3 col=vec3(c,c,c)+t*0.0625;
+	
+	// color selection stuff
+	vec3 col1 = vec3(0.375, 0.025, 0.025);
+	vec3 col2 = vec3(0.05, 0.0625, 0.025);
+	
+	col1 = color.rgb;
+	
+	gl_FragColor=vec4(vec3(c-t*col1.r+p.y*col2.r,c-t*col1.g-p.y*col2.g,c+t*col1.b-p.y*col2.b)+col*col,color.a);
 }

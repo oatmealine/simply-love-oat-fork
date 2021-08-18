@@ -66,7 +66,8 @@ void main()
 	vec2 h=vec2(-0.02,0.01); // light
 	vec3 n=normalize(vec3(scene1(hit+h.xyy),scene1(hit+h.yxx),scene1(hit+h.yyx)));
 	float c=(n.x+n.y+n.z)*0.1;
-	vec3 color=vec3(c,c,c)-t*0.0625;
+	
+	vec3 col=vec3(c,c,c)-t*0.0625;
     //color*=0.6+0.4*rand(vec2(t,t),time); // noise!
-	gl_FragColor=vec4(vec3(c+t*0.08,c+t*0.02,c*1.5-t*0.01)+color*color,1.0);
+	gl_FragColor=vec4(vec3(c+t*0.08,c+t*0.02,c*1.5-t*0.01)+col*col,color.a);
 	}
