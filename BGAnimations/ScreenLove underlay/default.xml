@@ -5,6 +5,11 @@
 		File="@FUCK_EXE and 'SimplyLove' or 'SimplyOpen'" 
 		OnCommand="draworder,301;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,.9/(FUCK_EXE and 1 or 2);diffusealpha,0;linear,0.4;diffusealpha,1" 
 	/>
+	<Layer
+		File="SimplyLove overlay" 
+		OnCommand="draworder,301;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,.9/(FUCK_EXE and 1 or 2);diffusealpha,0;linear,0.4;diffusealpha,1;bob" 
+	/>
+	
 
 	<!-- rpc shenanigans -->
 	<Layer
