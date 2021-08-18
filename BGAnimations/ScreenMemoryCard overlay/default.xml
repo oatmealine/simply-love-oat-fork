@@ -1,0 +1,50 @@
+
+<ActorFrame LengthSeconds="10"><children>
+	<Actor
+		Import="../_shared background normal"
+	/>
+	<Actor
+		Var="usbicon"
+		File="usbicon"
+		Frag="glitch-lines.frag"
+		OnCommand="zoom,0.6;glow,1,1,1,1;glowshift;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,1.0;decelerate,2;diffusealpha,1;sleep,6;linear,0.75;diffusealpha,0"
+		OffCommand="stoptweening;accelerate,0.5;addx,-SCREEN_WIDTH*1.5"
+	/>
+	
+	<Layer Type="BitmapText" File="_wendy small"
+		Var="usbicontop"
+		Text="use a USB card"
+		OnCommand="zoom,0.6;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-60;diffusealpha,0;sleep,2.0;decelerate,1;diffusealpha,1;sleep,6;linear,0.75;diffusealpha,0"
+		OffCommand="stoptweening;accelerate,0.5;addx,-SCREEN_WIDTH*1.5"
+	/>
+	
+	<Layer Type="BitmapText" File="_wendy small"
+		Var="usbiconbot"
+		Text="to save scores &amp; preferences"
+		OnCommand="zoom,0.6;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;diffusealpha,0;sleep,3.0;decelerate,1;diffusealpha,1;sleep,5;linear,0.75;diffusealpha,0"
+		OffCommand="stoptweening;accelerate,0.5;addx,-SCREEN_WIDTH*1.5"
+	/>
+	
+	<Actor
+		File="../ScreenAttract overlay"
+	/>
+	
+	<Actor Type="Quad" OnCommand="%function(self)
+		self:hidden(1)
+		local texts = {
+			{'use a USB card', 'usbicon.png', 'to save scores &amp; preferences'},
+			{'use a USB card', 'usbicon.png', 'i forgor'},
+			{'don\'t forget', 'code.png', 'your glitch-lines.frag', glitchlines=true},
+			{'she', 'she.png', 'she', 0.5},
+		}
+		
+		local t = texts[math.random(1, #texts)]
+		--local t = texts[3]
+		
+		usbicontop:settext(t[1])
+		usbiconbot:settext(t[3])
+		usbicon:Load(Path('BGAnimations', 'ScreenMemoryCard overlay/' .. t[2]))
+		if t[4] then usbicon:zoom2(t[4]) end
+		if t.glitchlines then usbicon:GetShader():uniform1f('amount', 0.1) end
+	end"/>
+</children></ActorFrame>
