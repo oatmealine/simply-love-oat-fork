@@ -11,8 +11,21 @@
 		<Layer Type="BitmapText" Text="hurtpiggypig" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Mad Matt" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Modified by Oatmealine" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Modified by Sorae" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Life/Timing Graph by BrightXeno" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="THEME CONTRIBUTORS" File="_misobold small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#76B1D5;ztest,1" />
+		<Layer Type="BitmapText" Text="TaroNuke" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Ky_Dash" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="0b5vr" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="PCBoyGames" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="ArcticFqx" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="OATS FORK CONTRIBUTORS" File="_misobold small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#76B1D5;ztest,1" />
+		<Layer Type="BitmapText" Text="sorae" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="BrightXeno" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="InfinitePhantasm" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Jaezmien Naejara" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="arceus" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Rya" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Shaders by otaviogood" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Shaders by rez" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="IN THE GROOVE TEAM" File="_misobold small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#D57676;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
@@ -103,10 +116,6 @@
 		<Layer Type="BitmapText" Text="Steve Checkoway" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Sean Burke" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="XPort" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
