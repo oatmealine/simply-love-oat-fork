@@ -11,17 +11,17 @@
 		OffCommand="stoptweening;accelerate,0.5;addx,-SCREEN_WIDTH*1.5"
 	/>
 	
-	<Layer Type="BitmapText" File="_wendy small"
+	<Layer Type="BitmapText" File="_wendy white"
 		Var="usbicontop"
 		Text="use a USB card"
-		OnCommand="zoom,0.6;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-60;diffusealpha,0;sleep,2.0;decelerate,1;diffusealpha,1;sleep,6;linear,0.75;diffusealpha,0"
+		OnCommand="zoom,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-65;diffusealpha,0;sleep,2.0;decelerate,1;diffusealpha,1;sleep,6;linear,0.75;diffusealpha,0"
 		OffCommand="stoptweening;accelerate,0.5;addx,-SCREEN_WIDTH*1.5"
 	/>
 	
-	<Layer Type="BitmapText" File="_wendy small"
+	<Layer Type="BitmapText" File="_wendy white"
 		Var="usbiconbot"
 		Text="to save scores &amp; preferences"
-		OnCommand="zoom,0.6;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;diffusealpha,0;sleep,3.0;decelerate,1;diffusealpha,1;sleep,5;linear,0.75;diffusealpha,0"
+		OnCommand="zoom,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+55;diffusealpha,0;sleep,3.0;decelerate,1;diffusealpha,1;sleep,5;linear,0.75;diffusealpha,0"
 		OffCommand="stoptweening;accelerate,0.5;addx,-SCREEN_WIDTH*1.5"
 	/>
 	
