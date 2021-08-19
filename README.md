@@ -27,6 +27,8 @@ Do note this list is slightly inaccurate as I've only done this when pushing thi
 ![title](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot1.png "title")
 ![song select](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot2.png "song list")
 ![result](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot3.png "result")
+![usb screen](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot4.png "usb screen")
+![config](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot5.png "config")
 
 ## Rich Presence Installation
 
@@ -34,4 +36,4 @@ Get Node.js, `cd` to `1 - rich presence (oat impl)` and run
 
 `npm install`
 
-After which, run `node index.js` each time you launch nITG (make sure to close the script once the game is closed to prevent stale RPC!)
+After which, run `node index.js` each time you launch nITG (can also be open all the time, if you like)
