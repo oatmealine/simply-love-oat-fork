@@ -5,9 +5,9 @@
 #define scale 8.0
 #define scaleFg 1.5
 
-#define alpha ((1.0 - fract(time * 7.0)) * 0.5 + 0.4)
+#define alpha ((1.0 - fract(ptime * 7.0)) * 0.5 + 0.4)
 
-uniform float time;
+uniform float ptime;
 uniform float angle = 0.3;
 uniform vec2 resolution;
 varying vec4 color;
@@ -29,7 +29,7 @@ float hash(float p) {
 vec3 lines(vec2 uv) {
 	bool mirror = false;
 	
-	uv += time * 0.3; // Offset lines
+	uv += ptime * 0.3; // Offset lines
 	uv = rotateVec(uv, angle);
 	
 	if (fract(uv.x * scale/2.0) > 0.5) {
@@ -59,7 +59,7 @@ void main()
 	uv /= 1.5;
 	uv.x *= resolution.x / resolution.y;
 	
-	float angleOffset = hash(floor(time * 0.7)) * 3.14;
+	float angleOffset = hash(floor(ptime * 0.7)) * 3.14;
 	
 	gl_FragColor = vec4(lines(rotateVec(uv, angleOffset)) + lines(rotateVec(uv * scaleFg + 0.2, angle * 2.0 + angleOffset)) * 0.2, color.a);
 }

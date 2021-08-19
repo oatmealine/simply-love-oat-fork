@@ -1,6 +1,6 @@
 #version 120
 
-uniform float time;
+uniform float ptime;
 uniform vec2 imageSize;
 varying vec4 color;
 
@@ -29,9 +29,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     uv = floor(uv * pixAmt) / pixAmt;
     
     if (mod(fragCoord.y, 2) < 2 * 0.5) {
-        uv += 0.1 + sin(time * 0.2 + uv.y * 8.) * 0.05;
+        uv += 0.1 + sin(ptime * 0.2 + uv.y * 8.) * 0.05;
     } else {
-        uv -= 0.1 + sin(time * 0.2 + uv.y * 8. + .5) * 0.05;
+        uv -= 0.1 + sin(ptime * 0.2 + uv.y * 8. + .5) * 0.05;
     }
     
     vec2 uv2 = uv;
@@ -40,7 +40,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     
     // first one (bg-ish thing??)
     
-    col = vec3(mod(abs(sawtooth(uv.x, 0.6) * resolutionRatio + sawtooth(uv.y, 0.6) + time * 0.3), 0.4)) * mainColor;
+    col = vec3(mod(abs(sawtooth(uv.x, 0.6) * resolutionRatio + sawtooth(uv.y, 0.6) + ptime * 0.3), 0.4)) * mainColor;
     
     // second one (stripes-like thing)
     
@@ -51,10 +51,10 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         uv2.y = 1.0 - uv2.y;
     }
 
-    uv2.x += sin(uv2.y * 4.0 + time) * 0.1;
+    uv2.x += sin(uv2.y * 4.0 + ptime) * 0.1;
     
-    if (mod(abs(uv2.x * resolutionRatio + uv2.y + time * 0.2), 0.2) < 0.1) {
-        vec3 lines = vec3(cos(uv.x * 2.0 + time + uv.y * 3.0)) * mainColor * 0.7;
+    if (mod(abs(uv2.x * resolutionRatio + uv2.y + ptime * 0.2), 0.2) < 0.1) {
+        vec3 lines = vec3(cos(uv.x * 2.0 + ptime + uv.y * 3.0)) * mainColor * 0.7;
         col = mix(col, lines, 0.3);
     }
     

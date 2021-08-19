@@ -7,11 +7,11 @@ varying vec4 color;
 
 uniform sampler2D sampler0;
 uniform float beat;
-uniform float time;
+uniform float ptime;
 
 const float PI=3.14159265358979323846;
 
-#define speed (time*0.2975)
+#define speed (ptime*0.2975)
 #define ground_x (1.0-0.325*sin(PI*speed*0.25))
 float ground_y=1.0;
 float ground_z=0.5;

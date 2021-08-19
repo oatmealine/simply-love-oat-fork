@@ -7,7 +7,7 @@ varying vec4 color;
 
 uniform sampler2D sampler0;
 uniform float beat;
-uniform float time;
+uniform float ptime;
 
 float r=0.25;
 float g=0.225;
@@ -19,7 +19,7 @@ float t_buffer=0.0;
 
 vec2 zkal(vec2 a)
 	{
-	float v=0.625-0.5*cos(time*0.1);
+	float v=0.625-0.5*cos(ptime*0.1);
 	float z=8.0;
 	a.x=abs(a.x*(v*z));
 	a.y=-a.y*(v*z);
@@ -43,7 +43,7 @@ vec3 getcolor(vec2 p)
 
 void main()
 	{
-	float zoom=5.0-4.0*cos(time*0.2);
+	float zoom=5.0-4.0*cos(ptime*0.2);
 	vec2 position=zoom*gl_FragCoord.xy/res.xy-zoom*0.5;
 	position.x*=res.x/res.y;
 	gl_FragColor=vec4(getcolor(vec2(position)),1.0);

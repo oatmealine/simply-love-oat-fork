@@ -1,11 +1,10 @@
 #version 130
 
 uniform vec2 resolution;
-uniform float time;
+uniform float ptime;
 varying vec4 color;
 uniform vec3 color2;
 uniform vec3 color3;
-#define ptime time
 
 const vec3 cameraDir = normalize(vec3(-2.0, -1.0, -2.0));
 const float cameraDist = 9.0;

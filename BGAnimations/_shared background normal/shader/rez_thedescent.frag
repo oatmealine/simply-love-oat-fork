@@ -7,11 +7,11 @@ varying vec4 color;
 
 uniform sampler2D sampler0;
 uniform float beat;
-uniform float time;
+uniform float ptime;
 
 const float PI=3.14159265358979323846;
 
-#define speed (time*0.5)
+#define speed (ptime*0.5)
 #define value (0.4+0.25*cos(PI*speed*0.125))
 
 vec2 rotate(vec2 k,float t)

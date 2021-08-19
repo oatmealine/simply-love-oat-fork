@@ -1,4 +1,13 @@
-<ActorFrame><children>
+<ActorFrame InitCommand="queuecommand,Update"
+	UpdateCommand="%function(self)
+		bgshader_ptime = (bgshader_ptime or 0) + 1/140
+		--MESSAGEMAN:Broadcast('UpdateBackgroundShaderTimer')
+		for i,v in ipairs(self:GetChildren()) do
+			v:queuecommand('UpdateBackgroundShaderTimer')
+		end
+		self:sleep(1/140)
+		self:queuecommand('Update')
+	end"><children>
 	<Layer
 		Shader="shader/earthbound.frag"
 		File="_black"
@@ -26,6 +35,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
 	<Layer File="tex_bayer" Var="tex_bayer" OnCommand="hidden,1" />
@@ -57,6 +67,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
 	<Layer
@@ -86,6 +97,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
 	<Layer
@@ -115,6 +127,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
 	<Layer
@@ -148,6 +161,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 	
 	<Layer
@@ -177,6 +191,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 	
 	<Layer
@@ -206,6 +221,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
 	<Layer
@@ -239,6 +255,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 	
 	<Layer
@@ -266,6 +283,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 	
 	<Layer
@@ -293,6 +311,7 @@
 				self:hidden(1)
 			end
 		end"
+		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
 </children></ActorFrame>

@@ -7,11 +7,11 @@ varying vec4 color;
 
 uniform sampler2D sampler0;
 uniform float beat;
-uniform float time;
+uniform float ptime;
 
 const float PI=3.14159265358979323846;
 
-#define speed time
+#define speed ptime
 float ground_x=0.0;//+0.125*sin(PI*speed*0.25);
 float ground_y=0.0;//+0.125*cos(PI*speed*0.25);
 #define ground_z (4.0*sin(PI*speed*0.0625))
@@ -74,7 +74,7 @@ void main()
 	vec3 col=vec3(c*t*col1.r-p.x*col2.r,c*t*col1.g+t*col2.g,c*col1.b+t*col2.b+p.y*0.125);
 	col=smoothstep(0.4,0.7,c)+col*col;
 	/* post process */
-	col*=0.6+0.4*rand(p,time,43758.5453);
+	col*=0.6+0.4*rand(p,ptime,43758.5453);
 	col=vec3(col.x*0.9-0.1*cos(p.x*res.x),col.y*0.95+0.05*sin(p.y*res.x/2.0),col.z*0.9+0.1*cos(PI/2.0+p.x*res.x));
 	/* return color */
 	gl_FragColor=vec4(col,color.a);

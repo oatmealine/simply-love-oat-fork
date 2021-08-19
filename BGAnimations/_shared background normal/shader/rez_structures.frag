@@ -7,7 +7,7 @@ varying vec4 color;
 
 uniform sampler2D sampler0;
 uniform float beat;
-uniform float time;
+uniform float ptime;
 
 const float PI=3.14159265358979323846;
 const float value=0.0;
@@ -24,7 +24,7 @@ vec2 rotate(vec2 k,float t)
 
 float scene1(vec3 p)
 	{
-	float speed=time*0.5;
+	float speed=ptime*0.5;
 	float ground=dot(p,vec3(0.0,1.0,0.0))+0.75;
 	float t1=length(abs(mod(p.xyz,2.0)-1.0))-1.35+0.05*cos(PI*p.x*4.0)+0.05*sin(PI*p.z*4.0);	// structure
 	float t3=length(max(abs(mod(p.xyz,2.0)-1.0).xz-1.0,0.5))-0.075+0.1*cos(p.y*36.0);			// structure slices
@@ -43,7 +43,7 @@ float scene1(vec3 p)
 
 void main()
 	{
-	float speed=time*0.5;
+	float speed=ptime*0.5;
     float ground_x=1.5*cos(PI*speed*0.125);
     float ground_y=4.0-3.0*sin(PI*speed*0.125)+0.125*value;
     float ground_z=-1.0-speed;
@@ -68,6 +68,6 @@ void main()
 	float c=(n.x+n.y+n.z)*0.1;
 	
 	vec3 col=vec3(c,c,c)-t*0.0625;
-    //color*=0.6+0.4*rand(vec2(t,t),time); // noise!
+    //color*=0.6+0.4*rand(vec2(t,t),ptime); // noise!
 	gl_FragColor=vec4(vec3(c+t*0.08,c+t*0.02,c*1.5-t*0.01)+col*col,color.a);
 	}

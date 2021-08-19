@@ -8,9 +8,7 @@ uniform sampler2D sampler0;
 
 varying vec4 color;
 
-uniform float time;
-
-uniform float ptime = 0;
+uniform float ptime;
 
 uniform float bias;
 uniform vec2 imageSize;
@@ -61,16 +59,16 @@ void main() {
 	vec2 uv = imageCoord;
 
 	float u_k = 20;
-	float u_time = time*1.5;
+	float u_ptime = ptime*1.5;
 
     float v = 0.0;
     vec2 c = uv * u_k - u_k/2.0;
-    v += sin((c.x+u_time));
-    v += sin((c.y+u_time)/2.0);
-    v += sin((c.x+c.y+u_time)/2.0);
-    c += u_k/2.0 * vec2(sin(u_time/3.0), cos(u_time/2.0));
+    v += sin((c.x+u_ptime));
+    v += sin((c.y+u_ptime)/2.0);
+    v += sin((c.x+c.y+u_ptime)/2.0);
+    c += u_k/2.0 * vec2(sin(u_ptime/3.0), cos(u_ptime/2.0));
 
-	v += sin(sqrt(c.x*c.x+c.y*c.y+1)+u_time*0.25);
+	v += sin(sqrt(c.x*c.x+c.y*c.y+1)+u_ptime*0.25);
 
 	v = v/2.0;
 

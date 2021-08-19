@@ -7,7 +7,7 @@ To the extent possible under law, the author(s) have dedicated all copyright and
 -Otavio Good
 */
 
-uniform float time;
+uniform float ptime;
 uniform vec2 imageSize;
 varying vec4 color;
 
@@ -74,7 +74,7 @@ float Density(vec3 p)
 {
     //float ws = 0.06125*0.125;
     //vec3 warp = vec3(noise(p*ws), noise(p*ws + 111.11), noise(p*ws + 7111.11));
-    float final = noise(p*0.06125);// + sin(iTime)*0.5-1.95 + warp.x*4.0;
+    float final = noise(p*0.06125);// + sin(iptime)*0.5-1.95 + warp.x*4.0;
     float other = noise(p*0.06125 + 1234.567);
     other -= 0.5;
     final -= 0.5;
@@ -95,10 +95,10 @@ void main()
 	// Camera lookat.
 	vec3 camLookat=vec3(0,0.0,0);	// vrp
 
-	//float mx=iMouse.x/imageSize.x*PI*2.0 + time * 0.01;
-  float mx=time * 0.01;
-	//float my=-iMouse.y/imageSize.y*10.0 + sin(time * 0.03)*0.2+0.2;//*PI/2.01;
-  float my=sin(time * 0.03)*0.2+0.2;//*PI/2.01;
+	//float mx=iMouse.x/imageSize.x*PI*2.0 + ptime * 0.01;
+  float mx=ptime * 0.01;
+	//float my=-iMouse.y/imageSize.y*10.0 + sin(ptime * 0.03)*0.2+0.2;//*PI/2.01;
+  float my=sin(ptime * 0.03)*0.2+0.2;//*PI/2.01;
 	vec3 camPos=vec3(cos(my)*cos(mx),sin(my),cos(my)*sin(mx))*(200.2); 	// prp
 
 	// Camera setup.
@@ -115,8 +115,8 @@ void main()
 	float maxDepth = 30.0;
 	vec3 pos = vec3(0,0,0);
     float density = 0.0;
-	// ray marching time
-    for (int i = 0; i < 15; i++)	// This is the count of how many times the ray actually marches.
+	// ray marching ptime
+    for (int i = 0; i < 15; i++)	// This is the count of how many ptimes the ray actually marches.
     {
         if ((t > maxDepth)) break;
         pos = camPos + relVec * t;
