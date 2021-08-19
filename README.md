@@ -1,6 +1,6 @@
 # SIMPLY LOVE (Oat's Fork)
 
-![logo time](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/BGAnimations/ScreenLove%20underlay/SimplyLove%20doubleres.png "logo")
+![logo time](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/logo.png "logo")
 
 A fork of NotITG's Simply Love with more features, different graphics, theming and aesethetics. This repo mainly serves as a way to sync changes with the NotITG Simply Love fork.
 
