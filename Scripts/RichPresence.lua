@@ -74,5 +74,7 @@ function oat_RPC:update()
     end
   end
 
-  PREFSMAN:SetPreference(pref, isNvidia and (s .. 'nvidia') or s)
+  if OatProfile().OATRichPresence then
+    PREFSMAN:SetPreference(pref, isNvidia and (s .. 'nvidia') or s)
+  end
 end

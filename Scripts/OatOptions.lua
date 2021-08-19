@@ -14,6 +14,7 @@ OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
 OatProfile().OATDisplayFriends = OatProfile().OATDisplayFriends == nil and true or OatProfile().OATDisplayFriends
 OatProfile().OATFailGifs = OatProfile().OATFailGifs == nil and true or OatProfile().OATFailGifs
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
+OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
 
 function OptionSaveEverything()
   PROFILEMAN:SaveMachineProfile()
@@ -107,6 +108,20 @@ function OptionBackgroundShader()
     else
       resetHeader()
     end
+	end
+  return t
+end
+
+function OptionRichPresence()
+  local t = OptionRowBase('RichPresence')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {'On', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATRichPresence then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then OatProfile().OATRichPresence = true  end
+		if list[2] then OatProfile().OATRichPresence = false end
+    resetHeader()
+    resetBackground()
 	end
   return t
 end
