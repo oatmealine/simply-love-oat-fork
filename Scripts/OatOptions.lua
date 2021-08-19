@@ -22,6 +22,9 @@ end
 local function resetHeader()
   ScreenThemeOptionsHeader:settext('THEME OPTIONS')
 end
+local function resetBackground()
+  SCREENMAN:GetTopScreen()(1)(2):diffusealpha(1)
+end
 
 function OptionTesting(...)
   SCREENMAN:SystemMessage(table.concat({args}))
@@ -46,6 +49,7 @@ function OptionDisplayCustomHeaders()
         ScreenThemeOptionsHeader:settext('This header will stay the same')
       end
     end
+    resetBackground()
 	end
 	return t
 end
@@ -59,6 +63,7 @@ function OptionDisplaySongSelectFriends()
 		if list[1] then OatProfile().OATDisplayFriends = true  end
 		if list[2] then OatProfile().OATDisplayFriends = false end
     resetHeader()
+    resetBackground()
 	end
   return t
 end
@@ -72,6 +77,7 @@ function OptionDisplayFailImages()
 		if list[1] then OatProfile().OATFailGifs = true  end
 		if list[2] then OatProfile().OATFailGifs = false end
     resetHeader()
+    resetBackground()
 	end
   return t
 end
@@ -95,6 +101,7 @@ function OptionBackgroundShader()
 		if list[11] then OatProfile().OATBackgroundShader = 11 end
     MESSAGEMAN:Broadcast('UpdateBackgroundShader')
 
+    SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
     if list[4] or list[6] or list[7] or list[8] or list[9] or list[10] or list[11] then
       ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
     else
