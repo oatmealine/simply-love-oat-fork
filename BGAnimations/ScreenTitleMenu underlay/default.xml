@@ -205,7 +205,7 @@
 			<!-- Tetaes -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Tetaes!"
+				Text="Happy Birthday Tetaes, Exschwasion and j0e!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
 				OnCommand="rainbow"
@@ -578,15 +578,6 @@
 				Type="BitmapText"
 				Text="Happy Birthday CERiNG!"
 				Condition="DayOfMonth() == 15 and MonthOfYear() == 12"
-				Font="_wendy white"
-				OnCommand="rainbow"
-				OffCommand="accelerate,1;diffusealpha,0"
-			/>
-			<!-- j0e -->
-			<AutoActor
-				Type="BitmapText"
-				Text="Happy Birthday j0e!"
-				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
