@@ -793,24 +793,17 @@ end"><children>
 			local judgsum = 0
 			local judgsump = 0
 			local judgsump_len = 0
-			local max = -9999
-			local min = 9999
 			
 			for i=1,table.getn(dvt) do
 				if dvt[i] ~= 1000 then
 				    judgsum = judgsum + dvt[i]
-				    max = math.max(max, dvt[i])
-				    min = math.min(min, dvt[i])
-				    if offsetToJudgeWindow(dvt[i]) < 3 then
-				        judgsump = judgsump + dvt[i]
-				        judgsump_len = judgsump_len + 1
-				    end
+				    judgsump = judgsump + dvt[i] * (1/offsetToJudgeWindow(dvt[i]))
+				    judgsump_len = judgsump_len + 1
 				end
 		    end
 		    
 			p1_avgoffset = judgsum / table.getn(dvt)
 			p1_avgpoffset = judgsump / judgsump_len
-			p1_medianoffset = (max + min) / 2
 		end"
 		/>
 
@@ -893,8 +886,8 @@ end"><children>
 			    self:queuecommand('DoText')
 		    end"
 			DoTextCommand="%function(self)
-			    if p1_avgoffset and p1_medianoffset and p1_avgpoffset then
-        			self:settext('MEAN ' .. (math.floor(p1_avgoffset * 100) / 100) .. 'ms PMEAN' .. (math.floor(p1_avgpoffset * 100) / 100) .. 'ms MEDI ' .. (math.floor(p1_medianoffset * 100) / 100) .. 'ms')
+			    if p1_avgoffset and p1_avgpoffset then
+        			self:settext('MEAN ' .. (math.floor(p1_avgoffset * 1000) / 1000) .. 'ms WMEAN ' .. (math.floor(p1_avgpoffset * 100) / 100) .. 'ms')
         		else
         		    self:sleep(0.1)
         		    self:queuecommand('DoText')
@@ -1563,24 +1556,17 @@ end"><children>
 			local judgsum = 0
 			local judgsump = 0
 			local judgsump_len = 0
-			local max = -9999
-			local min = 9999
 			
 			for i=1,table.getn(dvt) do
 				if dvt[i] ~= 1000 then
 				    judgsum = judgsum + dvt[i]
-				    max = math.max(max, dvt[i])
-				    min = math.min(min, dvt[i])
-				    if offsetToJudgeWindow(dvt[i]) < 3 then
-				        judgsump = judgsump + dvt[i]
-				        judgsump_len = judgsump_len + 1
-				    end
+				    judgsump = judgsump + dvt[i] * (1/offsetToJudgeWindow(dvt[i]))
+				    judgsump_len = judgsump_len + 1
 				end
 		    end
 		    
 			p2_avgoffset = judgsum / table.getn(dvt)
 			p2_avgpoffset = judgsump / judgsump_len
-			p2_medianoffset = (max + min) / 2
 		end"
 		/>
 
@@ -1737,8 +1723,8 @@ end"><children>
 			    self:queuecommand('DoText')
 		    end"
 			DoTextCommand="%function(self)
-			    if p2_avgoffset and p2_medianoffset and p2_avgpoffset then
-        			self:settext('MEAN ' .. (math.floor(p2_avgoffset * 100) / 100) .. 'ms PMEAN' .. (math.floor(p2_avgpoffset * 100) / 100) .. 'ms MEDI ' .. (math.floor(p2_medianoffset * 100) / 100) .. 'ms')
+			    if p2_avgoffset and p2_avgpoffset then
+        			self:settext('MEAN ' .. (math.floor(p2_avgoffset * 1000) / 1000) .. 'ms WMEAN ' .. (math.floor(p2_avgpoffset * 100) / 100) .. 'ms')
         		else
         		    self:sleep(0.1)
         		    self:queuecommand('DoText')
