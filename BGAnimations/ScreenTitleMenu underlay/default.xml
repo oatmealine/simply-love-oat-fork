@@ -218,7 +218,7 @@
 				Text="Happy Birthday Tetaes!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
-				OnCommand="rainbow;addx,-100"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Exschwasion -->
