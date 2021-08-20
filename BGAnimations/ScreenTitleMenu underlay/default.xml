@@ -208,7 +208,7 @@
 				Text="Happy Birthday Tetaes, Exschwasion and j0e!"
 				Font="_wendy white"
 				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
-				OnCommand="rainbow"
+				OnCommand="rainbow;addx,-100"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- CosmicLAER -->
