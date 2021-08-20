@@ -24,6 +24,8 @@
 		<Layer Type="BitmapText" Text="Jaezmien Naejara" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="arceus" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Rya" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Somario" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="pixloen" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Shaders by otaviogood" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Shaders by rez" File="_misoreg small" OnCommand="shadowlength,0;shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
@@ -74,7 +76,7 @@
 		<Layer Type="BitmapText" Text="Rhea Dysangco" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Cinnamon Cooney" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Lee Search" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Gina “Lou” Hall" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Gina \93Lou\94 Hall" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Aaron Shafer" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Kristy Bowden" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Koley Porter" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
@@ -91,28 +93,28 @@
 		<Layer Type="BitmapText" Text="" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="STEPMANIA PROGRAMMERS" File="_misobold small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#76B1D5;ztest,1" />
 		<Layer Type="BitmapText" Text="Frieza" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Peter “Dro Kulix” May" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Jared “nmspaz” Roberts" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Brendan “binarys” Walker" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Lance “Neovanglist” Gilbert" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Peter \93Dro Kulix\94 May" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Jared \93nmspaz\94 Roberts" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Brendan \93binarys\94 Walker" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Lance \93Neovanglist\94 Gilbert" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Michel Donais" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Ben “Mantis” Nordstrom" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Chris “Parasyte” Gomez" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Michael “dirkthedaring” Patterson" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Sauleil “angedelamort” Lamarre" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Ben \93Mantis\94 Nordstrom" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Chris \93Parasyte\94 Gomez" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Michael \93dirkthedaring\94 Patterson" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Sauleil \93angedelamort\94 Lamarre" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Edwin Evans" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Brian “Bork” Bugh" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Joel “Elvis314” Maher" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Garth “Kefabi” Smith" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Brian \93Bork\94 Bugh" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Joel \93Elvis314\94 Maher" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Garth \93Kefabi\94 Smith" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Pkillah" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Robert Kemmetmueller" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Ben “Shabach” Andersen" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Will “SlinkyWizard” Valladao" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Ben \93Shabach\94 Andersen" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Will \93SlinkyWizard\94 Valladao" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="TheChip" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="David “WarriorBob” H" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="David \93WarriorBob\94 H" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Mike Waltson" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Kevin “Miryokuteki” Slaughter" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
-		<Layer Type="BitmapText" Text="Thad “Coderjoe” Ward" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Kevin \93Miryokuteki\94 Slaughter" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+		<Layer Type="BitmapText" Text="Thad \93Coderjoe\94 Ward" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Steve Checkoway" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="Sean Burke" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 		<Layer Type="BitmapText" Text="XPort" File="_misoreg small" OnCommand="shadowlength,0;zoom,0.7;diffuse,#FFFFFF;ztest,1" />
