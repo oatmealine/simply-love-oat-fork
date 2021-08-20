@@ -1,4 +1,4 @@
-# SIMPLY LOVE (Oat's Fork)
+# SIMPLY LOVE (Oat vs Rya's Fork)
 
 ![logo time](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/logo.png "logo")
 
