@@ -137,7 +137,17 @@
 			end"
 		/>
 		<!-- Ah look, cODE! -->
-		<ActorFrame InitCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rotationz,10;rainbow;fov,45;bounce,effectmagnitude,0,0,150;effectperiod,.5;"><children>
+		<ActorFrame InitCommand="draworder,1010;horizalign,center;zoom,0.4;x,SCREEN_RIGHT-180;y,SCREEN_CENTER_Y-150;rotationz,10;rainbow;fov,45;bounce,effectmagnitude,0,0,150;effectperiod,.5;"
+		OnCommand="%function(self)
+			-- handle multiple birthdays
+			local index = 0 -- index variable since non-initialized/condition failed actors still count
+			for i,c in ipairs(self:GetChildren()) do
+				if c.settext then -- initialized only if its a bitmaptext
+					c:y((index - 1) * 46)
+					index = index + 1
+				end
+			end
+		end"><children>
 			<!-- wait what the fuck is an AutoActor -->
 			<!-- Jose, from which who I (rya) stole this entire thing and added like 40 more -->
 			<AutoActor
@@ -211,6 +221,15 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
+			<!-- Exschwasion -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Exschwasion!"
+				Font="_wendy white"
+				Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
 			<!-- CosmicLAER -->
 			<AutoActor
 				Type="BitmapText"
@@ -256,10 +275,19 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- "Star", Samario -->
+			<!-- Samario -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday ''Star'' and Samario!"
+				Text="Happy Birthday Samario!"
+				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
+				Font="_wendy white"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- "Star" -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday ''Star''!"
 				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -400,10 +428,19 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Valor + Meowsicle -->
+			<!-- Meowsicle -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Valor and Meowsicle!"
+				Text="Happy Birthday Meowsicle!"
+				Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
+				Font="_wendy white"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Valor -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Valor!"
 				Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -512,7 +549,15 @@
 			<!-- Kinoseidon and Maractus | someone confirm that Kino has birthday on the 8th or 9th -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Kino and Maractus!"
+				Text="Happy Birthday Maractus!"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 11"
+				Font="_wendy white"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Kino!"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 11"
 				Font="_wendy white"
 				OnCommand="rainbow"
