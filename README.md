@@ -22,6 +22,8 @@ Do note this list is slightly inaccurate as I've only done this when pushing thi
 - 57:8 aspect ratio support (oat what)
 - *Just, in general, tons of weird meme additions and annoyances*
 
+(Pixel chars art mostly by [pixloen](https://twitter.com/pixloen))
+
 ## Screenshots
 
 ![title](https://raw.githubusercontent.com/oatmealine/simply-love-oat-fork/master/screenshot1.png "title")
