@@ -645,10 +645,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Halcyoniix -->
+			<!-- halcyoniix -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Hal!"
+				Text="Happy Birthday hal!"
 				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
 				Font="_wendy white"
 				OnCommand="rainbow"
