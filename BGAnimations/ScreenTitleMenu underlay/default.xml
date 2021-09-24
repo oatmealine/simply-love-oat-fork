@@ -432,7 +432,7 @@
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday Meowsicle!"
-				Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 2"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
@@ -450,7 +450,7 @@
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday Burby!"
-				Condition="DayOfMonth() == 16 and MonthOfYear() == 9"
+				Condition="DayOfMonth() == 15 and MonthOfYear() == 9"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
@@ -645,10 +645,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Halcyoniix -->
+			<!-- halcyoniix -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Hal!"
+				Text="Happy Birthday hal!"
 				Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
 				Font="_wendy white"
 				OnCommand="rainbow"
