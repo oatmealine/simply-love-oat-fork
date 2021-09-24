@@ -98,6 +98,7 @@
 			local et = GAMESTATE:GetCurrentSong():GetElapsedTimeFromBeat(e)
 			perc = (bt-st)/(et-st)
 		else
+			if not song then error('uh oh!', 2) end
 			perc = oplot_cumulativeTime(beat,song)/oplot_finalSecond
 		end
 		
@@ -116,6 +117,7 @@
 			local et = e
 			perc = (bt-st)/(et-st)
 		else
+			if not song then error('uh oh!', 2) end
 			perc = oplot_cumulativeTime(beat,song)/oplot_finalSecond
 		end
 		
@@ -455,6 +457,8 @@ end"><children>
 			end
 		end"
 		MakeAndUpdateCommand="%function(self)
+			if GAMESTATE:IsCourseMode() then return end
+
 			local pn = 1
 			local ss = STATSMAN:GetCurStageStats()
 			local pss = ss:GetPlayerStageStats(pn-1)
@@ -537,6 +541,8 @@ end"><children>
 			end
 		end"
 		MakeAndUpdateCommand="%function(self)
+			if GAMESTATE:IsCourseMode() then return end
+
 			--Trace('HEY! P1 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
 			local pn = 1
 			local ss = STATSMAN:GetCurStageStats()
@@ -1237,6 +1243,8 @@ end"><children>
 			end
 		end"
 		MakeAndUpdateCommand="%function(self)
+			if GAMESTATE:IsCourseMode() then return end
+
 			local pn = 2
 			local ss = STATSMAN:GetCurStageStats()
 			local pss = ss:GetPlayerStageStats(pn-1)
@@ -1319,6 +1327,8 @@ end"><children>
 			end
 		end"
 		MakeAndUpdateCommand="%function(self)
+			if GAMESTATE:IsCourseMode() then return end
+
 			--Trace('HEY! P2 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
 			local pn = 2
 			local ss = STATSMAN:GetCurStageStats()
@@ -1671,7 +1681,8 @@ end"><children>
 			end
 		end"
 		MakeAndUpdateCommand="%function(self)
-			Trace('HEY! P2 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
+			if GAMESTATE:IsCourseMode() then return end
+			--Trace('HEY! P2 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
 			local pn = 2
 			local ss = STATSMAN:GetCurStageStats()
 			local pss = ss:GetPlayerStageStats(pn-1)
