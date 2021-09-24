@@ -1,4 +1,5 @@
 <ActorFrame> <children>
+	
 	<Layer
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
