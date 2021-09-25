@@ -98,6 +98,7 @@
 			local et = GAMESTATE:GetCurrentSong():GetElapsedTimeFromBeat(e)
 			perc = (bt-st)/(et-st)
 		else
+			song = song or GAMESTATE:GetCurrentSong()
 			if not song then error('uh oh!', 2) end
 			perc = oplot_cumulativeTime(beat,song)/oplot_finalSecond
 		end
