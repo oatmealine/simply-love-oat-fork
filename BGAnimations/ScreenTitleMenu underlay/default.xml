@@ -504,7 +504,7 @@
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday Ori!"
-				Condition="DayOfMonth() == 2 and MonthOfYear() == 10"
+				Condition="DayOfMonth() == 2 and MonthOfYear() == 11"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
