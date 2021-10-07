@@ -572,15 +572,6 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- FMS_Cat -->
-			<AutoActor
-				Type="BitmapText"
-				Text="Happy Birthday FMS_Cat!"
-				Condition="DayOfMonth() == 7 and MonthOfYear() == 10"
-				Font="_wendy white"
-				OnCommand="rainbow"
-				OffCommand="accelerate,1;diffusealpha,0"
-			/>
 			<!-- Lirodon -->
 			<AutoActor
 				Type="BitmapText"
