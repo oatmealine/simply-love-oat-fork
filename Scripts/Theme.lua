@@ -9,7 +9,7 @@ if not FUCK_EXE then judgmentFontList = { 'Love' , 'Tactics', 'Chromatic', 'Deco
 voiceOption = true
 
 rateModsPay = { "1.0x", "1.1x", "1.2x", "1.3x", "1.4x", "1.5x", "1.6x", "1.7x", "1.8x", "1.9x", "2.0x" }
-rateModsFree = { "1.0x", "1.1x", "1.2x", "1.3x", "1.4x", "1.5x", "1.6x", "1.7x", "1.8x", "1.9x", "2.0x", "0.5x", "0.6x", "0.7x" , "0.8x", "0.9x" }
+rateModsFree = {{"1.0x"},{"1.05x"},{"1.1x"},{"1.15x"},{"1.2x"},{"1.25x"},{"1.3x"},{"1.35x"},{"1.4x"},{"1.45x"},{"1.5x"},{"1.55x"},{"1.6x"},{"1.65x"},{"1.7x"},{"1.75x"},{"1.8x"},{"1.85x"},{"1.9x"},{"1.95x"},{"2.0x"},{"0.5x"},{"0.55x"},{"0.6x"},{"0.65x"},{"0.7x"},{"0.75x"},{"0.8x"},{"0.85x"},{"0.9x"},{"0.95x"}}
 
 screenList = { Gameplay = 'ScreenStage' , SelectMusic = 'ScreenSelectMusic' , PlayerOptions = 'ScreenPlayerOptions' , TitleMenu = ScreenTitleBranch  , NameEntry = 'ScreenNameEntryTraditional' , Evaluation = SelectEvaluationScreen , Summary = 'Summary' , Ending = SelectEndingScreen }
 
