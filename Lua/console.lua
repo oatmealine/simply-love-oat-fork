@@ -180,7 +180,7 @@ event.Persist("key char","dev console",function(char, special)
     DevConsole:y(0)
 
     if SCREENMAN.SetInputMode then
-        SCREENMAN:SetInputMode(2)
+        SCREENMAN:SetInputMode(1) -- fixes a bug with getting the ctrl key stuck after closing the console, might causes other issues? idk
     end
 
     event.Timer(0.5, function()
