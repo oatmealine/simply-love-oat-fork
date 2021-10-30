@@ -1,0 +1,2 @@
+Due to the way I setup Fortnite.lua and FortniteCover.lua, adding more images require both lua files to be edited.
+Both of those can be found in <Theme>\Lua\death
