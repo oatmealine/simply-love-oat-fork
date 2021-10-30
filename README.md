@@ -23,6 +23,7 @@ Do note this list is slightly inaccurate as I've only done this when pushing thi
 - *Just, in general, tons of weird meme additions and annoyances*
 
 (Pixel chars art mostly by [pixloen](https://twitter.com/pixloen))
+(Some meme additions are directly stolen from the UKSRT Discord Server)
 
 ## Screenshots
 
