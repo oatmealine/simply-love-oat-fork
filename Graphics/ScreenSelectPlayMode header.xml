@@ -5,5 +5,6 @@
 		Text="SELECT PLAY MODE"
 		File="_wendy white"
 		InitCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
+		OnCommand="%function(self) if not OatProfile().OATShowHeaders then self:hidden(1) end end"
 	/>
 </children> </ActorFrame>

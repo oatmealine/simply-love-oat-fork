@@ -1,3 +1,4 @@
 <ActorFrame> <children>
-	<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM-24,SCREEN_RIGHT,SCREEN_BOTTOM;blend,noeffect;zwrite,1"/>	
+	<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM-24,SCREEN_RIGHT,SCREEN_BOTTOM;blend,noeffect;zwrite,1"
+		InitCommand="%function(self) if not OatProfile().OATShowHeaders then self:hidden(1) end end"/>	
 </children> </ActorFrame>

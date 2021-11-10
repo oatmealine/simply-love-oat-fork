@@ -98,8 +98,10 @@
 			OffCommand="linear,0.2;diffusealpha,0"
 		/>
 	</children></Layer>
-	<Quad Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_TOP+32;diffuse,#000000" />
-	<Quad Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM,SCREEN_RIGHT,SCREEN_BOTTOM-24;diffuse,#000000" />
+	<Quad Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_TOP+32;diffuse,#000000" 
+		InitCommand="%function(self) if not OatProfile().OATShowHeaders then self:hidden(1) end end"/>
+	<Quad Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM,SCREEN_RIGHT,SCREEN_BOTTOM-24;diffuse,#000000" 
+		InitCommand="%function(self) if not OatProfile().OATShowHeaders then self:hidden(1) end end"/>
 	<Quad Command="stretchto,SCREEN_CENTER_X+320,SCREEN_BOTTOM,SCREEN_RIGHT,SCREEN_TOP;diffuse,#00000000" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
 	<Quad Command="stretchto,SCREEN_CENTER_X-320,SCREEN_BOTTOM,SCREEN_LEFT,SCREEN_TOP;diffuse,#00000000" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
 	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+94);y,SCREEN_CENTER_Y+25.5" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />

@@ -4,7 +4,7 @@
 		Type="BitmapText"
 		Text=""
 		File="_wendy white"
-		InitCommand="%function(self) ScreenSelectMusicCourseHeaderTextSet(self) end"
 		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
+		InitCommand="%function(self) ScreenSelectMusicCourseHeaderTextSet(self); if not OatProfile().OATShowHeaders then self:hidden(1) end end"
 	/>
 </children> </ActorFrame>

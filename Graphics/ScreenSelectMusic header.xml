@@ -5,7 +5,7 @@
 		Text=""
 		File="_wendy white"
 		OnCommand="diffuse,#FFFFFFFF;zoom,.4;shadowlength,0;horizalign,left;x,15;y,16;texturefiltering,false"
-		InitCommand="%function(self) ScreenSelectMusicHeaderTextSet(self) end"
+		InitCommand="%function(self) ScreenSelectMusicHeaderTextSet(self); if not OatProfile().OATShowHeaders then self:hidden(1) end end"
 	/>
 	<Layer File="skeedobop.png" InitCommand="%function(self)
 	  self:xywh(150, 15, 300, 30)

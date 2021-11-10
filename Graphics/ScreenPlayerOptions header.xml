@@ -5,6 +5,6 @@
 		Text=""
 		File="_wendy white"
 		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,0;horizalign,left;x,15;y,16"
-		InitCommand="%function(self) ScreenPlayerOptionsHeaderTextSet(self) end"
+		InitCommand="%function(self) ScreenPlayerOptionsHeaderTextSet(self); if not OatProfile().OATShowHeaders then self:hidden(1) end end"
 	/>
 </children> </ActorFrame>

@@ -23,6 +23,7 @@ OatProfile().OATFailGifs = OatProfile().OATFailGifs == nil and true or OatProfil
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
 OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 0.2
+OatProfile().OATShowHeaders = OatProfile().OATShowHeaders == nil and true or OatProfile().OATShowHeaders
 
 function OptionSaveEverything()
   PROFILEMAN:SaveMachineProfile()
@@ -30,6 +31,7 @@ end
 
 local function resetHeader()
   ScreenThemeOptionsHeader:settext('THEME OPTIONS')
+  ScreenThemeOptionsHeader:hidden(OatProfile().OATShowHeaders and 0 or 1)
   ResultsAlphaPreview:hidden(1)
 end
 local function resetBackground()
@@ -171,4 +173,18 @@ function OptionResultsAlpha()
   t.LayoutType = 'ShowOneInRow'
 
 	return t
+end
+
+function OptionShowHeaders()
+  local t = OptionRowBase('ShowHeaders')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {'On', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATShowHeaders then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then OatProfile().OATShowHeaders = true  end
+		if list[2] then OatProfile().OATShowHeaders = false end
+    resetHeader()
+    resetBackground()
+	end
+  return t
 end

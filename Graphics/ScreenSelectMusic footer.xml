@@ -1,7 +1,7 @@
 <ActorFrame> <children>
 	<Layer File="ScreenWithMenuElements footer"/>	
 
-	<Layer Type="ActorFrame" OnCommand="y,SCREEN_BOTTOM-13" > <children>
+	<Layer Type="ActorFrame" OnCommand="y,SCREEN_BOTTOM-13" InitCommand="%function(self) if not OatProfile().OATShowHeaders then self:hidden(1) end end"> <children>
 		<Layer
 			Type="BitmapText"
 			Font="_misobold white"

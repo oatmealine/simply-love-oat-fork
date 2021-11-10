@@ -1,10 +1,11 @@
 <ActorFrame> <children>
-	<Layer Type="Quad" Command="diffuse,#111111FF;stretchto,SCREEN_LEFT,SCREEN_TOP-32,SCREEN_RIGHT,SCREEN_TOP;decelerate,.5;y,SCREEN_TOP+16"/>	
+	<Layer Type="Quad" Command="diffuse,#111111FF;stretchto,SCREEN_LEFT,SCREEN_TOP-32,SCREEN_RIGHT,SCREEN_TOP;decelerate,.5;y,SCREEN_TOP+16"
+		OnCommand="%function(self) if not OatProfile().OATShowHeaders then self:hidden(1) end end"/>	
 	<Layer
 		Type="BitmapText"
 		Text=""
 		File="_wendy white"
-		InitCommand="%function(self) ScreenSelectGameHeaderTextSet(self) end"
 		OnCommand="diffuse,#FFFFFF00;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16;linear,.5;diffusealpha,1"
+		InitCommand="%function(self) ScreenSelectGameHeaderTextSet(self); if not OatProfile().OATShowHeaders then self:hidden(1) end end"
 	/>
 </children> </ActorFrame>
