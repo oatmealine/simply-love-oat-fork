@@ -9,12 +9,20 @@ function OatProfile(raw)
   return saved
 end
 
+local function fequ( f1, f2, error )
+  if not f1 or not f2 then return nil end
+  local error = error or 0.01
+  local absolute_diff = math.abs(f1 - f2)
+  return absolute_diff < error
+end
+
 -- set defaults
 OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
 OatProfile().OATDisplayFriends = OatProfile().OATDisplayFriends == nil and true or OatProfile().OATDisplayFriends
 OatProfile().OATFailGifs = OatProfile().OATFailGifs == nil and true or OatProfile().OATFailGifs
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
+OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 0.2
 
 function OptionSaveEverything()
   PROFILEMAN:SaveMachineProfile()
@@ -22,6 +30,7 @@ end
 
 local function resetHeader()
   ScreenThemeOptionsHeader:settext('THEME OPTIONS')
+  ResultsAlphaPreview:hidden(1)
 end
 local function resetBackground()
   SCREENMAN:GetTopScreen()(1)(2):diffusealpha(1)
@@ -124,4 +133,42 @@ function OptionRichPresence()
     resetBackground()
 	end
   return t
+end
+
+function OptionResultsAlpha()
+  local t = OptionRowBase('ResultsAlpha')
+
+  t.OneChoiceForAllPlayers = true
+
+	local Names = {}
+  for i = 0, 1, 0.1 do table.insert(Names, i) end
+
+  t.Choices = Names
+	t.LoadSelections = function(self, list)
+    local a = OatProfile().OATResultsAlpha
+		for i,v in ipairs(Names) do
+			if fequ(a, v) then list[i] = true return end
+		end
+
+		list[#list] = true;	-- default to 1
+	end
+
+	t.SaveSelections = function(self, list)
+		for i,v in ipairs(Names) do
+			if list[i] then
+        OatProfile().OATResultsAlpha = v
+      end
+		end
+    resetHeader()
+    resetBackground()
+    ResultsAlphaPreview:hidden(0)
+    for i,v in ipairs(ResultsAlphaPreview:GetChildren()) do
+      v:queuecommand('Update')
+    end
+    SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0)
+	end
+
+  t.LayoutType = 'ShowOneInRow'
+
+	return t
 end
