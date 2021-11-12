@@ -24,6 +24,8 @@ OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
 OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 0.2
 OatProfile().OATShowHeaders = OatProfile().OATShowHeaders == nil and true or OatProfile().OATShowHeaders
+OatProfile().OATShowPlaytime = OatProfile().OATShowPlaytime == nil and true or OatProfile().OATShowPlaytime
+OatProfile().OATShowTotalPlaytime = OatProfile().OATShowTotalPlaytime == nil and true or OatProfile().OATShowTotalPlaytime
 
 OatProfile().OATTotalPlayedSongs = OatProfile().OATTotalPlayedSongs or 0
 OatProfile().OATTotalPlayedFor = OatProfile().OATTotalPlayedFor or 0
@@ -186,6 +188,34 @@ function OptionShowHeaders()
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATShowHeaders = true  end
 		if list[2] then OatProfile().OATShowHeaders = false end
+    resetHeader()
+    resetBackground()
+	end
+  return t
+end
+
+function OptionShowPlaytime()
+  local t = OptionRowBase('ShowPlaytime')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {'On', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATShowPlaytime then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then OatProfile().OATShowPlaytime = true  end
+		if list[2] then OatProfile().OATShowPlaytime = false end
+    resetHeader()
+    resetBackground()
+	end
+  return t
+end
+
+function OptionShowTotalPlaytime()
+  local t = OptionRowBase('ShowTotalPlaytime')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {'On', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATShowTotalPlaytime then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then OatProfile().OATShowTotalPlaytime = true  end
+		if list[2] then OatProfile().OATShowTotalPlaytime = false end
     resetHeader()
     resetBackground()
 	end

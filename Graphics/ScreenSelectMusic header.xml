@@ -22,7 +22,11 @@
 			self:shadowlength(0)
 			self:horizalign('right')
 			self:x(SCREEN_WIDTH)
-			self:y(19)
+			if OatProfile().OATShowPlaytime and OatProfile().OATShowTotalPlaytime then
+			  self:y(19)
+			else
+			  self:y(26)
+			end
 			self:texturefiltering(false)
 		    self:sleep(0);
 			self:queuecommand('UpdateCounter');
@@ -75,11 +79,21 @@
 			gnSongCount = 0;
 			end
 		
-		if gnSongCount == 1 then
-		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)\ntotal playtime: ' .. formatTime(t) .. ' (' .. s .. ' Songs)');
-			else
-		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Songs)\ntotal playtime: ' .. formatTime(t) .. ' (' .. s .. ' Songs)');
-			end
+		local lines = {}
+		
+		if OatProfile().OATShowPlaytime then
+		    if gnSongCount == 1 then
+		        table.insert(lines, 'playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)')
+		    else
+		        table.insert(lines, 'playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Songs)')
+		    end
+		end
+			
+		if OatProfile().OATShowTotalPlaytime then
+		    table.insert(lines, 'total playtime: ' .. formatTime(t) .. ' (' .. s .. ' Songs)')
+		end
+		
+		self:settext(table.concat(lines, '\n'))
 
 		self:sleep(1);
 		self:queuecommand('UpdateCounter');
