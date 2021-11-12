@@ -19,13 +19,16 @@
 			self:shadowlength(0)
 			self:horizalign('right')
 			self:x(SCREEN_WIDTH)
-			self:y(26)
+			--self:y(26)
+			self:y(19)
 			self:texturefiltering(false)
 			
 			if gnSongCount == nil then
 				gnSongCount = 0;
 		    end
 		    gnSongCount = gnSongCount + 1;
+		    OatProfile().OATTotalPlayedSongs = (OatProfile().OATTotalPlayedSongs or 0) + 1
+		    PROFILEMAN:SaveMachineProfile()
 		    
 		    self:sleep(0);
 			self:queuecommand('UpdateCounter');
@@ -37,7 +40,18 @@
 		if gnPlayMin  == nil then gnPlayMin  = 0 end
 		if gnPlayHour == nil then gnPlayHour = 0 end
 		
+		local function formatTime(t)
+		  local d = math.floor(t / 60 / 60 / 24)
+		  local h = math.floor((t / 60 / 60) % 24)
+		  local m = math.floor((t / 60) % 60)
+		  local s = t % 60
+		  return (d < 10 and '0' .. d or d) .. ':' .. (h < 10 and '0' .. h or h) .. ':' .. (m < 10 and '0' .. m or m) .. ':' .. (s < 10 and '0' .. s or s)
+		end
+		
 		gnPlaySec = gnPlaySec + 1;
+		OatProfile().OATTotalPlayedFor = (OatProfile().OATTotalPlayedFor or 0) + 1
+		local t = OatProfile().OATTotalPlayedFor or 0
+		local s = OatProfile().OATTotalPlayedSongs or 0
 		if gnPlaySec >= 60 then
 			gnPlaySec = gnPlaySec - 60;
 			gnPlayMin = gnPlayMin + 1;
@@ -68,9 +82,9 @@
 			end
 		
 		if gnSongCount == 1 then
-		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)');
+		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)\ntotal playtime: ' .. formatTime(t) .. ' (' .. s .. ' Songs)');
 			else
-		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Songs)');
+		    self:settext('playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Songs)\ntotal playtime: ' .. formatTime(t) .. ' (' .. s .. ' Songs)');
 			end
 
 		self:sleep(1);

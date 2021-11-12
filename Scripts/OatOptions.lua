@@ -25,6 +25,9 @@ OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or O
 OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 0.2
 OatProfile().OATShowHeaders = OatProfile().OATShowHeaders == nil and true or OatProfile().OATShowHeaders
 
+OatProfile().OATTotalPlayedSongs = OatProfile().OATTotalPlayedSongs or 0
+OatProfile().OATTotalPlayedFor = OatProfile().OATTotalPlayedFor or 0
+
 function OptionSaveEverything()
   PROFILEMAN:SaveMachineProfile()
 end
