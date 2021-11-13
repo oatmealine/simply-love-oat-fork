@@ -313,6 +313,30 @@
 		end"
 		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			self:stretchto(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+			self:diffuse(ColorRGB(0))
+
+			if OatProfile().OATBackgroundShader == 12 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			self:diffuse(ColorRGB(0))
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 12 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+	/>
 
 	<Layer
 		Type="Quad"
