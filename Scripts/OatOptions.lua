@@ -9,25 +9,18 @@ function OatProfile(raw)
   return saved
 end
 
-local function fequ( f1, f2, error )
-  if not f1 or not f2 then return nil end
-  local error = error or 0.01
-  local absolute_diff = math.abs(f1 - f2)
-  return absolute_diff < error
-end
-
 -- set defaults
 OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
 OatProfile().OATDisplayFriends = OatProfile().OATDisplayFriends == nil and true or OatProfile().OATDisplayFriends
 OatProfile().OATFailGifs = OatProfile().OATFailGifs == nil and true or OatProfile().OATFailGifs
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
-OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 0.2
+OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 2 -- floating point
 OatProfile().OATShowHeaders = OatProfile().OATShowHeaders == nil and true or OatProfile().OATShowHeaders
 OatProfile().OATShowPlaytime = OatProfile().OATShowPlaytime == nil and true or OatProfile().OATShowPlaytime
 OatProfile().OATShowTotalPlaytime = OatProfile().OATShowTotalPlaytime == nil and true or OatProfile().OATShowTotalPlaytime
 OatProfile().OATAggressiveRichPresence = OatProfile().OATAggressiveRichPresence == nil and false or OatProfile().OATAggressiveRichPresence
-OatProfile().OATBackgroundBrightness = OatProfile().OATBackgroundBrightness or 1
+OatProfile().OATBackgroundBrightness = OatProfile().OATBackgroundBrightness or 5 -- floating point
 
 OatProfile().OATTotalPlayedSongs = OatProfile().OATTotalPlayedSongs or 0
 OatProfile().OATTotalPlayedFor = OatProfile().OATTotalPlayedFor or 0
@@ -157,7 +150,7 @@ function OptionResultsAlpha()
 	t.LoadSelections = function(self, list)
     local a = OatProfile().OATResultsAlpha
 		for i,v in ipairs(Names) do
-			if fequ(a, v) then list[i] = true return end
+			if tostring(a / 10) == tostring(v) then list[i] = true return end
 		end
 
 		list[#list] = true;	-- default to 1
@@ -166,7 +159,7 @@ function OptionResultsAlpha()
 	t.SaveSelections = function(self, list)
 		for i,v in ipairs(Names) do
 			if list[i] then
-        OatProfile().OATResultsAlpha = v
+        OatProfile().OATResultsAlpha = v * 10
       end
 		end
     resetHeader()
@@ -195,7 +188,7 @@ function OptionBackgroundBrightness()
 	t.LoadSelections = function(self, list)
     local a = OatProfile().OATBackgroundBrightness
 		for i,v in ipairs(Names) do
-			if fequ(a, v) then list[i] = true return end
+			if tostring(a / 10) == tostring(v) then list[i] = true return end
 		end
 
 		list[#list] = true;	-- default to 1
@@ -204,7 +197,7 @@ function OptionBackgroundBrightness()
 	t.SaveSelections = function(self, list)
 		for i,v in ipairs(Names) do
 			if list[i] then
-        OatProfile().OATBackgroundBrightness = v
+        OatProfile().OATBackgroundBrightness = v * 10
       end
 		end
     resetHeader()

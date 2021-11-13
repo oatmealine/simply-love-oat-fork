@@ -12,38 +12,38 @@
 	<Layer Type="ActorFrame" Var="ResultsAlphaPreview" InitCommand="hidden,1"><children>
 		<Layer Type="Quad"
 			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,409,SCREEN_CENTER_X-5,443;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha(OatProfile().OATResultsAlpha or 0.2) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10) end"
 		/>
 		<Layer Type="Quad"
 			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X-310,320,SCREEN_CENTER_X-5,409;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 0.2) * 0.35) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10 * 0.35) end"
 		/>
 
 		<Layer Type="Quad"
 			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-5,355;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha(OatProfile().OATResultsAlpha or 0.2) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10) end"
 		/>
 		<Layer Type="Quad"
 			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-146,240;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 0.2) * 0.47) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10 * 0.47) end"
 		/>
 
 		<Layer Type="Quad"
 			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,409,SCREEN_CENTER_X+310,443;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha(OatProfile().OATResultsAlpha or 0.2) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10) end"
 		/>
 		<Layer Type="Quad"
 			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X+5,320,SCREEN_CENTER_X+310,409;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 0.2) * 0.35) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10 * 0.35) end"
 		/>
 
 		<Layer Type="Quad"
 			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,180,SCREEN_CENTER_X+310,355;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha(OatProfile().OATResultsAlpha or 0.2) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10) end"
 		/>
 		<Layer Type="Quad"
 			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X+146,180,SCREEN_CENTER_X+310,240;diffusealpha,0.2"
-			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 0.2) * 0.47) end"
+			UpdateCommand="%function(self) self:diffusealpha((OatProfile().OATResultsAlpha or 2) / 10 * 0.47) end"
 		/>
 
 

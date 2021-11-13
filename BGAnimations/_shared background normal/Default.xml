@@ -15,7 +15,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 2 then
 				self:hidden(0)
@@ -26,7 +25,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 2 then
@@ -46,7 +44,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 			self:GetShader():uniformTexture('bayer', tex_bayer:GetTexture())
 
 			if OatProfile().OATBackgroundShader == 3 then
@@ -58,7 +55,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 3 then
@@ -77,7 +73,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 4 then
 				self:hidden(0)
@@ -88,7 +83,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 4 then
@@ -107,7 +101,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 5 then
 				self:hidden(0)
@@ -118,7 +111,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 5 then
@@ -139,7 +131,6 @@
 			self:diffuse(ColorRGB(0))
 			self:GetShader():uniform3f('color2', ColorRGB(1))
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 6 then
 				self:hidden(0)
@@ -152,7 +143,6 @@
 			self:diffuse(ColorRGB(0))
 			self:GetShader():uniform3f('color2', ColorRGB(1))
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 6 then
@@ -171,7 +161,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 7 then
 				self:hidden(0)
@@ -182,7 +171,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 7 then
@@ -201,7 +189,6 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 8 then
 				self:hidden(0)
@@ -212,7 +199,6 @@
 		end"
 		ColorSelectedMessageCommand="%function(self)
 			self:diffuse(ColorRGB(0))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 8 then
@@ -233,7 +219,6 @@
 			self:diffuse(ColorRGB(0))
 			self:GetShader():uniform3f('color2', ColorRGB(1))
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 9 then
 				self:hidden(0)
@@ -246,7 +231,6 @@
 			self:diffuse(ColorRGB(0))
 			self:GetShader():uniform3f('color2', ColorRGB(1))
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 9 then
@@ -264,7 +248,6 @@
 		OnCommand="%function(self) theme_rezstructuresShader = self:GetShader() end"
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 10 then
 				self:hidden(0)
@@ -274,7 +257,6 @@
 			self:effectclock('timer')
 		end"
 		ColorSelectedMessageCommand="%function(self)
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 10 then
@@ -292,7 +274,6 @@
 		OnCommand="%function(self) theme_rezthedescentShader = self:GetShader() end"
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
-			self:diffusealpha(0.5)
 
 			if OatProfile().OATBackgroundShader == 11 then
 				self:hidden(0)
@@ -302,7 +283,6 @@
 			self:effectclock('timer')
 		end"
 		ColorSelectedMessageCommand="%function(self)
-			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
 			if OatProfile().OATBackgroundShader == 11 then
@@ -343,10 +323,10 @@
 		InitCommand="%function(self)
 			self:xywh(SCREEN_CENTER_X, SCREEN_CENTER_Y, SCREEN_WIDTH, SCREEN_HEIGHT)
 			self:diffuse(0, 0, 0, 1)
-			self:diffusealpha(1 - (OatProfile().OATBackgroundBrightness or 1))
+			self:diffusealpha(1 - (OatProfile().OATBackgroundBrightness or 10) / 10)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			self:diffusealpha(1 - (OatProfile().OATBackgroundBrightness or 1))
+			self:diffusealpha(1 - (OatProfile().OATBackgroundBrightness or 10) / 10)
 		end"
 	/>
 </children></ActorFrame>
