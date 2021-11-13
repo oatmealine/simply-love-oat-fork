@@ -328,7 +328,9 @@
 			end
 
 			self:sleep(30)
-			self:queuecommand('Update')
+			if OatProfile().OATAggressiveRichPresence then
+				self:queuecommand('Update')
+			end
 		end"
 	/>
 	
@@ -356,6 +358,7 @@
 		if gnPlayHour == nil then gnPlayHour = 0 end
 		
 		gnPlaySec = gnPlaySec + 1;
+		OatProfile().OATTotalPlayedFor = (OatProfile().OATTotalPlayedFor or 0) + 1
 		if gnPlaySec >= 60 then
 			gnPlaySec = gnPlaySec - 60;
 			gnPlayMin = gnPlayMin + 1;

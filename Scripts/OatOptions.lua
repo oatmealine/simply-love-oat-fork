@@ -26,6 +26,7 @@ OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 0.2
 OatProfile().OATShowHeaders = OatProfile().OATShowHeaders == nil and true or OatProfile().OATShowHeaders
 OatProfile().OATShowPlaytime = OatProfile().OATShowPlaytime == nil and true or OatProfile().OATShowPlaytime
 OatProfile().OATShowTotalPlaytime = OatProfile().OATShowTotalPlaytime == nil and true or OatProfile().OATShowTotalPlaytime
+OatProfile().OATAggressiveRichPresence = OatProfile().OATAggressiveRichPresence == nil and false or OatProfile().OATAggressiveRichPresence
 
 OatProfile().OATTotalPlayedSongs = OatProfile().OATTotalPlayedSongs or 0
 OatProfile().OATTotalPlayedFor = OatProfile().OATTotalPlayedFor or 0
@@ -216,6 +217,20 @@ function OptionShowTotalPlaytime()
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATShowTotalPlaytime = true  end
 		if list[2] then OatProfile().OATShowTotalPlaytime = false end
+    resetHeader()
+    resetBackground()
+	end
+  return t
+end
+
+function OptionAggressiveRichPresence()
+  local t = OptionRowBase('AggressiveRichPresence')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {'On', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATAggressiveRichPresence then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then OatProfile().OATAggressiveRichPresence = true  end
+		if list[2] then OatProfile().OATAggressiveRichPresence = false end
     resetHeader()
     resetBackground()
 	end
