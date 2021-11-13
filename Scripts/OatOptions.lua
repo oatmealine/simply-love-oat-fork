@@ -27,6 +27,7 @@ OatProfile().OATShowHeaders = OatProfile().OATShowHeaders == nil and true or Oat
 OatProfile().OATShowPlaytime = OatProfile().OATShowPlaytime == nil and true or OatProfile().OATShowPlaytime
 OatProfile().OATShowTotalPlaytime = OatProfile().OATShowTotalPlaytime == nil and true or OatProfile().OATShowTotalPlaytime
 OatProfile().OATAggressiveRichPresence = OatProfile().OATAggressiveRichPresence == nil and false or OatProfile().OATAggressiveRichPresence
+OatProfile().OATBackgroundBrightness = OatProfile().OATBackgroundBrightness or 1
 
 OatProfile().OATTotalPlayedSongs = OatProfile().OATTotalPlayedSongs or 0
 OatProfile().OATTotalPlayedFor = OatProfile().OATTotalPlayedFor or 0
@@ -174,6 +175,41 @@ function OptionResultsAlpha()
       v:queuecommand('Update')
     end
     SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0)
+	end
+
+  t.LayoutType = 'ShowOneInRow'
+
+	return t
+end
+
+function OptionBackgroundBrightness()
+  local t = OptionRowBase('BackgroundBrightness')
+
+  t.OneChoiceForAllPlayers = true
+
+	local Names = {}
+  for i = 0, 1, 0.1 do table.insert(Names, i) end
+
+  t.Choices = Names
+	t.LoadSelections = function(self, list)
+    local a = OatProfile().OATBackgroundBrightness
+		for i,v in ipairs(Names) do
+			if fequ(a, v) then list[i] = true return end
+		end
+
+		list[#list] = true;	-- default to 1
+	end
+
+	t.SaveSelections = function(self, list)
+		for i,v in ipairs(Names) do
+			if list[i] then
+        OatProfile().OATBackgroundBrightness = v
+      end
+		end
+    resetHeader()
+    resetBackground()
+    MESSAGEMAN:Broadcast('UpdateBackgroundShader')
+    SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
 	end
 
   t.LayoutType = 'ShowOneInRow'

@@ -314,4 +314,15 @@
 		UpdateBackgroundShaderTimerCommand="%function(self) self:GetShader():uniform1f('ptime', bgshader_ptime) end"
 	/>
 
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			self:xywh(SCREEN_CENTER_X, SCREEN_CENTER_Y, SCREEN_WIDTH, SCREEN_HEIGHT)
+			self:diffuse(0, 0, 0, 1)
+			self:diffusealpha(1 - (OatProfile().OATBackgroundBrightness or 1))
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			self:diffusealpha(1 - (OatProfile().OATBackgroundBrightness or 1))
+		end"
+	/>
 </children></ActorFrame>
