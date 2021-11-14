@@ -1,5 +1,5 @@
 <ActorFrame> <children>
-	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon() end" />
+	<ActorFrame Command="queuecommand,Icon" IconCommand="%function(self) StyleIcon(); if not OatProfile().OATShowHeaders then SCREENMAN:GetTopScreen():GetChild('StyleIcon'):hidden(1) end end" />
 	<ActorFrame Command="%function() if GAMESTATE:GetCoinMode() == 1 and not GetPref('EventMode') then rateMods = rateModsPay else rateMods = rateModsFree end end" />
 	<Layer 
 		File="@'Banner'..Color()..'.png'"

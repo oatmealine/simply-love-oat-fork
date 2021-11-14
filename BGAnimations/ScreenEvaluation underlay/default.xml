@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<ActorFrame InitCommand="%EvaluationInit" FirstUpdateCommand="%Evaluation" />
-	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon() end" />
+	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon(); if not OatProfile().OATShowHeaders then SCREENMAN:GetTopScreen():GetChild('StyleIcon'):hidden(1) end end" />
 	<ActorFrame
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		Command="x,DoublesOffset()"
