@@ -15,9 +15,11 @@
 		Type="BitmapText"
 		Text=""
 		File="_wendy white"
+		OnCommand="diffusealpha,0;linear,0.2;diffusealpha,1;queuecommand,UpdateCounter"
+		OffCommand="stoptweening;linear,0.2;diffusealpha,0"
 		InitCommand="%function(self)
 		    --self:stoptweening();
-			self:diffuse(0.8, 0.8, 0.8, 1)
+			self:diffuse(0.8, 0.8, 0.8, 0)
 			self:zoom(.2)
 			self:shadowlength(0)
 			self:horizalign('right')
