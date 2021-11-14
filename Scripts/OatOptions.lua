@@ -31,7 +31,9 @@ end
 
 local function resetHeader()
   ScreenThemeOptionsHeader:settext('THEME OPTIONS')
+  ScreenThemeOptionsHeaderTop:hidden(OatProfile().OATShowHeaders and 0 or 1)
   ScreenThemeOptionsHeader:hidden(OatProfile().OATShowHeaders and 0 or 1)
+  SCREENMAN(10):hidden(OatProfile().OATShowHeaders and 0 or 1)
   ResultsAlphaPreview:hidden(1)
 end
 local function resetBackground()
