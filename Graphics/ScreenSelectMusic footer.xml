@@ -58,5 +58,24 @@
 				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0"
 			/>
 		</children> </Layer>
+
+		<Layer Type="ActorFrame" OnCommand="%function(self) if true then self:x(SCREEN_WIDTH - 20) else self:hidden(1) end end" > <children>
+			<Layer
+				Type="BitmapText"
+				Font="_misobold white"
+				Text="Switch Keyboard / Pad"
+				OnCommand="shadowlength,0;x,-15;horizalign,right;vertalign,bottom;zoom,0.2;diffusealpha,0"
+				EnableSelectHelpMessageCommand="stoptweening;linear,0.2;diffusealpha,1"
+				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0"
+			/>
+			<Layer
+				Type="BitmapText"
+				Font="_misobold white"
+				Text="&MENUUP;"
+				OnCommand="shadowlength,0;x,0;y,-2;horizalign,center;vertalign,bottom;zoom,0.5;diffusealpha,0"
+				EnableSelectHelpMessageCommand="stoptweening;linear,0.2;diffusealpha,1"
+				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0"
+			/>
+		</children> </Layer>
 	</children> </Layer>
 </children> </ActorFrame>

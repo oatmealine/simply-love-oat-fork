@@ -491,7 +491,9 @@ end"><children>
 					colors[3] = 0
 				end
 				]] -- looked weird with the newer background approach
-				colors = {1 - (num/5), num/5, 0}
+				local col1 = {252/255, 108/255, 133/255}
+				local col2 = {144/255, 239/255, 144/255}
+				colors = {col1[1] * (1 - num/5) + col2[1] * (num/5), col1[2] * (1 - num/5) + col2[2] * (num/5), col1[3] * (1 - num/5) + col2[3] * (num/5)}
 				return colors
 			end
 
@@ -576,7 +578,9 @@ end"><children>
 					colors[3] = 0
 				end
 				]] -- looked weird with the newer background approach
-				colors = {1 - (num/5), num/5, 0}
+				local col1 = {252/255, 108/255, 133/255}
+				local col2 = {144/255, 239/255, 144/255}
+				colors = {col1[1] * (1 - num/5) + col2[1] * (num/5), col1[2] * (1 - num/5) + col2[2] * (num/5), col1[3] * (1 - num/5) + col2[3] * (num/5)}
 				return colors
 			end
 		
@@ -1277,7 +1281,9 @@ end"><children>
 					colors[3] = 0
 				end
 				]] -- looked weird with the newer background approach
-				colors = {1 - (num/5), num/5, 0}
+				local col1 = {252/255, 108/255, 133/255}
+				local col2 = {144/255, 239/255, 144/255}
+				colors = {col1[1] * (1 - num/5) + col2[1] * (num/5), col1[2] * (1 - num/5) + col2[2] * (num/5), col1[3] * (1 - num/5) + col2[3] * (num/5)}
 				return colors
 			end
 
@@ -1362,7 +1368,9 @@ end"><children>
 					colors[3] = 0
 				end
 				]] -- looked weird with the newer background approach
-				colors = {1 - (num/5), num/5, 0}
+				local col1 = {252/255, 108/255, 133/255}
+				local col2 = {144/255, 239/255, 144/255}
+				colors = {col1[1] * (1 - num/5) + col2[1] * (num/5), col1[2] * (1 - num/5) + col2[2] * (num/5), col1[3] * (1 - num/5) + col2[3] * (num/5)}
 				return colors
 			end
 		

@@ -152,5 +152,39 @@
 	    		if not OatProfile().OATDisplayFriends then self:hidden(1) end
 		end"
 	/>
+
+	<Layer
+		Type="Quad"
+		InitCommand="%function(self)
+			oat_shiftKeyDown = false
+			self:hidden(1)
+
+			print('lol dick')
+
+			for pn = 1, 2 do
+				self:addcommand('EnableSelectHelpMessageCommand', function()
+					oat_shiftKeyDown = true
+					print('shiftkey down')
+				end)
+				self:addcommand('SelectMenuOffMessageCommand', function()
+					oat_shiftKeyDown = false
+					print('shiftkey up')
+				end)
+				self:addcommand('StepP' .. pn .. 'Up' .. 'Press' .. 'Message', function()
+					print('up')
+					if oat_shiftKeyDown then
+						print('yes!!!!')
+					end
+				end)
+			end
+		end"
+
+		StepP1UpPressMessageCommand="%function(self)
+			print('up')
+			if oat_shiftKeyDown then
+				print('yes!!!!')
+			end
+		end"
+	/>
 </children> </ActorFrame>
 
