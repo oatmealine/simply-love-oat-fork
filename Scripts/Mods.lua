@@ -163,7 +163,7 @@ function Diffuse(self,c,n) if not c[4] then c[4] = 1 end if n == 1 then self:dif
 function ApplyMod(mod,pn,f) local m = mod if m then if f then m = f .. '% ' .. m end GAMESTATE:ApplyGameCommand('mod,'..m,pn) end end
 function CheckMod(pn,mod) return mod and GAMESTATE:PlayerIsUsingModifier(pn,mod) end
 function SummaryBranch() ForceSongAndSteps() if not scoreIndex then scoreIndex = 1 end if scoreIndex <= table.getn(AllScores) then return ScreenList('Summary') else scoreIndex = 1 return ScreenList('Ending') end end
-function Clock(val) local t = GlobalClock:GetSecsIntoEffect() if val then t = t - val end return t end
+function Clock(val) local t = GlobalClock and GlobalClock:GetSecsIntoEffect() or 0 if val then t = t - val end return t end
 --function Clock(val) local t = 0 if val then t = t - val end return t end
 function MusicClock() return Screen():GetSecsIntoEffect() end
 
@@ -231,6 +231,7 @@ function HoldCommand(self,n) TrackJudgment(self,n) HoldTween(self) end
 function TrackJudgment(self,j,p)
 	local pn = p or math.max(self:getaux(),1)
 	
+	if not judge then return end
 	judge[pn].Score = GetScore(pn)
 	judge[pn][j] = judge[pn][j] + 1
 	judge[pn].CurDP = judge[pn].CurDP + ScoreWeight(j)

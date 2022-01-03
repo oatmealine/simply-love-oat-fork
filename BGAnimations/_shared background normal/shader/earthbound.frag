@@ -28,7 +28,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     float pixAmt = 60.;
     uv = floor(uv * pixAmt) / pixAmt;
     
-    if (mod(fragCoord.y, 2) < 2 * 0.5) {
+    if (mod(fragCoord.y, 2.0) < 2 * 0.5) {
         uv += 0.1 + sin(ptime * 0.2 + uv.y * 8.) * 0.05;
     } else {
         uv -= 0.1 + sin(ptime * 0.2 + uv.y * 8. + .5) * 0.05;

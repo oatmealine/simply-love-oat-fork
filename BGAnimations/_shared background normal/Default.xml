@@ -317,6 +317,286 @@
 			end
 		end"
 	/>
+	
+	<Layer
+		Type="ActorFrame"
+		OnCommand="%function(self)
+			local c = self:GetChildren()
+			
+			local bg = c[1]
+			
+			local bgpolyx = {}
+			local bgpolyy = {}
+			local bgpolyx2 = {}
+			local bgpolyy2 = {}
+			local sw, sh = SCREEN_WIDTH, SCREEN_HEIGHT
+			
+			for i = 2, 11 do
+				table.insert(bgpolyx, c[i])
+			end
+			for i = 12, 21 do
+				table.insert(bgpolyy, c[i])
+			end
+			for i = 22, 31 do
+				table.insert(bgpolyx2, c[i])
+			end
+			for i = 32, 41 do
+				table.insert(bgpolyy2, c[i])
+			end
+			
+			bg:stretchto(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+			--bg:diffuse(126/255, 254/255, 103/255, 1)
+			bg:diffuse(ColorRGB(0))
+				
+			local overdraw = 10
+			local gridcells = math.min(#bgpolyx, #bgpolyy) - 1
+			local gridsize = 1/gridcells * math.max(sw, sh)
+			local verticesx = sw / gridsize + 2 + overdraw
+			local verticesy = sh / gridsize + 2 + overdraw -- not sure why 2
+
+			--local color = {169/255, 255/255, 154/255}
+			local color = {ColorRGB(0)}
+			color[1] = color[1] + 0.16
+			color[2] = color[2] + 0.2
+			color[3] = color[3] + 0.19
+			
+			local gridalpha = 1
+			local gridoddalpha = 1
+			local randomsize = 0
+
+			for i,p in ipairs(bgpolyx) do
+				p:SetNumVertices(verticesx)
+				p:SetPolygonMode(1)
+				p:SetDrawMode('linestrip')
+				p:SetLineWidth(6)
+
+				p:halign(sw/2)
+				p:valign(sh/2)
+			
+				for v = 0, verticesx - 1 do
+					local y = (i - 0.5) * gridsize
+					local x = (v - 0.5 - overdraw/2) * gridsize
+					
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha)
+					p:SetVertexPosition(v, x + (math.random(1,100)/100*2-1) * randomsize * gridsize, y + (math.random(1,100)/100*2-1) * randomsize * gridsize, 0)
+				end
+			end
+			
+			for i,p in ipairs(bgpolyy) do
+				p:SetNumVertices(verticesy)
+				p:SetPolygonMode(1)
+				p:SetDrawMode('linestrip')
+				p:SetLineWidth(6)
+			
+				p:halign(sw/2)
+				p:valign(sh/2)
+
+				for v = 0, verticesy - 1 do
+					local x = (i - 0.5) * gridsize
+					local y = (v - 0.5 - overdraw/2) * gridsize
+					
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha)
+					p:SetVertexPosition(v, x + (math.random(1,100)/100*2-1) * randomsize * gridsize, y + (math.random(1,100)/100*2-1) * randomsize * gridsize, 0)
+				end
+			end
+
+			for i,p in ipairs(bgpolyx2) do
+				p:SetNumVertices(verticesx)
+				p:SetPolygonMode(1)
+				p:SetDrawMode('linestrip')
+				p:SetLineWidth(5)
+			
+				p:halign(sw/2)
+				p:valign(sh/2)
+				
+				for v = 0, verticesx - 1 do
+					local y = (i - 0.5) * gridsize
+					local x = (v - 0.5 - overdraw/2) * gridsize
+					
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha * 0.6)
+					p:SetVertexPosition(v, x + (math.random(1,100)/100*2-1) * randomsize * gridsize, y + (math.random(1,100)/100*2-1) * randomsize * gridsize, 0)
+				end
+			end
+			
+			for i,p in ipairs(bgpolyy2) do
+				p:SetNumVertices(verticesy)
+				p:SetPolygonMode(1)
+				p:SetDrawMode('linestrip')
+				p:SetLineWidth(5)
+			
+				p:halign(sw/2)
+				p:valign(sh/2)
+				
+				for v = 0, verticesy - 1 do
+					local x = (i - 0.5) * gridsize
+					local y = (v - 0.5 - overdraw/2) * gridsize
+					
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha * 0.6)
+					p:SetVertexPosition(v, x + (math.random(1,100)/100*2-1) * randomsize * gridsize, y + (math.random(1,100)/100*2-1) * randomsize * gridsize, 0)
+				end
+			end
+			
+			self:hidden(0)
+			
+			if OatProfile().OATBackgroundShader == 13 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+		UpdateBackgroundShaderMessageCommand="%function(self)
+			if OatProfile().OATBackgroundShader == 13 then
+				self:hidden(0)
+			else
+				self:hidden(1)
+			end
+		end"
+		ColorSelectedMessageCommand="%function(self)
+			local c = self:GetChildren()
+			
+			local bg = c[1]
+			
+			local bgpolyx = {}
+			local bgpolyy = {}
+			local bgpolyx2 = {}
+			local bgpolyy2 = {}
+			local sw, sh = SCREEN_WIDTH, SCREEN_HEIGHT
+			
+			for i = 2, 11 do
+				table.insert(bgpolyx, c[i])
+			end
+			for i = 12, 21 do
+				table.insert(bgpolyy, c[i])
+			end
+			for i = 22, 31 do
+				table.insert(bgpolyx2, c[i])
+			end
+			for i = 32, 41 do
+				table.insert(bgpolyy2, c[i])
+			end
+			--bg:diffuse(126/255, 254/255, 103/255, 1)
+			bg:diffuse(ColorRGB(0))
+			local overdraw = 10
+			local gridcells = math.min(#bgpolyx, #bgpolyy) - 1
+			local gridsize = 1/gridcells * math.max(sw, sh)
+			local verticesx = sw / gridsize + 2 + overdraw
+			local verticesy = sh / gridsize + 2 + overdraw -- not sure why 2
+			
+			local color = {ColorRGB(0)}
+			color[1] = color[1] + 0.16
+			color[2] = color[2] + 0.2
+			color[3] = color[3] + 0.19
+			local gridalpha = 1
+			local gridoddalpha = 1
+			
+			for i,p in ipairs(bgpolyx) do
+				for v = 0, verticesx - 1 do
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha)
+				end
+			end
+			
+			for i,p in ipairs(bgpolyy) do
+				for v = 0, verticesy - 1 do
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha)
+				end
+			end
+
+			for i,p in ipairs(bgpolyx2) do
+				for v = 0, verticesx - 1 do
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha * 0.6)
+				end
+			end
+			
+			for i,p in ipairs(bgpolyy2) do
+				for v = 0, verticesy - 1 do
+					p:SetVertexColor(v, color[1], color[2], color[3], math.max(v%2, gridoddalpha) * gridalpha * 0.6)
+				end
+			end
+		end"
+		UpdateBackgroundShaderTimerCommand="%function(self)
+			local c = self:GetChildren()
+			
+			local bgpolyx = {}
+			local bgpolyy = {}
+			local bgpolyx2 = {}
+			local bgpolyy2 = {}
+			local sw, sh = SCREEN_WIDTH, SCREEN_HEIGHT
+			
+			for i = 2, 11 do
+				table.insert(bgpolyx, c[i])
+			end
+			for i = 12, 21 do
+				table.insert(bgpolyy, c[i])
+			end
+			for i = 22, 31 do
+				table.insert(bgpolyx2, c[i])
+			end
+			for i = 32, 41 do
+				table.insert(bgpolyy2, c[i])
+			end
+			local gridcells = math.min(#bgpolyx, #bgpolyy) - 1
+			local gridsize = 1/gridcells * math.max(sw, sh)
+			local b = bgshader_ptime * 2
+			for i,p in ipairs(bgpolyx) do
+				p:y((-b * sh/20) % gridsize)
+			end
+			for i,p in ipairs(bgpolyy) do
+				p:x((-b * sw/20) % gridsize)
+			end
+			for i,p in ipairs(bgpolyx2) do
+				p:y((-b * sh/50) % gridsize)
+			end
+			for i,p in ipairs(bgpolyy2) do
+				p:x((-b * sw/50) % gridsize)
+			end
+		end"
+	><children>	
+		<Layer Type = "Quad" Name = "bggreen"/>
+
+		<Layer Type = "Polygon" Name = "bgpolyx[1]"/> <!-- just so i dont forget: x in bgpolyx refers to going forward on the x axis, and staying still on the y axis -->
+		<Layer Type = "Polygon" Name = "bgpolyx[2]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[3]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[4]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[5]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[6]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[7]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[8]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[9]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx[10]"/>
+		
+		<Layer Type = "Polygon" Name = "bgpolyy[1]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[2]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[3]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[4]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[5]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[6]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[7]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[8]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[9]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy[10]"/>
+
+		<Layer Type = "Polygon" Name = "bgpolyx2[1]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[2]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[3]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[4]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[5]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[6]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[7]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[8]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[9]"/>
+		<Layer Type = "Polygon" Name = "bgpolyx2[10]"/>
+		
+		<Layer Type = "Polygon" Name = "bgpolyy2[1]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[2]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[3]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[4]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[5]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[6]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[7]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[8]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[9]"/>
+		<Layer Type = "Polygon" Name = "bgpolyy2[10]"/>
+	</children></Layer>
 
 	<Layer
 		Type="Quad"

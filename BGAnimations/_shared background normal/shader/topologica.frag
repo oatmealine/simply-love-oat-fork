@@ -132,7 +132,7 @@ void main()
 	// Now that we have done our ray marching, let's put some color on this.
 	vec3 finalColor = (color.rgb + vec3(0.0, 0.01, 0.0)) * density*0.2;
 
-    finalColor *= (float(mod(gl_FragCoord.y, 2)) * 0.75 + 0.25);
+    finalColor *= (float(mod(gl_FragCoord.y, 2.0)) * 0.75 + 0.25);
 
 	// output the final color with sqrt for "gamma correction"
 	gl_FragColor = vec4(sqrt(clamp(finalColor, 0.0, 1.0)),color.a);
