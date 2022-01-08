@@ -272,14 +272,16 @@ end"><children>
 			BX_CustomLifeGraph_2bg:hidden(1)
 			BX_CustomLifeGraph_1:hidden(1)
 			BX_CustomLifeGraph_1bg:hidden(1)
-			BX_CustomTimingGraph:hidden(0)
+			BX_CustomTimingGraph1:hidden(0)
+			BX_CustomTimingGraph2:hidden(0)
 		else
 			BX_DisplayedGraph = 'Life'
 			BX_CustomLifeGraph_2:hidden(0)
 			BX_CustomLifeGraph_2bg:hidden(0)
 			BX_CustomLifeGraph_1:hidden(0)
 			BX_CustomLifeGraph_1bg:hidden(0)
-			BX_CustomTimingGraph:hidden(1)
+			BX_CustomTimingGraph1:hidden(1)
+			BX_CustomTimingGraph2:hidden(1)
 		end
 		--SCREENMAN:SystemMessage('Scatterplot Now Displays Custom '..BX_DisplayedGraph..' Graph')
 	end"
@@ -448,10 +450,10 @@ end"><children>
 			if curcard[pn] == 0 then
 				if BX_DisplayedGraph == 'Life' then
 					BX_CustomLifeGraph_1bg:hidden(0)
-					BX_CustomTimingGraph:hidden(1)
+					BX_CustomTimingGraph1:hidden(1)
 				else
 					BX_CustomLifeGraph_1bg:hidden(1)
-					BX_CustomTimingGraph:hidden(0)
+					BX_CustomTimingGraph1:hidden(0)
 				end
 			else
 				self:hidden(1)
@@ -534,10 +536,10 @@ end"><children>
 			if curcard[pn] == 0 then
 				if BX_DisplayedGraph == 'Life' then
 					BX_CustomLifeGraph_1:hidden(0)
-					BX_CustomTimingGraph:hidden(1)
+					BX_CustomTimingGraph1:hidden(1)
 				else
 					BX_CustomLifeGraph_1:hidden(1)
-					BX_CustomTimingGraph:hidden(0)
+					BX_CustomTimingGraph1:hidden(0)
 				end
 			else
 				self:hidden(1)
@@ -878,6 +880,84 @@ end"><children>
 		    
 			p1_avgoffset = judgsum / table.getn(dvt)
 			p1_avgpoffset = judgsump / judgsump_len
+		end"
+		/>
+		
+		
+		<Layer Type="Polygon" DrawMode="LineStrip" 
+		Var="BX_CustomTimingGraph1" 
+		OnCommand="hidden,1;sleep,0;queuecommand,MakeAndUpdate"
+		UpdateSpellDisplayP2MessageCommand="%function(self)
+			local pn = 1
+			if curcard[pn] == 0 then
+				if BX_DisplayedGraph == 'Life' then
+					BX_CustomLifeGraph_2:hidden(0)
+					BX_CustomLifeGraph_2bg:hidden(0)
+					BX_CustomLifeGraph_1:hidden(0)
+					BX_CustomLifeGraph_1bg:hidden(0)
+					BX_CustomTimingGraph1:hidden(1)
+					BX_CustomTimingGraph2:hidden(1)
+				else
+					BX_CustomLifeGraph_2:hidden(1)
+					BX_CustomLifeGraph_2bg:hidden(1)
+					BX_CustomLifeGraph_1:hidden(1)
+					BX_CustomLifeGraph_1bg:hidden(1)
+					BX_CustomTimingGraph1:hidden(0)
+					BX_CustomTimingGraph2:hidden(0)
+				end
+			else
+				self:hidden(1)
+			end
+		end"
+		MakeAndUpdateCommand="%function(self)
+			if GAMESTATE:IsCourseMode() then return end
+			--Trace('HEY! P1 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
+			local pn = 1
+			local ss = STATSMAN:GetCurStageStats()
+			local pss = ss:GetPlayerStageStats(pn-1)
+			local dvt = pss:GetOffsetVector()
+			local nrt = pss:GetNoteRowVector()
+			local mrt = pss.GetMineRowVector and 
+						pss:GetMineRowVector() or {}
+			local nrs = pss:GetNoteSongVector()
+			local vert = 0;
+			local totaldvt = 0
+			local avdvt = 0
+			
+			self:diffusealpha(0.5)
+			self:glowshift()
+			self:effectperiod(4)
+			self:effectcolor1(0,0,0,0)
+			self:effectcolor1(1,0,0,0.5)
+			self:SetNumVertices(table.getn(nrt))
+			for a = 1,table.getn(nrt) do
+				totaldvt = 0
+				local avcount = 0
+				local x = oplot_fitX(nrt[a]/48)
+				
+				for t = -15,15 do
+					if nrt[a+t] then
+						totaldvt = totaldvt + dvt[a+t]
+						avcount = avcount + 1
+						avdvt = totaldvt / avcount
+						
+						if math.abs(avdvt) > 1000 then
+							avdvt = 1000
+						end
+						--Trace('### NRT '..a..' - '..dvt[a+t]..'')
+					end
+				end
+				
+				local y = oplot_fitY(avdvt)
+				
+				if math.abs(y) > oplot_plotHeight/2 then
+					y = oplot_fitY(oplot_maxOffset+4)
+				end
+					
+					self:SetVertexPosition(a-1,x,y,0)
+					self:SetVertexColor(a-1,1,1,1,1)
+			end
+			self:SetLineWidth(3)
 		end"
 		/>
 		
@@ -1260,10 +1340,10 @@ end"><children>
 			if curcard[pn] == 0 then
 				if BX_DisplayedGraph == 'Life' then
 					BX_CustomLifeGraph_2bg:hidden(0)
-					BX_CustomTimingGraph:hidden(1)
+					BX_CustomTimingGraph2:hidden(1)
 				else
 					BX_CustomLifeGraph_2bg:hidden(1)
-					BX_CustomTimingGraph:hidden(0)
+					BX_CustomTimingGraph2:hidden(0)
 				end
 			else
 				self:hidden(1)
@@ -1346,10 +1426,10 @@ end"><children>
 			if curcard[pn] == 0 then
 				if BX_DisplayedGraph == 'Life' then
 					BX_CustomLifeGraph_2:hidden(0)
-					BX_CustomTimingGraph:hidden(1)
+					BX_CustomTimingGraph2:hidden(1)
 				else
 					BX_CustomLifeGraph_2:hidden(1)
-					BX_CustomTimingGraph:hidden(0)
+					BX_CustomTimingGraph2:hidden(0)
 				end
 			else
 				self:hidden(1)
@@ -1689,7 +1769,7 @@ end"><children>
 		/>
 
 		<Layer Type="Polygon" DrawMode="LineStrip" 
-		Var="BX_CustomTimingGraph" 
+		Var="BX_CustomTimingGraph2" 
 		OnCommand="hidden,1;sleep,0;queuecommand,MakeAndUpdate"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
@@ -1699,13 +1779,15 @@ end"><children>
 					BX_CustomLifeGraph_2bg:hidden(0)
 					BX_CustomLifeGraph_1:hidden(0)
 					BX_CustomLifeGraph_1bg:hidden(0)
-					BX_CustomTimingGraph:hidden(1)
+					BX_CustomTimingGraph1:hidden(1)
+					BX_CustomTimingGraph2:hidden(1)
 				else
 					BX_CustomLifeGraph_2:hidden(1)
 					BX_CustomLifeGraph_2bg:hidden(1)
 					BX_CustomLifeGraph_1:hidden(1)
 					BX_CustomLifeGraph_1bg:hidden(1)
-					BX_CustomTimingGraph:hidden(0)
+					BX_CustomTimingGraph1:hidden(0)
+					BX_CustomTimingGraph2:hidden(0)
 				end
 			else
 				self:hidden(1)
