@@ -880,6 +880,28 @@ end"><children>
 			p1_avgpoffset = judgsump / judgsump_len
 		end"
 		/>
+		
+		<Layer Type="ActorFrame" InitCommand="%function(self)
+			for _, r in ipairs(BX_SaltyResetPos) do
+				local x = oplot_fitX(r, 1)
+				print(x)
+			end
+			self:SetDrawFunction(function()
+				local q = self(1)
+				local t = self(2)
+				
+				for _, r in ipairs(BX_SaltyResetPos) do
+					local x = oplot_fitX(r, 1)
+					q:x(x)
+					t:x(x + 3)
+					q:Draw()
+					t:Draw()
+				end
+			end)
+		end"><children>
+			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
+			<Layer Type="BitmapText" File="_misoreg small" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+		</children></Layer>
 
 		<!-- Early/late markers -->
 		<Layer Type="BitmapText" File="_misoreg small"
@@ -1740,6 +1762,28 @@ end"><children>
 			self:SetLineWidth(3)
 		end"
 		/>
+		
+		<Layer Type="ActorFrame" InitCommand="%function(self)
+			for _, r in ipairs(BX_SaltyResetPos) do
+				local x = oplot_fitX(r, 1)
+				print(x)
+			end
+			self:SetDrawFunction(function()
+				local q = self(1)
+				local t = self(2)
+				
+				for _, r in ipairs(BX_SaltyResetPos) do
+					local x = oplot_fitX(r, 1)
+					q:x(x)
+					t:x(x + 3)
+					q:Draw()
+					t:Draw()
+				end
+			end)
+		end"><children>
+			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
+			<Layer Type="BitmapText" File="_misoreg small" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+		</children></Layer>
 
 		<!-- Early/late markers -->
 		<Layer Type="BitmapText" File="_misoreg small"

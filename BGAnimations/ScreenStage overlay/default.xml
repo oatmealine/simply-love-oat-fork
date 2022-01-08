@@ -40,6 +40,8 @@
 			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
 			BX_DisplayedGraph = 'Life'
 			BX_SaltyResets = 0
+			
+			BX_SaltyResetPos = {}
 		end"
 	/>
 </children></ActorFrame>
