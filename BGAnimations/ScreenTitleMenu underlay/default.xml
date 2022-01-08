@@ -717,10 +717,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Cooly -->
+			<!-- Mallow -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Cooly!"
+				Text="Happy Birthday Mallow!"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 1"
 				Font="_wendy white"
 				OnCommand="rainbow"
