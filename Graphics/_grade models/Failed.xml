@@ -2,7 +2,7 @@
 	OnCommand="%function(self)
 	    local children = self:GetChildren()
 	    math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
-	    local fail = math.random(1, 46)
+	    local fail = math.random(1, 60)
 	    local actor = children[1]
 	    if OatProfile().OATFailGifs then
 	      actor:Load(Path('Graphics', '_grade models/fail/fail' .. fail))
