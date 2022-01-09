@@ -164,6 +164,20 @@ ScreenEvaluationStageHeaderTexts = {
   'beep',
   'skill issue',
   '#score-share be like',
+  'ONYON did nothing wrong',
+  'if you can read this, you\'re cute',
+  'liver',
+  ':clueless:',
+  ':heeeh:',
+  'are you a player? or are you a GAMER',
+  'congratulations! it\'s a boy!',
+  'MURD will win OISRT',
+  'this is a 14, actually',
+  'eat ass',
+  'go touch grass',
+  'slaps own ass',
+  'Wordle 202',
+  'https://www.google.com',
 }
 function ScreenEvaluationStageHeaderTextSet(self)
   local t = ScreenEvaluationStageHeaderTexts[math.random(1, #ScreenEvaluationStageHeaderTexts)]
