@@ -79,6 +79,7 @@ ScreenSelectMusicHeaderTexts = {
   'the j',
   'why can\'t eggs have love',
   'yop',
+  'bd9b2458e8f46511cdca1c6a04aeabdc65e6cd32 114.59% {"decent":50,"excellent":327,"fantastic":377,"great":7,"hold_ng":0,"hold_ok":0,"mines":0,"miss":0,"way_off":0} 2021-12-18 18:46:33 (UTC)'
 }
 function ScreenSelectMusicHeaderTextSet(self)
   local t = ScreenSelectMusicHeaderTexts[math.random(1, #ScreenSelectMusicHeaderTexts)]
