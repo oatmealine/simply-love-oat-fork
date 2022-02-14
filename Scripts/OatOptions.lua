@@ -99,7 +99,8 @@ end
 function OptionBackgroundShader()
   local t = OptionRowBase('BackgroundShader')
 	t.OneChoiceForAllPlayers = true
-	t.Choices = {'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag', 'descent.frag', 'rez_dubstepmyass.frag', 'rez_mynameisjulia.frag', 'rez_roadtohell.frag', 'rez_structures.frag', 'rez_thedescent.frag', 'solid color', 'star factory'}
+	t.Choices = {'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag', 'descent.frag', 'rez_dubstepmyass.frag',
+	'rez_mynameisjulia.frag', 'rez_roadtohell.frag', 'rez_structures.frag', 'rez_thedescent.frag', 'solid color', 'star factory', 'glacia'}
     t.LoadSelections = function(self, list) if OatProfile().OATBackgroundShader then list[OatProfile().OATBackgroundShader] = true else list[1] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATBackgroundShader = 1 end
@@ -115,10 +116,11 @@ function OptionBackgroundShader()
 		if list[11] then OatProfile().OATBackgroundShader = 11 end
 		if list[12] then OatProfile().OATBackgroundShader = 12 end
 		if list[13] then OatProfile().OATBackgroundShader = 13 end
+		if list[14] then OatProfile().OATBackgroundShader = 14 end
     MESSAGEMAN:Broadcast('UpdateBackgroundShader')
 
     SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
-    if list[4] or list[6] or list[7] or list[8] or list[9] or list[10] or list[11] then
+    if list[4] or list[6] or list[7] or list[8] or list[9] or list[10] or list[11] or list[14] then
       ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
     else
       resetHeader()
