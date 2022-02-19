@@ -1,11 +1,11 @@
 <ActorFrame InitCommand="queuecommand,Update"
 	UpdateCommand="%function(self)
-		bgshader_ptime = (bgshader_ptime or 0) + 1/140
+		bgshader_ptime = os.clock()
 		--MESSAGEMAN:Broadcast('UpdateBackgroundShaderTimer')
 		for i,v in ipairs(self:GetChildren()) do
 			v:queuecommand('UpdateBackgroundShaderTimer')
 		end
-		self:sleep(1/140)
+		self:sleep(1/60)
 		self:queuecommand('Update')
 	end"><children>
 	<Layer

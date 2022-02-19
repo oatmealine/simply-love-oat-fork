@@ -482,10 +482,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- PokéJoshua -->
+			<!-- PokéLily -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday PokeJoshua!"
+				Text="Happy Birthday PokeLily!"
 				Condition="DayOfMonth() == 3 and MonthOfYear() == 2"
 				Font="_wendy white"
 				OnCommand="rainbow"

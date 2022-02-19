@@ -118,6 +118,7 @@
 	    		
 			local friends = {
 				{'groove.gif', 0.2},
+				{'jevil.gif', 0.2},
 				{'karen.png'},
 				
 				{'pixelfriends_ayaze.png'},
