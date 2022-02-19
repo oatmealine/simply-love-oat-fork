@@ -113,16 +113,16 @@
 			self:x(120)
 			self:y(SCREEN_HEIGHT-120)
 			
-			self:effectclock('bgm')
 			self:effectoffset(0.2)
 	    		
 			local friends = {
 				{'groove.gif', 0.2},
 				{'jevil.gif', 0.2},
+				{'based-and-blessed-alice.gif', 0, 0},
 				{'karen.png'},
 				
 				{'pixelfriends_ayaze.png'},
-				--{'pixelfriends_forgothername.png'},
+				--{'pixelfriends_ama.png'},
 				--{'pixelfriends_laer.png'},
 				--{'pixelfriends_mimi.png'},
 				--{'pixelfriends_peeesh.png'},
@@ -137,6 +137,9 @@
 			  self:bounce()
 			  self:effectmagnitude(0, -30, 0)
 			  self:effectperiod(1)
+			end
+			if not s[3] then -- I'm sorry
+				self:effectclock('bgm')
 			end
 			
 			-- scaling nonsense
