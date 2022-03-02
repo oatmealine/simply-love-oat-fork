@@ -120,13 +120,21 @@
 				{'jevil.gif', 0.2},
 				{'based-and-blessed-alice.gif', 0, 0},
 				{'karen.png'},
+				{'BONZI.png'},
 				
-				{'pixelfriends_ayaze.png'},
 				--{'pixelfriends_ama.png'},
-				--{'pixelfriends_laer.png'},
+				--{'pixelfriends_ashe.png'},
+				--{'pixelfriends_chan.png'},
 				--{'pixelfriends_mimi.png'},
-				--{'pixelfriends_peeesh.png'},
+				--{'pixelfriends_laer.png'},
+				{'pixelfriends_ayaze.png'},
 				{'pixelfriends_shame.png'},
+				{'pixelfriends_scold.png'},
+				--{'pixelfriends_cursor.png'},
+				--{'pixelfriends_uac.png'},
+				--{'pixelfriends_ccleaner.png'},
+				--{'pixelfriends_defender.png'},
+				{'pixelfriends_peeesh.png'},
 			}
 	    		math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    		local s = friends[math.random(1, #friends)]
