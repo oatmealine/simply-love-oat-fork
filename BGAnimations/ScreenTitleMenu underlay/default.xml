@@ -654,10 +654,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Aelteria -->
+			<!-- Tari | Puuro -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Tari!"
+				Text="Happy Birthday Tari and Puuro!"
 				Condition="DayOfMonth() == 5 and MonthOfYear() == 4"
 				Font="_wendy white"
 				OnCommand="diffuse,.2,1,.3,1"
