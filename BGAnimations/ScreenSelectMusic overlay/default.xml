@@ -135,6 +135,8 @@
 				--{'pixelfriends_ccleaner.png'},
 				--{'pixelfriends_defender.png'},
 				{'pixelfriends_peeesh.png'},
+				{'ddr-dance-1.gif', 0.2},
+				{'ddr-dance-2.gif', 0.2},
 			}
 	    		math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    		local s = friends[math.random(1, #friends)]
