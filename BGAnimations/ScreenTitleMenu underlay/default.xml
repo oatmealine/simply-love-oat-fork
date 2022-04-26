@@ -726,6 +726,15 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
+			<!-- NotITGfan61 -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday NotITGfan61!"
+				Condition="DayOfMonth() == 4 and MonthOfYear() == 26"
+				Font="_wendy white"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
 			<!-- YOSEFU | couldn't find their birthday
 			<AutoActor
 				Type="BitmapText"
