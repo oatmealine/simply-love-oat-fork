@@ -49,16 +49,22 @@
 
 		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+75;y,SCREEN_CENTER_Y-42"> <children>
 			<Layer Type="BitmapText" Font="_misobold white" Text="Fanta"
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('FANTASTIC') end end"
 			OnCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1"/>
 			<Layer Type="BitmapText" Font="_misobold white" Text="Exclennet"
-			OnCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1"/>
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('EXCELLENT') end end"
+			OnCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text='"Great"'
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('GREAT') end end"
 			OnCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text="Decent"
-			OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1" InitCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('DECENT') end end"
+			OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"
-			OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1" InitCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('WAY OFF') end end"
+			OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('MISS') end end"
 			OnCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1" />
 		</children> </Layer>
 		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+205;y,SCREEN_CENTER_Y-42"> <children>
@@ -70,16 +76,22 @@
 
 		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-75;y,SCREEN_CENTER_Y-42"> <children>
 			<Layer Type="BitmapText" Font="_misobold white" Text="Fanta"
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('FANTASTIC') end end"
 			OnCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1"/>
 			<Layer Type="BitmapText" Font="_misobold white" Text="Exclennet"
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('EXCELLENT') end end"
 			OnCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1"/>
 			<Layer Type="BitmapText" Font="_misobold white" Text='"Great"'
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('GREAT') end end"
 			OnCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text="Decent"
-			OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1" InitCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('DECENT') end end"
+			OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"
-			OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1" InitCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('WAY OFF') end end"
+			OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1" />
 			<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"
+			InitCommand="%function(self) if OatProfile().OATResultText == 3 then self:settext('MISS') end end"
 			OnCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1" />
 		</children> </Layer>
 		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-250;y,SCREEN_CENTER_Y-42"> <children>

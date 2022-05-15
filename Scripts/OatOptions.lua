@@ -11,8 +11,9 @@ end
 
 -- set defaults
 OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
-OatProfile().OATDisplayFriends = OatProfile().OATDisplayFriends == nil and true or OatProfile().OATDisplayFriends
-OatProfile().OATFailGifs = OatProfile().OATFailGifs == nil and true or OatProfile().OATFailGifs
+OatProfile().OATDisplayFriendZ = OatProfile().OATDisplayFriendZ or 1
+OatProfile().OATResultGif = OatProfile().OATResultGif or 2
+OatProfile().OATResultText = OatProfile().OATResultText or 2
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
 OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 2 -- floating point
@@ -71,25 +72,45 @@ end
 function OptionDisplaySongSelectFriends()
   local t = OptionRowBase('SongSelectFriends')
 	t.OneChoiceForAllPlayers = true
-	t.Choices = {'On', 'Off'}
-  t.LoadSelections = function(self, list) if OatProfile().OATDisplayFriends then list[1] = true else list[2] = true end end
+	t.Choices = {'Mix Random', 'PixelJumpers', 'PixelJumpers+', 'Just SHAME', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATDisplayFriendZ then list[OatProfile().OATDisplayFriendZ] = true else list[1] = true end end
 	t.SaveSelections = function(self, list)
-		if list[1] then OatProfile().OATDisplayFriends = true  end
-		if list[2] then OatProfile().OATDisplayFriends = false end
+		if list[1] then OatProfile().OATDisplayFriendZ = 1 end
+		if list[2] then OatProfile().OATDisplayFriendZ = 2 end
+		if list[3] then OatProfile().OATDisplayFriendZ = 3 end
+		if list[4] then OatProfile().OATDisplayFriendZ = 4 end
+		if list[5] then OatProfile().OATDisplayFriendZ = 5 end
     resetHeader()
     resetBackground()
 	end
   return t
 end
 
-function OptionDisplayFailImages()
-  local t = OptionRowBase('RandomFailGIFs')
+function OptionDisplayResultGIF()
+  local t = OptionRowBase('ResultGradeGIF')
 	t.OneChoiceForAllPlayers = true
-	t.Choices = {'On', 'Off'}
-  t.LoadSelections = function(self, list) if OatProfile().OATFailGifs then list[1] = true else list[2] = true end end
+	t.Choices = {'On', 'FunnyFail', 'Off', 'FunnyFail-ONLY'}
+  t.LoadSelections = function(self, list) if OatProfile().OATResultGif then list[OatProfile().OATResultGif] = true else list[2] = true end end
 	t.SaveSelections = function(self, list)
-		if list[1] then OatProfile().OATFailGifs = true  end
-		if list[2] then OatProfile().OATFailGifs = false end
+		if list[1] then OatProfile().OATResultGif = 1 end
+		if list[2] then OatProfile().OATResultGif = 2 end
+		if list[3] then OatProfile().OATResultGif = 3 end
+		if list[4] then OatProfile().OATResultGif = 4 end
+    resetHeader()
+    resetBackground()
+	end
+  return t
+end
+
+function OptionDisplayResultFunnyText()
+  local t = OptionRowBase('ResultFunnyJudge')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {'Text Only', 'Text with Animation', 'Off'}
+  t.LoadSelections = function(self, list) if OatProfile().OATResultText then list[OatProfile().OATResultText] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then OatProfile().OATResultText = 1 end
+		if list[2] then OatProfile().OATResultText = 2 end
+		if list[3] then OatProfile().OATResultText = 3 end
     resetHeader()
     resetBackground()
 	end
