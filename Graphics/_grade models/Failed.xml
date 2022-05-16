@@ -4,12 +4,15 @@
 	    math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    local fail = math.random(1, 60)
 	    local actor = children[1]
-	    if OatProfile().OATFailGifs then
+	    if OatProfile().OATResultGif == 1 then
+	      actor:Load(Path('Graphics', '_grade models/f.gif'))
+	      actor:zoom(0.5)
+	    elseif OatProfile().OATResultGif == 3 then
+	      actor:Load(Path('Graphics', '_grade models/f.png'))
+	      actor:zoom(0.5)
+	    else
 	      actor:Load(Path('Graphics', '_grade models/fail/fail' .. fail))
 	      actor:stretchto(-25, -25, 50, 50)
-	    else
-	      actor:Load(Path('Graphics', '_grade models/f.gif'))
-	      actor:zoom(0.85)
 	    end
 	end"
 >

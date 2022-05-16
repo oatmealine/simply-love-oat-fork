@@ -1,7 +1,14 @@
 <ActorFrame>
 	<children>
 		<ActorFrame
-			OnCommand="zoom,0.85"
+			OnCommand="%function(self)
+			    local children = self:GetChildren()
+			    local actor = children[1]
+			    if OatProfile().OATResultGif > 2 then
+			      actor:Load(Path('Graphics', '_grade models/s.png'))
+			    end
+			    actor:zoom(0.85)
+			end"
 		>
 			<children>
 				<Actor

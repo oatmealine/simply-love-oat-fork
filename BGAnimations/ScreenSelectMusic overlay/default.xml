@@ -115,7 +115,8 @@
 			
 			self:effectoffset(0.2)
 	    		
-			local friends = {
+			local friends
+			if OatProfile().OATDisplayFriendZ == 1 then friends = {
 				{'groove.gif', 0.2},
 				{'jevil.gif', 0.2},
 				{'based-and-blessed-alice.gif', 0, 0},
@@ -137,7 +138,35 @@
 				{'pixelfriends_peeesh.png'},
 				{'ddr-dance-1.gif', 0.2},
 				{'ddr-dance-2.gif', 0.2},
-			}
+			} elseif OatProfile().OATDisplayFriendZ == 2 then friends = {
+				--{'pixelfriends_ama.png'},
+				--{'pixelfriends_ashe.png'},
+				--{'pixelfriends_chan.png'},
+				--{'pixelfriends_mimi.png'},
+				--{'pixelfriends_laer.png'},
+				{'pixelfriends_ayaze.png'},
+				{'pixelfriends_shame.png'},
+				{'pixelfriends_scold.png'},
+				--{'pixelfriends_cursor.png'},
+				--{'pixelfriends_uac.png'},
+				--{'pixelfriends_ccleaner.png'},
+				--{'pixelfriends_defender.png'},
+				{'pixelfriends_peeesh.png'},
+			} elseif OatProfile().OATDisplayFriendZ == 3 then friends = {
+				{'pixelfriends_ama.png'},
+				{'pixelfriends_ashe.png'},
+				{'pixelfriends_chan.png'},
+				{'pixelfriends_mimi.png'},
+				{'pixelfriends_laer.png'},
+				{'pixelfriends_ayaze.png'},
+				{'pixelfriends_shame.png'},
+				{'pixelfriends_scold.png'},
+				{'pixelfriends_cursor.png'},
+				{'pixelfriends_uac.png'},
+				{'pixelfriends_ccleaner.png'},
+				{'pixelfriends_defender.png'},
+				{'pixelfriends_peeesh.png'},
+ 			} else friends = { {'pixelfriends_shame.png'} } end
 	    		math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    		local s = friends[math.random(1, #friends)]
 			self:Load(Path('BGAnimations', 'ScreenSelectMusic overlay/friends/' .. s[1]))
@@ -163,7 +192,7 @@
 	    		self:diffusealpha(0.9)
 	    		self:texturefiltering(false)
 	    		
-	    		if not OatProfile().OATDisplayFriends then self:hidden(1) end
+	    		if OatProfile().OATDisplayFriendZ == 5 then self:hidden(1) end
 		end"
 	/>
 

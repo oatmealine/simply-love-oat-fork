@@ -15,22 +15,28 @@
 		        SCREENMAN:GetTopScreen():GetChild('MissNumberP1')
 		    }
 		    
-		    -- funny number detection
-		    local funy = {'  69', ' 420', ' 621', ' 666', ' 403'}
-		    for _,j in ipairs(judg) do
-		        for _,f in ipairs(funy) do
-		            if j:GetText() == f then
-		                j:rainbow()
-		            end
-		        end
-		    end
-		    
 		    -- pfc
-		    if judg[2]:GetText() == '  0' and judg[3]:GetText() == '  0' and judg[4]:GetText() == '  0' and judg[5]:GetText() == '  0' and judg[6]:GetText() == '  0' then
+		    if judg[1]:GetText() ~= '   0' and judg[2]:GetText() == '   0' and judg[3]:GetText() == '   0' and judg[4]:GetText() == '   0' and judg[5]:GetText() == '   0' and judg[6]:GetText() == '   0' then
 		        self:rainbow()
 		    end
+		    
+		    -- funny number detection
+		    if OatProfile().OATResultText < 3 then
+			    local funy = {'  69', ' 420', ' 621', ' 666', ' 403'}
+			    for _,j in ipairs(judg) do
+			        for _,f in ipairs(funy) do
+			            if j:GetText() == f then
+			                j:rainbow()
+			            end
+			        end
+			    end
+		    end
+		    
+		    if OatProfile().OATResultText == 3 then self:settext('FANTASTIC')
+		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1);self:decelerate(0.5);self:zoom(0.35);
+		    end
 		end"
-		OnCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1;decelerate,0.5;zoom,0.35;"
+		OnCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1;"
         UpdateSpellDisplayP1MessageCommand="%function(self) 
             if sorae_fuck1a == -1 then 
                 self:hidden(0) 
@@ -42,8 +48,13 @@
             sorae_fuck1a = -sorae_fuck1a 
         end"/>
 		<Layer Type="BitmapText" Font="_misobold white" Text="Exclennet"	
-		InitCommand="%function(self) sorae_fuck1b = 1 end" 
-		OnCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1.25;decelerate,0.5;zoom,0.35;"
+		InitCommand="%function(self) sorae_fuck1b = 1; self:queuecommand('Update'); end" 
+		UpdateCommand="%function(self)
+		    if OatProfile().OATResultText == 3 then self:settext('EXCELLENT')
+		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.25);self:decelerate(0.5);self:zoom(0.35);
+		    end
+		end"
+		OnCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1;"
         UpdateSpellDisplayP1MessageCommand="%function(self) 
             if sorae_fuck1b == -1 then 
                 self:hidden(0) 
@@ -54,10 +65,38 @@
             end; 
             sorae_fuck1b = -sorae_fuck1b
         end"/>
-		<Layer Type="BitmapText" Font="_misobold white" Text='"Great"'		OnCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1.5;decelerate,0.5;zoom,0.35;" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="Decent"	OnCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;zoom,0;sleep,1.75;decelerate,0.5;zoom,0.35;" InitCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"	OnCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;zoom,0;sleep,2;decelerate,0.5;zoom,0.35;" InitCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"		OnCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1;zoom,0;sleep,2.25;decelerate,3;zoom,0.35;rotationz,-1800;rotationy,7200;rotationx,-720;" />
+		<Layer Type="BitmapText" Font="_misobold white" Text='"Great"'
+		InitCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1;"
+		OnCommand="%function(self)
+		    if OatProfile().OATResultText == 3 then self:settext('GREAT')
+		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.5);self:decelerate(0.5);self:zoom(0.35);
+		    end
+		end" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Decent"
+		InitCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;"
+		OnCommand="%function(self)
+		    self:queuecommand('Update');
+		    if OatProfile().OATResultText == 3 then self:settext('DECENT')
+		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.75);self:decelerate(0.5);self:zoom(0.35);
+		    end
+		end"
+		UpdateCommand="%function(self) if SCREENMAN:GetTopScreen():GetChild('GoodNumberP1'):GetText() == '   0' then self:diffuse(.5,.5,.5,.5) end end" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"
+		InitCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;"
+		OnCommand="%function(self)
+		    self:queuecommand('Update');
+		    if OatProfile().OATResultText == 3 then self:settext('WAY OFF')
+		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(2);self:decelerate(0.5);self:zoom(0.35);
+		    end
+		end"
+		UpdateCommand="%function(self) if SCREENMAN:GetTopScreen():GetChild('BooNumberP1'):GetText() == '   0' then self:diffuse(.5,.5,.5,.5) end end" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"
+		InitCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1;"
+		OnCommand="%function(self)
+		    if OatProfile().OATResultText == 3 then self:settext('MISS')
+		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(2.25);self:decelerate(3);self:zoom(0.35);self:rotationz(-1800);self:rotationy(7200);self:rotationx(-720);
+		    end
+		end" />
 	</children> </Layer>
 	<Layer Type="ActorFrame" OnCommand="x,-110;y,-97"> <children>
 		<Layer Type="BitmapText" Font="_misobold white" Text="Holds"		OnCommand="y,27*2;zoom,0.35;diffuse,0.0235294117647059,0.9725490196078431,0.7490196078431373,1;horizalign,right;ShadowLength,1" />
