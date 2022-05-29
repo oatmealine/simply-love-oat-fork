@@ -166,7 +166,29 @@
 				{'pixelfriends_ccleaner.png'},
 				{'pixelfriends_defender.png'},
 				{'pixelfriends_peeesh.png'},
- 			} else friends = { {'pixelfriends_shame.png'} } end
+ 			} elseif OatProfile().OATDisplayFriendZ == 4 then friends = { 
+ 				{'pixelfriends_shame.png'} 
+ 			} elseif OatProfile().OATDisplayFriendZ == 5 then friends = {
+ 				{'karen.png'},
+ 				{'dave.png'},
+ 				{'z.png'},
+ 				{'kevin.png'},
+ 				{'mike.png'},
+ 				{'osaki.png'},
+ 				{'timothy.png'},
+ 				{'jim.png'},
+ 				{'ram.png'},
+ 				{'steve.png'},
+ 				{'sarah.png'},
+ 				{'vox.png'},
+ 				{'no.png'},
+ 				{'chris_from_onesot.png'},
+ 				{'sam.png'},
+ 				{'wambi.png'},
+ 				{'bim.png'},
+ 				{'meal.png'},
+ 				{'pesh.png'}
+ 			} end
 	    		math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    		local s = friends[math.random(1, #friends)]
 			self:Load(Path('BGAnimations', 'ScreenSelectMusic overlay/friends/' .. s[1]))
@@ -192,7 +214,7 @@
 	    		self:diffusealpha(0.9)
 	    		self:texturefiltering(false)
 	    		
-	    		if OatProfile().OATDisplayFriendZ == 5 then self:hidden(1) end
+	    		if OatProfile().OATDisplayFriendZ == 6 then self:hidden(1) end
 		end"
 	/>
 

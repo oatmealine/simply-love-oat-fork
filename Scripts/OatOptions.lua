@@ -72,7 +72,7 @@ end
 function OptionDisplaySongSelectFriends()
   local t = OptionRowBase('SongSelectFriends')
 	t.OneChoiceForAllPlayers = true
-	t.Choices = {'Mix Random', 'PixelJumpers', 'PixelJumpers+', 'Just SHAME', 'Off'}
+	t.Choices = {'Mix Random', 'PixelJumpers', 'PixelJumpers+', 'Just SHAME', 'Karens', 'Off'}
   t.LoadSelections = function(self, list) if OatProfile().OATDisplayFriendZ then list[OatProfile().OATDisplayFriendZ] = true else list[1] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATDisplayFriendZ = 1 end
@@ -80,6 +80,7 @@ function OptionDisplaySongSelectFriends()
 		if list[3] then OatProfile().OATDisplayFriendZ = 3 end
 		if list[4] then OatProfile().OATDisplayFriendZ = 4 end
 		if list[5] then OatProfile().OATDisplayFriendZ = 5 end
+		if list[6] then OatProfile().OATDisplayFriendZ = 6 end
     resetHeader()
     resetBackground()
 	end
