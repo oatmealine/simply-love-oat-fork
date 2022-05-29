@@ -20,6 +20,7 @@ Do note this list is slightly inaccurate as I've only done this when pushing thi
 - Groove Nights-like playtime
 - QUICK quick play (instant song wheel)
 - 57:8 aspect ratio support (oat what)
+- Lots of friends ! (lots. really.)
 - *Just, in general, tons of weird meme additions and annoyances*
 
 (Pixel chars art mostly by [pixloen](https://twitter.com/pixloen))
