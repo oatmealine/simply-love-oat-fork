@@ -188,7 +188,10 @@
  				{'bim.png'},
  				{'meal.png'},
  				{'pesh.png'}
- 			} end
+ 			} else friends = {
+			   {groove.gif, 0.2} --[[this should be hidden and it shouldn't crash when turning off friends
+						if it doesn't do any of those, then i have no idea]]
+			   } end
 	    		math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    		local s = friends[math.random(1, #friends)]
 			self:Load(Path('BGAnimations', 'ScreenSelectMusic overlay/friends/' .. s[1]))
