@@ -69,7 +69,7 @@ end"> <children>
 		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
 		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,0;zoomy,3;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(1);self:accelerate(0.5) end
+			if OatProfile().OATResultText==2 then self:sleep(1);self:decelerate(0.5) end
 			if otaJudgeTotalP2>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):GetText())
 				if count==otaJudgeTotalP2 then self:zoomx(125); self:rainbow()
@@ -80,7 +80,7 @@ end"> <children>
 		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
 		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(1.25);self:accelerate(0.5) end
+			if OatProfile().OATResultText==2 then self:sleep(1.25);self:decelerate(0.5) end
 			if otaJudgeTotalP2>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'):GetText())
 				if count==otaJudgeTotalP2 then self:zoomx(125); self:rainbow()
