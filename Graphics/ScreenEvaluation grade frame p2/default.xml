@@ -136,4 +136,3 @@ end"> <children>
 		<Layer Type="BitmapText" Font="_misobold white" Text="Rolls" OnCommand="y,27*5;zoom,0.35;diffuse,0.0274509803921569,0.6117647058823529,0.2235294117647059,1;horizalign,right;ShadowLength,1" />
 	</children> </Layer>
 </children> </ActorFrame>
-
