@@ -28,7 +28,7 @@ end"> <children>
 					else self:diffuse(1,1,1,0) 
 					end
 					self:settext(string.format('%s: %.2f%%  (%s%.2f%%)',
-						PROFILEMAN:IsPersistentProfile(pn) and 'CRAD' or 'BEST',
+						PROFILEMAN:IsPersistentProfile(pn) and 'CARD' or 'BEST',
 						_G['uksrt_cached_highscore_'..pn]*100,
 						(perc<_G['uksrt_cached_highscore_'..pn]) and '' or '+',
 						(perc-_G['uksrt_cached_highscore_'..pn])*100
@@ -57,7 +57,7 @@ end"> <children>
 					else self:diffuse(1,1,1,0) 
 					end
 					self:settext(string.format('%s: %.2f%%  (%s%.2f%%)',
-						PROFILEMAN:IsPersistentProfile(pn) and 'CRAD' or 'BEST',
+						PROFILEMAN:IsPersistentProfile(pn) and 'CARD' or 'BEST',
 						_G['uksrt_cached_highscore_'..pn]*100,
 						(perc<_G['uksrt_cached_highscore_'..pn]) and '' or '+',
 						(perc-_G['uksrt_cached_highscore_'..pn])*100
