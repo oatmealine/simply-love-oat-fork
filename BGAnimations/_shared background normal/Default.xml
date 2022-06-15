@@ -1,4 +1,8 @@
-<ActorFrame InitCommand="queuecommand,Update"
+<ActorFrame
+	InitCommand="%function(self)
+		otaBackgroundActualNo = OatProfile(true).OATBackgroundShader
+		self:queuecommand('Update')
+	end"
 	UpdateCommand="%function(self)
 		bgshader_ptime = os.clock()
 		--MESSAGEMAN:Broadcast('UpdateBackgroundShaderTimer')
@@ -7,6 +11,9 @@
 		end
 		self:sleep(1/60)
 		self:queuecommand('Update')
+	end"
+	UpdateBackgroundShaderMessageCommand="%function(self)
+		otaBackgroundActualNo = OatProfile(true).OATBackgroundShader
 	end"><children>
 	<Layer
 		Shader="shader/earthbound.frag"
@@ -16,7 +23,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 2 then
+			if otaBackgroundActualNo == 2 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -27,7 +34,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 2 then
+			if otaBackgroundActualNo == 2 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -46,7 +53,7 @@
 			self:diffuse(ColorRGB(0))
 			self:GetShader():uniformTexture('bayer', tex_bayer:GetTexture())
 
-			if OatProfile().OATBackgroundShader == 3 then
+			if otaBackgroundActualNo == 3 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -57,7 +64,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 3 then
+			if otaBackgroundActualNo == 3 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -74,7 +81,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 4 then
+			if otaBackgroundActualNo == 4 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -85,7 +92,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 4 then
+			if otaBackgroundActualNo == 4 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -102,7 +109,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 5 then
+			if otaBackgroundActualNo == 5 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -113,7 +120,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 5 then
+			if otaBackgroundActualNo == 5 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -132,7 +139,7 @@
 			self:GetShader():uniform3f('color2', ColorRGB(1))
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
 
-			if OatProfile().OATBackgroundShader == 6 then
+			if otaBackgroundActualNo == 6 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -145,7 +152,7 @@
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 6 then
+			if otaBackgroundActualNo == 6 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -162,7 +169,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 7 then
+			if otaBackgroundActualNo == 7 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -173,7 +180,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 7 then
+			if otaBackgroundActualNo == 7 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -190,7 +197,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 8 then
+			if otaBackgroundActualNo == 8 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -201,7 +208,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 8 then
+			if otaBackgroundActualNo == 8 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -220,7 +227,7 @@
 			self:GetShader():uniform3f('color2', ColorRGB(1))
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
 
-			if OatProfile().OATBackgroundShader == 9 then
+			if otaBackgroundActualNo == 9 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -233,7 +240,7 @@
 			self:GetShader():uniform3f('color3', ColorRGB(-2))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 9 then
+			if otaBackgroundActualNo == 9 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -249,7 +256,7 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 
-			if OatProfile().OATBackgroundShader == 10 then
+			if otaBackgroundActualNo == 10 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -259,7 +266,7 @@
 		ColorSelectedMessageCommand="%function(self)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 10 then
+			if otaBackgroundActualNo == 10 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -275,7 +282,7 @@
 		InitCommand="%function(self)
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 
-			if OatProfile().OATBackgroundShader == 11 then
+			if otaBackgroundActualNo == 11 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -285,7 +292,7 @@
 		ColorSelectedMessageCommand="%function(self)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 11 then
+			if otaBackgroundActualNo == 11 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -302,7 +309,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 14 then
+			if otaBackgroundActualNo == 14 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -313,7 +320,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 14 then
+			if otaBackgroundActualNo == 14 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -330,7 +337,7 @@
 			self:blend('add')
 			self:diffusealpha(0.5)
 
-			if OatProfile().OATBackgroundShader == 14 then
+			if otaBackgroundActualNo == 14 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -341,7 +348,7 @@
 			self:diffusealpha(0.5)
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 14 then
+			if otaBackgroundActualNo == 14 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -355,7 +362,7 @@
 			self:stretchto(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 			self:diffuse(ColorRGB(0))
 
-			if OatProfile().OATBackgroundShader == 12 then
+			if otaBackgroundActualNo == 12 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -365,7 +372,7 @@
 			self:diffuse(ColorRGB(0))
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 12 then
+			if otaBackgroundActualNo == 12 then
 				self:hidden(0)
 			else
 				self:hidden(1)
@@ -493,14 +500,14 @@
 			
 			self:hidden(0)
 			
-			if OatProfile().OATBackgroundShader == 13 then
+			if otaBackgroundActualNo == 13 then
 				self:hidden(0)
 			else
 				self:hidden(1)
 			end
 		end"
 		UpdateBackgroundShaderMessageCommand="%function(self)
-			if OatProfile().OATBackgroundShader == 13 then
+			if otaBackgroundActualNo == 13 then
 				self:hidden(0)
 			else
 				self:hidden(1)

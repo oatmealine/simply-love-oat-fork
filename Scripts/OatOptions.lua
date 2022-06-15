@@ -1,12 +1,15 @@
 -- used in ScreenThemeOptions
-function OatProfile(raw)
-  local saved = PROFILEMAN:GetMachineProfile():GetSaved()
-  if not raw then
-    if saved.OATBackgroundShader == 1 then
-      saved.OATBackgroundShader = math.random(2, 5)
-    end
+function OatProfile(castDice)
+  saved = PROFILEMAN:GetMachineProfile():GetSaved()
+  if castDice then
+	return {
+		OATBackgroundShader=(saved.OATBackgroundShader~=1) and saved.OATBackgroundShader or math.random(2,14),
+		-- Change random's max number when you add BackgroundShader(s)!
+		-- and add here other options using random thing when you needy
+	}
+  else
+	return saved
   end
-  return saved
 end
 
 -- set defaults
@@ -139,7 +142,7 @@ function OptionBackgroundShader()
 	t.OneChoiceForAllPlayers = true
 	t.Choices = {'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag', 'descent.frag', 'rez_dubstepmyass.frag',
 	'rez_mynameisjulia.frag', 'rez_roadtohell.frag', 'rez_structures.frag', 'rez_thedescent.frag', 'solid color', 'star factory', 'glacia'}
-    t.LoadSelections = function(self, list) if OatProfile().OATBackgroundShader then list[OatProfile().OATBackgroundShader] = true else list[1] = true end end
+    t.LoadSelections = function(self, list) if OatProfile().OATBackgroundShader then list[OatProfile().OATBackgroundShader] = true else list[2] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATBackgroundShader = 1 end
 		if list[2] then OatProfile().OATBackgroundShader = 2 end
@@ -160,6 +163,8 @@ function OptionBackgroundShader()
     SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
     if list[4] or list[6] or list[7] or list[8] or list[9] or list[10] or list[11] or list[14] then
       ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
+	elseif list[1] then
+      ScreenThemeOptionsHeader:settext('THEME OPTIONS | This contains very intensive shader!')
     else
       resetHeader()
     end
