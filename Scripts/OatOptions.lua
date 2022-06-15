@@ -1,6 +1,6 @@
 -- used in ScreenThemeOptions
 function OatProfile(castDice)
-  saved = PROFILEMAN:GetMachineProfile():GetSaved()
+  local saved = PROFILEMAN:GetMachineProfile():GetSaved()
   if castDice then
 	return {
 		OATBackgroundShader=(saved.OATBackgroundShader~=1) and saved.OATBackgroundShader or math.random(2,14),
