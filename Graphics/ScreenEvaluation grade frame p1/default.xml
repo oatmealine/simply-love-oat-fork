@@ -65,67 +65,70 @@ end"> <children>
 		    end
 		end" />
 	</children> </Layer>
-	<Layer Type="ActorFrame" OnCommand="x,6;y,-79" InitCommand="%function(self) if not OatProfile().OATResultRate then self:hidden(1) end end"> <children>
-		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" UpdateSpellDisplayP1MessageCommand="hidden,sorae_fuckP1" />
+	<Layer Type="ActorFrame" OnCommand="x,6;y,-79" InitCommand="%function(self)
+	if OatProfile().OATResultRate==3 then self:hidden(1)
+	else otaRateBarLong=(OatProfile().OATResultRate==1) and 125 or 62
+	end end"> <children>
+		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,otaRateBarLong;zoomy,3;diffuse,1,1,1,.25;" UpdateSpellDisplayP1MessageCommand="hidden,sorae_fuckP1" />
 		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,0;zoomy,3;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
 			if OatProfile().OATResultText==2 then self:sleep(1);self:decelerate(0.5) end
 			if otaJudgeTotalP1>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP1'):GetText())
-				if count==otaJudgeTotalP1 then self:zoomx(125); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(124,math.ceil(count/otaJudgeTotalP1*125))) end
+				if count==otaJudgeTotalP1 then self:zoomx(otaRateBarLong); self:rainbow()
+				elseif count~=0 then self:zoomx(math.min(otaRateBarLong-1,math.ceil(count/otaJudgeTotalP1*otaRateBarLong))) end
 			end
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,sorae_fuckP1" />
-		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" UpdateSpellDisplayP1MessageCommand="hidden,sorae_fuckP1" />
+		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,otaRateBarLong;zoomy,3;diffuse,1,1,1,.25;" UpdateSpellDisplayP1MessageCommand="hidden,sorae_fuckP1" />
 		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
 			if OatProfile().OATResultText==2 then self:sleep(1.25);self:decelerate(0.5) end
 			if otaJudgeTotalP1>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('PerfectNumberP1'):GetText())
-				if count==otaJudgeTotalP1 then self:zoomx(125); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(124,math.ceil(count/otaJudgeTotalP1*125))) end
+				if count==otaJudgeTotalP1 then self:zoomx(otaRateBarLong); self:rainbow()
+				elseif count~=0 then self:zoomx(math.min(otaRateBarLong-1,math.ceil(count/otaJudgeTotalP1*otaRateBarLong))) end
 			end
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,sorae_fuckP1" />
-		<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" />
+		<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,otaRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
 		<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,0;zoomy,3;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
 			if OatProfile().OATResultText==2 then self:sleep(1.5);self:decelerate(0.5) end
 			if otaJudgeTotalP1>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('GreatNumberP1'):GetText())
-				if count==otaJudgeTotalP1 then self:zoomx(125); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(124,math.ceil(count/otaJudgeTotalP1*125))) end
+				if count==otaJudgeTotalP1 then self:zoomx(otaRateBarLong); self:rainbow()
+				elseif count~=0 then self:zoomx(math.min(otaRateBarLong-1,math.ceil(count/otaJudgeTotalP1*otaRateBarLong))) end
 			end
 		end"/>
-		<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" />
+		<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,otaRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
 		<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,0;zoomy,3;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
 			if OatProfile().OATResultText==2 then self:sleep(1.75);self:decelerate(0.5) end
 			if otaJudgeTotalP1>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('GoodNumberP1'):GetText())
-				if count==otaJudgeTotalP1 then self:zoomx(125); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(124,math.ceil(count/otaJudgeTotalP1*125))) end
+				if count==otaJudgeTotalP1 then self:zoomx(otaRateBarLong); self:rainbow()
+				elseif count~=0 then self:zoomx(math.min(otaRateBarLong-1,math.ceil(count/otaJudgeTotalP1*otaRateBarLong))) end
 			end
 		end" />
-		<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" />
+		<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,otaRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
 		<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
 			if OatProfile().OATResultText==2 then self:sleep(2);self:decelerate(0.5) end
 			if otaJudgeTotalP1>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('BooNumberP1'):GetText())
-				if count==otaJudgeTotalP1 then self:zoomx(125); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(124,math.ceil(count/otaJudgeTotalP1*125))) end
+				if count==otaJudgeTotalP1 then self:zoomx(otaRateBarLong); self:rainbow()
+				elseif count~=0 then self:zoomx(math.min(otaRateBarLong-1,math.ceil(count/otaJudgeTotalP1*otaRateBarLong))) end
 			end
 		end" />
-		<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,125;zoomy,3;diffuse,0,0,0,0.5;" />
+		<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,otaRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
 		<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;queuecommand,Update;"
 		UpdateCommand="%function(self)
 			if OatProfile().OATResultText==2 then self:sleep(2.25);self:decelerate(1) end
 			if otaJudgeTotalP1>0 then
 				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('MissNumberP1'):GetText())
-				if count==otaJudgeTotalP1 then self:zoomx(125)
-				elseif count~=0 then self:zoomx(math.min(124,math.ceil(count/otaJudgeTotalP1*125))) end
+				if count==otaJudgeTotalP1 then self:zoomx(otaRateBarLong)
+				elseif count~=0 then self:zoomx(math.min(otaRateBarLong-1,math.ceil(count/otaJudgeTotalP1*otaRateBarLong))) end
 			end
 		end" />
 	</children> </Layer>
