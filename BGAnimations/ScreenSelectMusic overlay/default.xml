@@ -115,7 +115,7 @@
 			self:y(SCREEN_HEIGHT-120)
 			
 			self:effectoffset(0.2)
-	    	
+			
 			local friends
 			if OatProfile().OATDisplayFriendZ == 1 then friends = {
 				{'groove.gif', 0.2},
@@ -189,8 +189,8 @@
  				{'meal.png'},
  				{'pesh.png'}
  			} end
-	    	math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
-	    	local s = friends[math.random(1, #friends)]
+			math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
+			local s = friends[math.random(1, #friends)]
 			self:Load(Path('BGAnimations', 'ScreenSelectMusic overlay/friends/' .. s[1]))
 			if s[2] then
 			  self:effectoffset(s[2])
@@ -211,8 +211,8 @@
 			local size = (th / h)
 			self:zoom(size)
 			
-	    	self:diffusealpha(0.9)
-	    	self:texturefiltering(false)
+			self:diffusealpha(0.9)
+			self:texturefiltering(false)
 		end end"
 	/>
 
