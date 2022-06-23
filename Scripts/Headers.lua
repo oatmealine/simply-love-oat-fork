@@ -224,6 +224,15 @@ ScreenTitleMenuTexts = { -- see Graphics/ScreenTitleMenu scroll choice1.xml
   'obama\'s... last name........... is........\n.....................................................................................joe',
   'LOADING?\nLOAFING??',
   'not enough memory \not enough memory  ',
+"I really love SHAME. Like, a lot. Like, a whole lot. \n\
+You have no idea.\n\
+I love her so much that it is inexplicable, \n\
+and I'm ninety-nine percent sure that\n\
+I have an unhealthy obsession.\n\
+I will never get tired of listening that\n\
+sweet, angelic voice of hers.\n\
+It is my life goal to meet up her with her in real life\n\
+and just say hello to her.",
 }
 
 function ScreenTitleMenuTextSet(self)
