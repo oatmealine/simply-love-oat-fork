@@ -224,15 +224,30 @@ ScreenTitleMenuTexts = { -- see Graphics/ScreenTitleMenu scroll choice1.xml
   'obama\'s... last name........... is........\n.....................................................................................joe',
   'LOADING?\nLOAFING??',
   'not enough memory \not enough memory  ',
-"I really love SHAME. Like, a lot. Like, a whole lot. \n\
-You have no idea.\n\
-I love her so much that it is inexplicable, \n\
-and I'm ninety-nine percent sure that\n\
-I have an unhealthy obsession.\n\
-I will never get tired of listening that\n\
-sweet, angelic voice of hers.\n\
-It is my life goal to meet up her with her in real life\n\
-and just say hello to her.",
+  "\
+I really love SHAME. Like, a lot. Like, a whole lot. You have no ide\n\
+a. I love her so much that it is inexplicable, and I'm ninety-nine p\n\
+ercent sure that I have an unhealthy obsession. I will never get tir\n\
+ed of listening that sweet, angelic voice of hers. It is my life goa\n\
+l to meet up her with her in real life and just say hello to her. I \n\
+fall asleep at night dreaming of her holding a personal SRT for me, \n\
+and then she would be sorry tired that she comes and cuddles up to m\n\
+e while we sleep together. If I could just hold her hand for a brief\n\
+moment, I could die happy. If given the opportunity, I would lightly\n\
+nibble on her ear just to hear what kind of sweet moans she would le\n\
+t out. Then, I would hug her while she clings to my body hoping that\n\
+I would stop, but I only continue as she moans louder and louder. I "--[[
+would give up almost anything just for her to look in my general dir
+ection. No matter what I do, I am constantly thinking of her. When I
+wake up, she is the first thing on my mind. When I go to school, I c
+an only focus on her. When I go come home, I go on the computer so t
+hat I can listen to her beautiful voice. When I go to sleep, I dream
+of her and I living a happy life together. She is my pride, passion,
+and joy. If she were to call me \"Onii-chan\", I would probably get di
+abetes from her sweetness and die. I wish for nothing but her happin
+ess. If it were for her, I would give my life with out any second th
+oughts. Without her, my life would serve no purpose. I really love
+SHAME.]],
 }
 
 function ScreenTitleMenuTextSet(self)
