@@ -34,6 +34,7 @@ layout:
         QwertyNO
         QwertzSwissFR
         QwertzSwissDE
+
     You can add more in /(theme)/lua/layout.lua
 
 console:
