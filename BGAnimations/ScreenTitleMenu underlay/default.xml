@@ -257,19 +257,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Chegg -->
-			<AutoActor
-				Type="BitmapText"
-				Text="Happy Cheggday Chegg!"
-				Condition="DayOfMonth() == 15 and MonthOfYear() == 5"
-				Font="_wendy white"
-				OnCommand="diffuse,1,1,.25,1;spin;effectmagnitude,0,0,1000069"
-				OffCommand="accelerate,1;diffusealpha,0"
-			/>
 			<!-- Oatmealine -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Oatmealine!"
+				Text="Happy Birthday oatmealine!"
 				Condition="DayOfMonth() == 14 and MonthOfYear() == 9"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -283,16 +274,7 @@
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
-			/>
-			<!-- "Star" -->
-			<AutoActor
-				Type="BitmapText"
-				Text="Happy Birthday ''Star''!"
-				Condition="DayOfMonth() == 1 and MonthOfYear() == 6"
-				Font="_wendy white"
-				OnCommand="rainbow"
-				OffCommand="accelerate,1;diffusealpha,0"
-			/>
+			/>=
 			<!-- Pat -->
 			<AutoActor
 				Type="BitmapText"
@@ -356,10 +338,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- Azurehaiku -->
+			<!-- Kez (formerly Azurehaiku) -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Azzy!"
+				Text="Happy Birthday Kez!"
 				Condition="DayOfMonth() == 2 and MonthOfYear() == 5"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -422,7 +404,7 @@
 			<!-- Sorae -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Sorae!"
+				Text="Happy Birthday sorae!"
 				Condition="DayOfMonth() == 30 and MonthOfYear() == 8"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -433,15 +415,6 @@
 				Type="BitmapText"
 				Text="Happy Birthday Meowsicle!"
 				Condition="DayOfMonth() == 8 and MonthOfYear() == 2"
-				Font="_wendy white"
-				OnCommand="rainbow"
-				OffCommand="accelerate,1;diffusealpha,0"
-			/>
-			<!-- Valor -->
-			<AutoActor
-				Type="BitmapText"
-				Text="Happy Birthday Valor!"
-				Condition="DayOfMonth() == 9 and MonthOfYear() == 2"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
@@ -482,10 +455,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- PokéLily -->
+			<!-- PokéFrenzy -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday PokeLily!"
+				Text="Happy Birthday PokeFrenzy!"
 				Condition="DayOfMonth() == 3 and MonthOfYear() == 2"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -509,10 +482,10 @@
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
-			<!-- strawberrymahou / merri | new role 7 -->
+			<!-- starvale -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Merri!"
+				Text="Happy Birthday starvale!"
 				Condition="DayOfMonth() == 9 and MonthOfYear() == 12"
 				Font="_wendy white"
 				OnCommand="rainbow"
@@ -657,10 +630,18 @@
 			<!-- Tari | Puuro -->
 			<AutoActor
 				Type="BitmapText"
-				Text="Happy Birthday Tari and Puuro!"
+				Text="Happy Birthday Puuro!"
 				Condition="DayOfMonth() == 5 and MonthOfYear() == 4"
 				Font="_wendy white"
-				OnCommand="diffuse,.2,1,.3,1"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Tari!"
+				Condition="DayOfMonth() == 5 and MonthOfYear() == 4"
+				Font="_wendy white"
+				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			<!-- Oranger -->
@@ -730,7 +711,7 @@
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday NotITGfan61!"
-				Condition="DayOfMonth() == 4 and MonthOfYear() == 26"
+				Condition="DayOfMonth() == 26 and MonthOfYear() == 4"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
@@ -739,7 +720,7 @@
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday Jewel!"
-				Condition="DayOfMonth() == 7 and MonthOfYear() == 19"
+				Condition="DayOfMonth() == 19 and MonthOfYear() == 7"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
