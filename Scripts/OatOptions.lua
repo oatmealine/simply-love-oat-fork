@@ -17,7 +17,6 @@ OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
 OatProfile().OATDisplayFriendZ = OatProfile().OATDisplayFriendZ or 1
 OatProfile().OATResultGif = OatProfile().OATResultGif or 2
 OatProfile().OATResultText = OatProfile().OATResultText or 2
-OatProfile().OATResultRate = OatProfile().OATResultRate or 1
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
 OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 2 -- floating point
@@ -120,21 +119,6 @@ function OptionDisplayResultFunnyText()
     resetBackground()
 	end
   return t
-end
-
-function OptionDisplayResultJudgeRate()
-	local t = OptionRowBase('ResultJudgeRate')
-	  t.OneChoiceForAllPlayers = true
-	  t.Choices = {'Full Bar', 'Half Bar', 'Off'}
-	t.LoadSelections = function(self, list) if OatProfile().OATResultRate then list[OatProfile().OATResultRate] = true else list[1] = true end end
-	  t.SaveSelections = function(self, list)
-		  if list[1] then OatProfile().OATResultRate = 1 end
-		  if list[2] then OatProfile().OATResultRate = 2 end
-		  if list[3] then OatProfile().OATResultRate = 3 end
-	  resetHeader()
-	  resetBackground()
-	  end
-	return t
 end
 
 function OptionBackgroundShader()
