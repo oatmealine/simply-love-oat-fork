@@ -1,13 +1,13 @@
 <ActorFrame> <children>
-	<Layer
+	<!--Layer
 		File="longverbubble.png"
 		OnCommand="%function(self) self:diffuse(ColorRGB(-1)) end" 
-	/>
+	/-->
 	<Layer
 		Type="BitmapText"
-		Text="COURSE HAS MODS"
+		Text="(WITH MODS)"
 		File="_misobold small"
-		InitCommand="zoom,.5;shadowlength,0;addx,2;addy,-2"
+		InitCommand="xy,16,-26;zoom,.5;shadowlength,0"
 		OnCommand="%function(self) self:diffuse(TextOnColor(-1)) end"
 		OffCommand="linear,0.2;diffusealpha,0"
 	/>

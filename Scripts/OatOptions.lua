@@ -1,15 +1,10 @@
 -- used in ScreenThemeOptions
 function OatProfile(castDice)
-  local saved = PROFILEMAN:GetMachineProfile():GetSaved()
-  if castDice then
-	return {
-		OATBackgroundShader=(saved.OATBackgroundShader~=1) and saved.OATBackgroundShader or math.random(2,14),
-		-- Change random's max number when you add BackgroundShader(s)!
-		-- and add here other options using random thing when you needy
-	}
-  else
-	return saved
-  end
+	local saved = PROFILEMAN:GetMachineProfile():GetSaved()
+	if castDice then return {
+		OATBackgroundShader=BackgroundShader_CastDice(saved.OATBackgroundShader),
+		-- add here other options using random
+	} else return saved end
 end
 
 -- set defaults
@@ -17,6 +12,7 @@ OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
 OatProfile().OATDisplayFriendZ = OatProfile().OATDisplayFriendZ or 1
 OatProfile().OATResultGif = OatProfile().OATResultGif or 2
 OatProfile().OATResultText = OatProfile().OATResultText or 2
+OatProfile().OATDefaultInputType = OatProfile().OATDefaultInputType or 1
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
 OatProfile().OATResultsAlpha = OatProfile().OATResultsAlpha or 2 -- floating point
@@ -26,6 +22,8 @@ OatProfile().OATShowTotalPlaytime = OatProfile().OATShowTotalPlaytime == nil and
 OatProfile().OATAggressiveRichPresence = OatProfile().OATAggressiveRichPresence == nil and false or OatProfile().OATAggressiveRichPresence
 OatProfile().OATBackgroundBrightness = OatProfile().OATBackgroundBrightness or 5 -- floating point
 
+OatProfile().OATInputTypeOffset2 = OatProfile().OATInputTypeOffset2 or ''
+OatProfile().OATInputTypeOffset3 = OatProfile().OATInputTypeOffset3 or ''
 OatProfile().OATTotalPlayedSongs = OatProfile().OATTotalPlayedSongs or 0
 OatProfile().OATTotalPlayedFor = OatProfile().OATTotalPlayedFor or 0
 
@@ -121,39 +119,63 @@ function OptionDisplayResultFunnyText()
   return t
 end
 
-function OptionBackgroundShader()
-  local t = OptionRowBase('BackgroundShader')
+function OptionDefaultInputType()
+	local t = OptionRowBase('DefaultInputType')
 	t.OneChoiceForAllPlayers = true
-	t.Choices = {'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag', 'descent.frag', 'rez_dubstepmyass.frag',
-	'rez_mynameisjulia.frag', 'rez_roadtohell.frag', 'rez_structures.frag', 'rez_thedescent.frag', 'solid color', 'star factory', 'glacia'}
-    t.LoadSelections = function(self, list) if OatProfile().OATBackgroundShader then list[OatProfile().OATBackgroundShader] = true else list[2] = true end end
+	t.Choices = {'Off','DancePad','Keyboard','Auto(Card)','Auto(Connect)'}
+	t.LoadSelections = function(self, list) if OatProfile().OATDefaultInputType then list[OatProfile().OATDefaultInputType] = true else list[1] = true end end
 	t.SaveSelections = function(self, list)
-		if list[1] then OatProfile().OATBackgroundShader = 1 end
-		if list[2] then OatProfile().OATBackgroundShader = 2 end
-		if list[3] then OatProfile().OATBackgroundShader = 3 end
-		if list[4] then OatProfile().OATBackgroundShader = 4 end
-		if list[5] then OatProfile().OATBackgroundShader = 5 end
-		if list[6] then OatProfile().OATBackgroundShader = 6 end
-		if list[7] then OatProfile().OATBackgroundShader = 7 end
-		if list[8] then OatProfile().OATBackgroundShader = 8 end
-		if list[9] then OatProfile().OATBackgroundShader = 9 end
-		if list[10] then OatProfile().OATBackgroundShader = 10 end
-		if list[11] then OatProfile().OATBackgroundShader = 11 end
-		if list[12] then OatProfile().OATBackgroundShader = 12 end
-		if list[13] then OatProfile().OATBackgroundShader = 13 end
-		if list[14] then OatProfile().OATBackgroundShader = 14 end
-    MESSAGEMAN:Broadcast('UpdateBackgroundShader')
+		if list[1] then OatProfile().OATDefaultInputType = 1 end
+		if list[2] then OatProfile().OATDefaultInputType = 2 end
+		if list[3] then OatProfile().OATDefaultInputType = 3 end
+		if list[4] then OatProfile().OATDefaultInputType = 4 end
+		if list[5] then OatProfile().OATDefaultInputType = 5 end
+	end
+	return t
+end
 
-    SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
-    if list[4] or list[6] or list[7] or list[8] or list[9] or list[10] or list[11] or list[14] then
-      ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
-	elseif list[1] then
-      ScreenThemeOptionsHeader:settext('THEME OPTIONS | This contains very intensive shader!')
-    else
-      resetHeader()
-    end
+local backgroundLength=14
+function OptionBackgroundShader()
+	local t = OptionRowBase('BackgroundShader')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = {
+		'Random', 'earthbound.frag', 'plasma.frag', 'topologica.frag', 'theyaremanycolors.frag', -- 5
+		'descent.frag', 'rez_dubstepmyass.frag', 'rez_mynameisjulia.frag', 'rez_roadtohell.frag', 'rez_structures.frag', -- 10
+		'rez_thedescent.frag', 'solid color', 'star factory', 'glacia',  -- 14
+		'Daily Random' -- Please place this at end of array. DO NOT MOVE.
+	}
+    t.LoadSelections = function(self, list)
+		if OatProfile().OATBackgroundShader then
+			list[(OatProfile().OATBackgroundShader==0) and backgroundLength+1 or OatProfile().OATBackgroundShader] = true
+		else list[2] = true end
+	end
+	t.SaveSelections = function(self, list)
+		for i=1,backgroundLength do if list[i] then OatProfile().OATBackgroundShader = i end end
+		if list[backgroundLength+1] then OatProfile().OATBackgroundShader = 0 end
+		MESSAGEMAN:Broadcast('UpdateBackgroundShader')
+
+		SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
+		if list[4] or list[6] or list[7] or list[8] or list[9] or list[10] or list[11] or list[14] then
+			ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
+		elseif list[1] or list[backgroundLength+1] then
+			ScreenThemeOptionsHeader:settext('THEME OPTIONS | This contains very intensive shaders!')
+		else
+			resetHeader()
+		end
 	end
   return t
+end
+function BackgroundShader_CastDice(OATBackgroundShader)
+	if OATBackgroundShader==1 then
+		-- Random
+		math.randomseed(math.random()*1000000+Second()*Hour()*DayOfYear())
+		return math.random(2,backgroundLength)
+	elseif OATBackgroundShader==0 then
+		-- Daily Random
+		math.randomseed(DayOfYear()+Year()*366)
+		math.random() math.random() math.random() -- WDYM lua math.random has stacks???
+		return math.random(2,backgroundLength)
+	else return OATBackgroundShader end
 end
 
 function OptionRichPresence()

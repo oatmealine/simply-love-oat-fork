@@ -106,7 +106,15 @@
 	<Quad Command="stretchto,SCREEN_CENTER_X-320,SCREEN_BOTTOM,SCREEN_LEFT,SCREEN_TOP;diffuse,#00000000" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
 	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+94);y,SCREEN_CENTER_Y+25.5" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />
 	
-	
+	<Layer Type="BitmapText" Text="DancePad MODE" Font="_misobold small"
+		Condition="ModCustom.InputType[1]==2"
+		OnCommand="xy,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-92),226;horizalign,center;shadowlength,0;diffuse,#FFFFFF66;zoom,.5;"
+	/>
+	<Layer Type="BitmapText" Text="Keyboard MODE" Font="_misobold small"
+		Condition="ModCustom.InputType[1]==3"
+		OnCommand="xy,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-92),226;horizalign,center;shadowlength,0;diffuse,#FFFFFF66;zoom,.5;"
+	/>
+
 	<Layer
 		File="friends/groove.gif"
 		OnCommand="%function(self)
@@ -215,39 +223,4 @@
 			self:texturefiltering(false)
 		end end"
 	/>
-
-	<Layer
-		Type="Quad"
-		InitCommand="%function(self)
-			oat_shiftKeyDown = false
-			self:hidden(1)
-
-			print('lol dick')
-
-			for pn = 1, 2 do
-				self:addcommand('EnableSelectHelpMessageCommand', function()
-					oat_shiftKeyDown = true
-					print('shiftkey down')
-				end)
-				self:addcommand('SelectMenuOffMessageCommand', function()
-					oat_shiftKeyDown = false
-					print('shiftkey up')
-				end)
-				self:addcommand('StepP' .. pn .. 'Up' .. 'Press' .. 'Message', function()
-					print('up')
-					if oat_shiftKeyDown then
-						print('yes!!!!')
-					end
-				end)
-			end
-		end"
-
-		StepP1UpPressMessageCommand="%function(self)
-			print('up')
-			if oat_shiftKeyDown then
-				print('yes!!!!')
-			end
-		end"
-	/>
 </children> </ActorFrame>
-
