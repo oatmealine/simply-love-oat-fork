@@ -29,8 +29,8 @@ Almost features are same to Oat vs Rya's Fork ***BUT***
 
 ![main menu](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot1.jpg "main menu")
 ![theme options](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot2.jpg "theme options")
-![song list](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot3.jpg "song list")
-![song select](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot4.jpg "song select")
+![mode select](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot3.jpg "mode select")
+![song list](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot4.jpg "song list")
 ![song transition](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot5.jpg "song transition")
 ![result](https://raw.githubusercontent.com/NyaightHazard/simply-love-oat-fork/nyaightz-edit/screenshot6.jpg "result")
 
