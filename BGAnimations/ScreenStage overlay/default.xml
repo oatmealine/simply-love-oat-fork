@@ -28,6 +28,22 @@
 		File="@'../../Graphics/ScreenGameplay stage '..GetStageText()"
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1;playcommand,FadeIn"
 	/>
+	<BitmapText
+		Condition="not GAMESTATE:IsCourseMode() and GetPref('EventMode') and not IsTimedSet()"
+		Text="GET READY"
+		Font="old_wendy white"
+        OnCommand="xy,SCREEN_CENTER_X,0;zoom,0.5;decelerate,0.7;y,SCREEN_CENTER_Y;sleep,0.1;zoom,1;decelerate,0.4;zoom,0.75;sleep,0.9;linear,0.5;diffusealpha,0"
+    />
+	<BitmapText
+		Condition="not GAMESTATE:IsCourseMode() and GetPref('EventMode') and not IsTimedSet()"
+		Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()..'::'..(
+			   GAMESTATE:GetCurrentSong():GetDisplaySubTitle()~=''
+			   and (GAMESTATE:GetCurrentSong():GetDisplaySubTitle()..'::')
+			   or ''
+			  )..GAMESTATE:GetCurrentSong():GetDisplayArtist()"
+		Font="_misoreg small"
+        OnCommand="xy,SCREEN_CENTER_X,SCREEN_BOTTOM-50;zoom,.5;diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2;linear,0.3;diffusealpha,0"
+    />
 	<Actor
 		Condition="GAMESTATE:IsCourseMode()"
 		File="../../Graphics/ScreenGameplay course song 1"
@@ -35,6 +51,7 @@
 	/>
 	<Layer Type="Quad"
 		OnCommand="%function(self)
+			self:hidden(1)
 			BX_CurCustomLife = {0.5, 0.5}
 			BX_DispCustomLife = {0.5, 0.5}
 			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
