@@ -5,7 +5,7 @@
 A fork of [SimplyLove (Oat vs Rya's Fork)](https://github.com/oatmealine/simply-love-oat-fork), which is a fork of [SimplyLove-NotITG](https://github.com/TaroNuke/Simply-Love-NotITG-ver.-).
 It's why also called Fork'n'Fork EDIT.
 
-The objective is keeping sync source changes, but adding more custom for personal (means **me**). 
+The objective is keeping sync source changes but also adding more custom for personal (means **me**). 
 So, this contains experimental features or some *less* funny.
 
 ## Features
@@ -17,7 +17,7 @@ Almost features are same to Oat vs Rya's Fork ***BUT***
 - *!* Change the default judgement font: SimplyLove-NotITG's one but aligned in center
 - Add `0 - enable restart` folder that makes enable to use "Restart Game"
 - Change the logo and window icon
-- Some places use old_wendy system font, classically SimplyLove-NotITG's font
+- Some places use old_wendy system font, classical SimplyLove-NotITG's font
 - Less confusing Select Mode Screen
 - Show "GET READY" and song details on Song Transition
 - Show both PB itself and difference from score on Result
@@ -52,4 +52,4 @@ In short, after put this theme in your NotITG, just run `0 - enable restart/Enab
 2. Right-click the shortcut file and select Properties.
 3. Click "Change Icon..." button and select `fork'n'fork.ico` in this theme folder.
 4. Launch NotITG from the shortcut.
-5. Look the task bar. Wow!
+5. Look at the task bar. Wow!
