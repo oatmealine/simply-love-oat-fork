@@ -51,5 +51,5 @@ In short, after put this theme in your NotITG, just run `0 - enable restart/Enab
 1. Make your NotITG exe shortcut.
 2. Right-click the shortcut file and select Properties.
 3. Click "Change Icon..." button and select `fork'n'fork.ico` in this theme folder.
-4. Lunck NotITG from the shortcut.
+4. Lunch NotITG from the shortcut.
 5. Look the task bar. Wow!
