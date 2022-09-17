@@ -26,7 +26,7 @@ return {
         alt = {
         }
     },
-    QwertyJIS = {
+    QwertyJP = {
         remap = {
             space = " ", enter = "\n", tab = "    ", oem102 = "\\"
         },

@@ -16,8 +16,8 @@ Almost features are same to Oat vs Rya's Fork ***BUT***
 - *!* Change the sort of FailOverlay: YouDied, Go2Brazil, Wasted, the rest are same. So default FailOverlay becomes to YouDied.
 - *!* Change the default judgement font: SimplyLove-NotITG's one but aligned in center
 - Add `0 - enable restart` folder that makes enable to use "Restart Game"!
-- Add "QwertyJIS" keyboard layout for debug console
-- Change the logo and window icon
+- Add "QwertyJP" layout of debug console for Japanese keyboard (106/109 keys)
+- Change the logo, window icon, and system message frame ... to <span style="color:#4CB219">green<span>
 - Some places use old_wendy system font, classical SimplyLove-NotITG's font
 - Less confusing Select Mode Screen
 - Show "GET READY" and song details on Song Transition
@@ -43,16 +43,12 @@ AND FOLLOW THE DIRECTIONS CAREFULLY
 
 In short, after put this theme in your NotITG, just run `0 - enable restart/Enable_Restart.bat`.
 
-## What is QwertyJIS at all
+## Note about QwertyJP
 
-At first, read `NotITG-v***/Data/config.lua`.
+You can use this by changing the value of layout on `NotITG-v***/Data/config.lua` to "QwertyJP".
 
-You can open debug console by pressing Crtl+(value of *console*).
-Also, by changing value of *layout*, debug console fits your keyboard layout.
-
-"QwertyJIS" is ✨new✨ layout for Japanese keyboard (106/109 keys) user.
 Almost keyboard symbols can work as-is, but somes cannot work (says '?').
-So, I set special shortcut with "QwertyJIS":
+So, I set special shortcut with "QwertyJP":
 ```
 Shift+0 = :
 Alt+1 = ^
