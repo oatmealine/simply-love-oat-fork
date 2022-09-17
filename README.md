@@ -17,7 +17,7 @@ Almost features are same to Oat vs Rya's Fork ***BUT***
 - *!* Change the default judgement font: SimplyLove-NotITG's one but aligned in center
 - Add `0 - enable restart` folder that makes enable to use "Restart Game"!
 - Add "QwertyJP" layout of debug console for Japanese keyboard (106/109 keys)
-- Change the logo, window icon, and system message frame ... to <span style="color:#4CB219">green<span>
+- Change the logo, window icon, and system message frame ... to <span style="color:#4CB219">green</span>
 - Some places use old_wendy system font, classical SimplyLove-NotITG's font
 - Less confusing Select Mode Screen
 - Show "GET READY" and song details on Song Transition
