@@ -75,21 +75,19 @@
 		<Layer Type="BitmapText" Font="_misobold white" Text="Decent"
 		InitCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
-		    self:queuecommand('Update');
 		    if OatProfile().OATResultText == 3 then self:settext('DECENT')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.75);self:decelerate(0.5);self:zoom(0.35);
 		    end
-		end"
-		UpdateCommand="%function(self) if SCREENMAN:GetTopScreen():GetChild('GoodNumberP1'):GetText() == '   0' then self:diffuse(.5,.5,.5,.5) end end" />
+			if not Decents() then self:diffuse(.5,.5,.5,.5) end
+		end" />
 		<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"
 		InitCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
-		    self:queuecommand('Update');
 		    if OatProfile().OATResultText == 3 then self:settext('WAY OFF')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(2);self:decelerate(0.5);self:zoom(0.35);
 		    end
-		end"
-		UpdateCommand="%function(self) if SCREENMAN:GetTopScreen():GetChild('BooNumberP1'):GetText() == '   0' then self:diffuse(.5,.5,.5,.5) end end" />
+			if not WayOffs() then self:diffuse(.5,.5,.5,.5) end
+		end" />
 		<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"
 		InitCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
