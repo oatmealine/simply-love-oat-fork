@@ -1,4 +1,4 @@
 	<ActorFrame Name="Go2Brazil"><children>
 		<Layer Type="Quad" />
-		<Layer File="tenor.gif" />
+		<Layer File="tenor.png" />
 	</children></ActorFrame>
