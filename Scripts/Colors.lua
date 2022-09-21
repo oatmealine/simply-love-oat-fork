@@ -10,10 +10,10 @@ function DefaultColor()
 end
 	
 function Color(c)
-	if not Profile(0) then return 9 end
-	if not Profile(0).Love then Profile(0).Love = { Color = 9 } end
+	if not Profile(0) then return 1 end
+	if not Profile(0).Love then Profile(0).Love = { Color = 1 } end
 	if c then Profile(0).Love.Color = c end
-	return Profile(0).Love and Profile(0).Love.Color or 9
+	return Profile(0).Love and Profile(0).Love.Color or 1
 end
 
 function FeetPosition()

@@ -77,7 +77,6 @@
 				end
 				ModInputTypeSave()
 			end"
-			StepP1Action7PressMessageCommand="%function(self) SCREENMAN:SetNewScreen('ScreenStage') end"
 		/>
 		<Layer 
 			Font="_misobold small"
@@ -124,7 +123,6 @@
 				end
 				-- ModInputTypeSave(2)
 			end"
-			StepP2Action7PressMessageCommand="%function(self) SCREENMAN:SetNewScreen('ScreenStage') end"
 		/>
 		<Layer 
 			Font="_misobold small"

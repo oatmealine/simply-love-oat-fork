@@ -12,8 +12,6 @@ OatProfile().OATDisplayCustomHeaders = OatProfile().OATDisplayCustomHeaders or 1
 OatProfile().OATDisplayFriendZ = OatProfile().OATDisplayFriendZ or 1
 OatProfile().OATResultGif = OatProfile().OATResultGif or 2
 OatProfile().OATResultText = OatProfile().OATResultText or 2
-OatProfile().OATResultRate = OatProfile().OATResultRate or 1
-OatProfile().OATFakeFailed = OatProfile().OATFakeFailed == nil and true or OatProfile().OATFakeFailed
 OatProfile().OATDefaultInputType = OatProfile().OATDefaultInputType or 1
 OatProfile().OATBackgroundShader = OatProfile().OATBackgroundShader or 2
 OatProfile().OATRichPresence = OatProfile().OATRichPresence == nil and true or OatProfile().OATRichPresence
@@ -58,16 +56,16 @@ function OptionDisplayCustomHeaders()
 		if list[2] then OatProfile().OATDisplayCustomHeaders = 2 end
 		if list[3] then OatProfile().OATDisplayCustomHeaders = 3 end
 
-	if ScreenThemeOptionsHeader then
-	  if list[1] then
-		ScreenThemeOptionsHeader:settext('This header will display random junk at all times')
-	  elseif list[2] then
-		ScreenThemeOptionsHeader:settext('This header will only display random junk in certain screens')
-	  elseif list[3] then
-		ScreenThemeOptionsHeader:settext('This header will stay the same')
-	  end
-	end
-	resetBackground()
+    if ScreenThemeOptionsHeader then
+      if list[1] then
+        ScreenThemeOptionsHeader:settext('This header will display random junk at all times')
+      elseif list[2] then
+        ScreenThemeOptionsHeader:settext('This header will only display random junk in certain screens')
+      elseif list[3] then
+        ScreenThemeOptionsHeader:settext('This header will stay the same')
+      end
+    end
+    resetBackground()
 	end
 	return t
 end
@@ -76,7 +74,7 @@ function OptionDisplaySongSelectFriends()
   local t = OptionRowBase('SongSelectFriends')
 	t.OneChoiceForAllPlayers = true
 	t.Choices = {'Mix Random', 'PixelJumpers', 'PixelJumpers+', 'Just SHAME', 'Karens', 'Off'}
-	t.LoadSelections = function(self, list) if OatProfile().OATDisplayFriendZ then list[OatProfile().OATDisplayFriendZ] = true else list[1] = true end end
+  t.LoadSelections = function(self, list) if OatProfile().OATDisplayFriendZ then list[OatProfile().OATDisplayFriendZ] = true else list[1] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATDisplayFriendZ = 1 end
 		if list[2] then OatProfile().OATDisplayFriendZ = 2 end
@@ -84,68 +82,41 @@ function OptionDisplaySongSelectFriends()
 		if list[4] then OatProfile().OATDisplayFriendZ = 4 end
 		if list[5] then OatProfile().OATDisplayFriendZ = 5 end
 		if list[6] then OatProfile().OATDisplayFriendZ = 6 end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
   return t
 end
 
 function OptionDisplayResultGIF()
-  	local t = OptionRowBase('ResultGradeGIF')
+  local t = OptionRowBase('ResultGradeGIF')
 	t.OneChoiceForAllPlayers = true
 	t.Choices = {'On', 'FunnyFail', 'Off', 'FunnyFail-ONLY'}
- 	t.LoadSelections = function(self, list) if OatProfile().OATResultGif then list[OatProfile().OATResultGif] = true else list[2] = true end end
+  t.LoadSelections = function(self, list) if OatProfile().OATResultGif then list[OatProfile().OATResultGif] = true else list[2] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATResultGif = 1 end
 		if list[2] then OatProfile().OATResultGif = 2 end
 		if list[3] then OatProfile().OATResultGif = 3 end
 		if list[4] then OatProfile().OATResultGif = 4 end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
-  	return t
+  return t
 end
 
 function OptionDisplayResultFunnyText()
   local t = OptionRowBase('ResultFunnyJudge')
 	t.OneChoiceForAllPlayers = true
 	t.Choices = {'Text Only', 'Text with Animation', 'Off'}
-  	t.LoadSelections = function(self, list) if OatProfile().OATResultText then list[OatProfile().OATResultText] = true else list[2] = true end end
+  t.LoadSelections = function(self, list) if OatProfile().OATResultText then list[OatProfile().OATResultText] = true else list[2] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATResultText = 1 end
 		if list[2] then OatProfile().OATResultText = 2 end
 		if list[3] then OatProfile().OATResultText = 3 end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
   return t
-end
-
-function OptionDisplayResultJudgeRate()
-	local t = OptionRowBase('ResultJudgeRate')
-	t.OneChoiceForAllPlayers = true
-	t.Choices = {'Full Bar', 'Half Bar', 'Off'}
-	t.LoadSelections = function(self, list) if OatProfile().OATResultRate then list[OatProfile().OATResultRate] = true else list[1] = true end end
-	t.SaveSelections = function(self, list)
-		  if list[1] then OatProfile().OATResultRate = 1 end
-		  if list[2] then OatProfile().OATResultRate = 2 end
-		  if list[3] then OatProfile().OATResultRate = 3 end
-		resetHeader()
-		resetBackground()
-	end
-	return t
-end
-
-function OptionFakeFailed()
-	local t = OptionRowBase('FakeFailed')
-	t.OneChoiceForAllPlayers = true
-	t.Choices = {'On', 'Off'}
-	t.LoadSelections = function(self, list) list[OatProfile().OATFakeFailed and 1 or 2] = true end
-	t.SaveSelections = function(self, list)
-		if list[1] then OatProfile().OATFakeFailed = true  end
-		if list[2] then OatProfile().OATFakeFailed = false end
-	end
-	return t
 end
 
 function OptionDefaultInputType()
@@ -192,7 +163,7 @@ function OptionBackgroundShader()
 			resetHeader()
 		end
 	end
-	return t
+  return t
 end
 function BackgroundShader_CastDice(OATBackgroundShader)
 	if OATBackgroundShader==1 then
@@ -208,17 +179,17 @@ function BackgroundShader_CastDice(OATBackgroundShader)
 end
 
 function OptionRichPresence()
-	local t = OptionRowBase('RichPresence')
+  local t = OptionRowBase('RichPresence')
 	t.OneChoiceForAllPlayers = true
 	t.Choices = {'On', 'Off'}
-	t.LoadSelections = function(self, list) if OatProfile().OATRichPresence then list[1] = true else list[2] = true end end
+  t.LoadSelections = function(self, list) if OatProfile().OATRichPresence then list[1] = true else list[2] = true end end
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATRichPresence = true  end
 		if list[2] then OatProfile().OATRichPresence = false end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
-	return t
+  return t
 end
 
 function OptionResultsAlpha()
@@ -231,7 +202,7 @@ function OptionResultsAlpha()
 
   t.Choices = Names
 	t.LoadSelections = function(self, list)
-	local a = OatProfile().OATResultsAlpha
+    local a = OatProfile().OATResultsAlpha
 		for i,v in ipairs(Names) do
 			if tostring(a / 10) == tostring(v) then list[i] = true return end
 		end
@@ -242,16 +213,16 @@ function OptionResultsAlpha()
 	t.SaveSelections = function(self, list)
 		for i,v in ipairs(Names) do
 			if list[i] then
-		OatProfile().OATResultsAlpha = v * 10
-	  end
+        OatProfile().OATResultsAlpha = v * 10
+      end
 		end
-	resetHeader()
-	resetBackground()
-	ResultsAlphaPreview:hidden(0)
-	for i,v in ipairs(ResultsAlphaPreview:GetChildren()) do
-	  v:queuecommand('Update')
-	end
-	SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0)
+    resetHeader()
+    resetBackground()
+    ResultsAlphaPreview:hidden(0)
+    for i,v in ipairs(ResultsAlphaPreview:GetChildren()) do
+      v:queuecommand('Update')
+    end
+    SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0)
 	end
 
   t.LayoutType = 'ShowOneInRow'
@@ -269,7 +240,7 @@ function OptionBackgroundBrightness()
 
   t.Choices = Names
 	t.LoadSelections = function(self, list)
-	local a = OatProfile().OATBackgroundBrightness
+    local a = OatProfile().OATBackgroundBrightness
 		for i,v in ipairs(Names) do
 			if tostring(a / 10) == tostring(v) then list[i] = true return end
 		end
@@ -280,13 +251,13 @@ function OptionBackgroundBrightness()
 	t.SaveSelections = function(self, list)
 		for i,v in ipairs(Names) do
 			if list[i] then
-		OatProfile().OATBackgroundBrightness = v * 10
-	  end
+        OatProfile().OATBackgroundBrightness = v * 10
+      end
 		end
-	resetHeader()
-	resetBackground()
-	MESSAGEMAN:Broadcast('UpdateBackgroundShader')
-	SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
+    resetHeader()
+    resetBackground()
+    MESSAGEMAN:Broadcast('UpdateBackgroundShader')
+    SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
 	end
 
   t.LayoutType = 'ShowOneInRow'
@@ -302,8 +273,8 @@ function OptionShowHeaders()
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATShowHeaders = true  end
 		if list[2] then OatProfile().OATShowHeaders = false end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
   return t
 end
@@ -316,8 +287,8 @@ function OptionShowPlaytime()
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATShowPlaytime = true  end
 		if list[2] then OatProfile().OATShowPlaytime = false end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
   return t
 end
@@ -330,8 +301,8 @@ function OptionShowTotalPlaytime()
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATShowTotalPlaytime = true  end
 		if list[2] then OatProfile().OATShowTotalPlaytime = false end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
   return t
 end
@@ -344,8 +315,8 @@ function OptionAggressiveRichPresence()
 	t.SaveSelections = function(self, list)
 		if list[1] then OatProfile().OATAggressiveRichPresence = true  end
 		if list[2] then OatProfile().OATAggressiveRichPresence = false end
-	resetHeader()
-	resetBackground()
+    resetHeader()
+    resetBackground()
 	end
   return t
 end

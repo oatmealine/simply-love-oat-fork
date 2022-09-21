@@ -1,69 +1,93 @@
-<ActorFrame InitCommand="queuecommand,Update" UpdateCommand="%function(self)
-	sorae_fuckP2=0
-	oatJudgeTotalP2=0
-	for _,t in ipairs({'Marvelous','Perfect','Great','Good','Boo','Miss'}) do
-		if (t=='Good' and Decents()) or (t=='Boo' and WayOffs()) or (t~='Good' and t~='Boo') then
-			local targ=SCREENMAN:GetTopScreen():GetChild(t..'NumberP2')
-			oatJudgeTotalP2=oatJudgeTotalP2+tonumber(targ:GetText())
-			-- funny number detection
-			if OatProfile().OATResultText < 3 then for _,f in ipairs({'  69', ' 420', ' 621', ' 666', ' 403'}) do
-				if targ:GetText() == f then targ:rainbow() end
-			end end
-		end
-	end
-	if oatJudgeTotalP2==0 then oatJudgeTotalP2=-1 end
-end"
-OnCommand="%function(self) oatRateBarLong=(OatProfile().OATResultRate==1) and 125 or 62 end"
-UpdateSpellDisplayP2MessageCommand="%function(self)
-	sorae_fuckP2=1-sorae_fuckP2
-	SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):hidden(sorae_fuckP2)
-	SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'):hidden(sorae_fuckP2)
-end"> <children>
+<ActorFrame> <children>
 	<Layer Type="ActorFrame" OnCommand="x,-70;y,-97"> <children>
-		<Layer Type="BitmapText" Font="_misobold white" Text="Fanta"
-		InitCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1;queuecommand,Update;"
-		OnCommand="%function(self)
+		<Layer Type="BitmapText" Font="_misobold white" Text="Fanta"	
+		InitCommand="%function(self)
+		    sorae_fuck2a = 1
+			self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+		    local judg = {
+		        SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'),
+		        SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'),
+		        SCREENMAN:GetTopScreen():GetChild('GreatNumberP2'),
+		        SCREENMAN:GetTopScreen():GetChild('GoodNumberP2'),
+		        SCREENMAN:GetTopScreen():GetChild('BooNumberP2'),
+		        SCREENMAN:GetTopScreen():GetChild('MissNumberP2')
+		    }
+		    
+		    -- pfc
+		    if judg[1]:GetText() ~= '   0' and judg[2]:GetText() == '   0' and judg[3]:GetText() == '   0' and judg[4]:GetText() == '   0' and judg[5]:GetText() == '   0' and judg[6]:GetText() == '   0' then
+		        self:rainbow()
+		    end
+		    
+		    -- funny number detection
+		    if OatProfile().OATResultText < 3 then
+			    local funy = {'  69', ' 420', ' 621', ' 666', ' 403'}
+			    for _,j in ipairs(judg) do
+			        for _,f in ipairs(funy) do
+			            if j:GetText() == f then
+			                j:rainbow()
+			            end
+			        end
+			    end
+		    end
+		    
 		    if OatProfile().OATResultText == 3 then self:settext('FANTASTIC')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1);self:decelerate(0.5);self:zoom(0.35);
 		    end
 		end"
-		UpdateCommand="%function(self) if oatJudgeTotalP2==tonumber(SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):GetText()) then self:rainbow() end end"
-		UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
+		OnCommand="y,27*0;zoom,0.35;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;horizalign,right;ShadowLength,1;"
+        UpdateSpellDisplayP2MessageCommand="%function(self) 
+            if sorae_fuck2a == -1 then 
+                self:hidden(0) 
+                SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):hidden(0) 
+            else 
+                self:hidden(1) 
+                SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):hidden(1) 
+            end; 
+            sorae_fuck2a = -sorae_fuck2a 
+        end"/>
 		<Layer Type="BitmapText" Font="_misobold white" Text="Exclennet"
-		InitCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1;queuecommand,Update;"
-		OnCommand="%function(self)
+		InitCommand="%function(self) sorae_fuck2b = 1 self:queuecommand('Update'); end" 
+		UpdateCommand="%function(self)
 		    if OatProfile().OATResultText == 3 then self:settext('EXCELLENT')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.25);self:decelerate(0.5);self:zoom(0.35);
 		    end
 		end"
-		UpdateCommand="%function(self) if oatJudgeTotalP2==tonumber(SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'):GetText()) then self:rainbow() end end"
-		UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
+		OnCommand="y,27*1;zoom,0.35;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;horizalign,right;ShadowLength,1;"
+        UpdateSpellDisplayP2MessageCommand="%function(self) 
+            if sorae_fuck2b == -1 then 
+                self:hidden(0) 
+                SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'):hidden(0) 
+            else 
+                self:hidden(1) 
+                SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'):hidden(1) 
+            end; 
+            sorae_fuck2b = -sorae_fuck2b 
+        end"/>
 		<Layer Type="BitmapText" Font="_misobold white" Text='"Great"'
-		InitCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1;queuecommand,Update;"
+		InitCommand="y,27*2;zoom,0.35;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
 		    if OatProfile().OATResultText == 3 then self:settext('GREAT')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.5);self:decelerate(0.5);self:zoom(0.35);
 		    end
-		end"
-		UpdateCommand="%function(self) if oatJudgeTotalP2==tonumber(SCREENMAN:GetTopScreen():GetChild('GreatNumberP2'):GetText()) then self:rainbow() end end" />
+		end" />
 		<Layer Type="BitmapText" Font="_misobold white" Text="Decent"
-		InitCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;queuecommand,Update;"
+		InitCommand="y,27*3;zoom,0.35;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
 		    if OatProfile().OATResultText == 3 then self:settext('DECENT')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(1.75);self:decelerate(0.5);self:zoom(0.35);
 		    end
 			if not Decents() then self:diffuse(.5,.5,.5,.5) end
-		end"
-		UpdateCommand="%function(self) if Decents() and oatJudgeTotalP2==tonumber(SCREENMAN:GetTopScreen():GetChild('GoodNumberP2'):GetText()) then self:rainbow() end end" />
+		end" />
 		<Layer Type="BitmapText" Font="_misobold white" Text="Way Off"
-		InitCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;queuecommand,Update;"
+		InitCommand="y,27*4;zoom,0.35;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
 		    if OatProfile().OATResultText == 3 then self:settext('WAY OFF')
 		    elseif OatProfile().OATResultText == 2 then self:zoom(0);self:sleep(2);self:decelerate(0.5);self:zoom(0.35);
 		    end
 			if not WayOffs() then self:diffuse(.5,.5,.5,.5) end
-		end"
-		UpdateCommand="%function(self) if WayOffs() and oatJudgeTotalP2==tonumber(SCREENMAN:GetTopScreen():GetChild('BooNumberP2'):GetText()) then self:rainbow() end end" />
+		end" />
 		<Layer Type="BitmapText" Font="_misobold white" Text="FUCK"
 		InitCommand="y,27*5;zoom,0.35;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;horizalign,right;ShadowLength,1;"
 		OnCommand="%function(self)
@@ -72,74 +96,11 @@ end"> <children>
 		    end
 		end" />
 	</children> </Layer>
-	<Layer Type="ActorFrame" OnCommand="x,-131;y,-79" InitCommand="%function(self) if OatProfile().OATResultRate==3 then self:hidden(1) end end"> <children>
-		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,oatRateBarLong;zoomy,3;diffuse,1,1,1,.25;" UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
-		<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,0;zoomy,3;diffuse,0.1529411764705882,0.8156862745098039,0.996078431372549,1;queuecommand,Update;"
-		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(1);self:decelerate(0.5) end
-			if oatJudgeTotalP2>0 then
-				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('MarvelousNumberP2'):GetText())
-				if count==oatJudgeTotalP2 then self:zoomx(oatRateBarLong); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(oatRateBarLong-1,math.ceil(count/oatJudgeTotalP2*oatRateBarLong))) end
-			end
-		end"		
-		UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
-		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,oatRateBarLong;zoomy,3;diffuse,1,1,1,.25;" UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
-		<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9647058823529412,0.8862745098039216,0.0745098039215686,1;queuecommand,Update;"
-		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(1.25);self:decelerate(0.5) end
-			if oatJudgeTotalP2>0 then
-				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('PerfectNumberP2'):GetText())
-				if count==oatJudgeTotalP2 then self:zoomx(oatRateBarLong); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(oatRateBarLong-1,math.ceil(count/oatJudgeTotalP2*oatRateBarLong))) end
-			end
-		end"
-		UpdateSpellDisplayP2MessageCommand="hidden,sorae_fuckP2" />
-		<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,oatRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
-		<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,0;zoomy,3;diffuse,0.2745098039215686,0.8901960784313725,0.0313725490196078,1;queuecommand,Update;"
-		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(1.5);self:decelerate(0.5) end
-			if oatJudgeTotalP2>0 then
-				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('GreatNumberP2'):GetText())
-				if count==oatJudgeTotalP2 then self:zoomx(oatRateBarLong); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(oatRateBarLong-1,math.ceil(count/oatJudgeTotalP2*oatRateBarLong))) end
-			end
-		end"/>
-		<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,oatRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
-		<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,0;zoomy,3;diffuse,0.6352941176470588,0.0392156862745098,0.9529411764705882,1;queuecommand,Update;"
-		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(1.75);self:decelerate(0.5) end
-			if Decents() and oatJudgeTotalP2>0 then
-				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('GoodNumberP2'):GetText())
-				if count==oatJudgeTotalP2 then self:zoomx(oatRateBarLong); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(oatRateBarLong-1,math.ceil(count/oatJudgeTotalP2*oatRateBarLong))) end
-			end
-		end" />
-		<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,oatRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
-		<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9803921568627451,0.4784313725490196,0.0156862745098039,1;queuecommand,Update;"
-		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(2);self:decelerate(0.5) end
-			if WayOffs() and oatJudgeTotalP2>0 then
-				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('BooNumberP2'):GetText())
-				if count==oatJudgeTotalP2 then self:zoomx(oatRateBarLong); self:rainbow()
-				elseif count~=0 then self:zoomx(math.min(oatRateBarLong-1,math.ceil(count/oatJudgeTotalP2*oatRateBarLong))) end
-			end
-		end" />
-		<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,oatRateBarLong;zoomy,3;diffuse,1,1,1,.25;" />
-		<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,0;zoomy,3;diffuse,0.9647058823529412,0.0313725490196078,0.0313725490196078,1;queuecommand,Update;"
-		UpdateCommand="%function(self)
-			if OatProfile().OATResultText==2 then self:sleep(2.25);self:decelerate(1) end
-			if oatJudgeTotalP2>0 then
-				local count=tonumber(SCREENMAN:GetTopScreen():GetChild('MissNumberP2'):GetText())
-				if count==oatJudgeTotalP2 then self:zoomx(oatRateBarLong)
-				elseif count~=0 then self:zoomx(math.min(oatRateBarLong-1,math.ceil(count/oatJudgeTotalP2*oatRateBarLong))) end
-			end
-		end" />
-	</children> </Layer>
 	<Layer Type="ActorFrame" OnCommand="x,65;y,-97"> <children>
-		<Layer Type="BitmapText" Font="_misobold white" Text="Holds" OnCommand="y,27*2;zoom,0.35;diffuse,0.0235294117647059,0.9725490196078431,0.7490196078431373,1;horizalign,right;ShadowLength,1" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="Mines" OnCommand="y,27*3;zoom,0.35;diffuse,0.6235294117647059,0.6274509803921569,0.603921568627451,1;horizalign,right;ShadowLength,1" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="Hands" OnCommand="y,27*4;zoom,0.35;diffuse,1,1,1,1;horizalign,right;ShadowLength,1" />
-		<Layer Type="BitmapText" Font="_misobold white" Text="Rolls" OnCommand="y,27*5;zoom,0.35;diffuse,0.0274509803921569,0.6117647058823529,0.2235294117647059,1;horizalign,right;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Holds"		OnCommand="y,27*2;zoom,0.35;diffuse,0.0235294117647059,0.9725490196078431,0.7490196078431373,1;horizalign,right;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Mines"		OnCommand="y,27*3;zoom,0.35;diffuse,0.6235294117647059,0.6274509803921569,0.603921568627451,1;horizalign,right;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Hands"		OnCommand="y,27*4;zoom,0.35;diffuse,1,1,1,1;horizalign,right;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_misobold white" Text="Rolls"		OnCommand="y,27*5;zoom,0.35;diffuse,0.0274509803921569,0.6117647058823529,0.2235294117647059,1;horizalign,right;ShadowLength,1" />
 	</children> </Layer>
 </children> </ActorFrame>
+

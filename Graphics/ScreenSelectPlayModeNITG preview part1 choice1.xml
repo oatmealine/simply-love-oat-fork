@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<BitampText
-		Text="::If you want to play NotITG mod charts,:: please select this!"
+		Text="::if you play this you will:: be an official member of::  the UKSRTEA mods clubbe::   select this idiot"
 		File="_common normal"
 		InitCommand="maxwidth,640/.8;zoom,.8;addy,20;skewx,-0.21;shadowlength,0"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"

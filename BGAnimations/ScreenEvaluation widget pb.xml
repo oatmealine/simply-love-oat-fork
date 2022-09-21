@@ -1,71 +1,96 @@
 <ActorFrame InitCommand="%function(self)
+
+	local prof = PROFILEMAN:GetMachineProfile()
 	for pn=0,1 do
+		_G['uksrt_cached_highscore_'..pn] = 0
 		if GAMESTATE:IsPlayerEnabled(pn) then
-			_G['uksrt_cached_highscore_'..pn] = 0
-			local sco = (PROFILEMAN:IsPersistentProfile(pn) and PROFILEMAN:GetProfile(pn) or PROFILEMAN:GetMachineProfile())
-						:GetHighScoreForSongAndSteps(GAMESTATE:GetCurrentSong(),GAMESTATE:GetCurrentSteps(pn):GetDifficulty())
+			local sco = prof:GetHighScoreForSongAndSteps( GAMESTATE:GetCurrentSong(), GAMESTATE:GetCurrentSteps(pn):GetDifficulty() )
 			if sco then
-				_G['uksrt_cached_highscore_'..pn] = sco:GetPercentDP()
+				_G['uksrt_cached_highscore_'..pn] = math.floor(sco:GetPercentDP()*10000)/10000
 			end
 		end
 	end
+	
 end"> <children>
+	
 	<Layer Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		OnCommand="x,SCREEN_CENTER_X-295;y,SCREEN_CENTER_Y-76"
 	> <children>
+		
 		<Layer 
 			Font="_misobold small"
 			Text="" 
 			OnCommand="x,130;y,64;zoom,.45;shadowlength,0;horizalign,right;maxwidth,240;sleep,0.5;queuecommand,Set" 
 			SetCommand="%function(self)
+				
 				local pn = 0
+
 				if GAMESTATE:IsPlayerEnabled(pn) then
-					local perc = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetPercentDancePoints()
+
+					local perc = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetPercentDancePoints()*10000)/10000
+					
 					--Trace(perc..' / '.._G['uksrt_cached_highscore_'..pn])
-					if perc > _G['uksrt_cached_highscore_'..pn] then self:diffuse(.6,1,.6,0)
-					elseif perc < _G['uksrt_cached_highscore_'..pn] then self:diffuse(1,.6,.6,0)
-					else self:diffuse(1,1,1,0) 
+					
+					if perc > _G['uksrt_cached_highscore_'..pn] then
+						self:diffuse(.6,1,.6,0)
+						self:settext( '(+'..string.format('%.2f',100*(perc - _G['uksrt_cached_highscore_'..pn]))..'%)' )
+					elseif perc < _G['uksrt_cached_highscore_'..pn] then
+						self:diffuse(1,.6,.6,0)
+						self:settext( '('..string.format('%.2f',100*(perc - _G['uksrt_cached_highscore_'..pn]))..'%)' )
+					else
+						self:diffuse(1,1,1,0)
+						self:settext( '(+'..string.format('%.2f',100*(perc - _G['uksrt_cached_highscore_'..pn]))..'%)' )
 					end
-					self:settext(string.format('%s: %.2f%%  (%s%.2f%%)',
-						PROFILEMAN:IsPersistentProfile(pn) and 'CARD' or 'BEST',
-						_G['uksrt_cached_highscore_'..pn]*100,
-						(perc<_G['uksrt_cached_highscore_'..pn]) and '' or '+',
-						(perc-_G['uksrt_cached_highscore_'..pn])*100
-					))
+					
 					self:linear(.4)
 					self:diffusealpha(1)
+					
 				end
+				
 			end" 
 		/>
+	
 	</children> </Layer>
+
 	<Layer Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 		OnCommand="x,SCREEN_CENTER_X+295;y,SCREEN_CENTER_Y-76"
 	> <children>
+		
 		<Layer 
 			Font="_misobold small"
 			Text="" 
 			OnCommand="x,-3;y,64;zoom,.45;shadowlength,0;horizalign,right;maxwidth,240;sleep,0.5;queuecommand,Set" 
 			SetCommand="%function(self)
+				
 				local pn = 1
+
 				if GAMESTATE:IsPlayerEnabled(pn) then
-					local perc = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetPercentDancePoints()
+
+					local perc = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetPercentDancePoints()*10000)/10000
+					
 					--Trace(perc..' / '.._G['uksrt_cached_highscore_'..pn])
-					if perc > _G['uksrt_cached_highscore_'..pn] then self:diffuse(.6,1,.6,0)
-					elseif perc < _G['uksrt_cached_highscore_'..pn] then self:diffuse(1,.6,.6,0)
-					else self:diffuse(1,1,1,0) 
+					
+					if perc > _G['uksrt_cached_highscore_'..pn] then
+						self:diffuse(.6,1,.6,0)
+						self:settext( '(+'..string.format('%.2f',100*(perc - _G['uksrt_cached_highscore_'..pn]))..'%)' )
+					elseif perc < _G['uksrt_cached_highscore_'..pn] then
+						self:diffuse(1,.6,.6,0)
+						self:settext( '('..string.format('%.2f',100*(perc - _G['uksrt_cached_highscore_'..pn]))..'%)' )
+					else
+						self:diffuse(1,1,1,0)
+						self:settext( '(+'..string.format('%.2f',100*(perc - _G['uksrt_cached_highscore_'..pn]))..'%)' )
 					end
-					self:settext(string.format('%s: %.2f%%  (%s%.2f%%)',
-						PROFILEMAN:IsPersistentProfile(pn) and 'CARD' or 'BEST',
-						_G['uksrt_cached_highscore_'..pn]*100,
-						(perc<_G['uksrt_cached_highscore_'..pn]) and '' or '+',
-						(perc-_G['uksrt_cached_highscore_'..pn])*100
-					))
+					
 					self:linear(.4)
 					self:diffusealpha(1)
+					
 				end
+				
 			end" 
 		/>
+
 	</children> </Layer>
+	
 </children> </ActorFrame>
