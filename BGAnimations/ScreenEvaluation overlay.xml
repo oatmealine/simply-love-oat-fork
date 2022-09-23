@@ -62,13 +62,21 @@
 			Type="ScreenGameplay DifficultyMeterP1"
 			OnCommand="playcommand,Update"
 			UpdateCommand="%function(self) 
-					if GAMESTATE:GetCurrentTrail(PLAYER_1) then 
-						self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_1)) 
-					else
-						self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1))
-					end
-					P1Difficulty = self:GetChild('Difficulty'):GetText()
-				end"
+				if GAMESTATE:GetCurrentTrail(PLAYER_1) then 
+					self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_1)) 
+				else
+					self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1))
+				end
+				P1Difficulty = self:GetChild('Difficulty'):GetText()
+				if P1Difficulty=='' then
+					if ModCustom.InputType[1]==2 then P1Difficulty = 'DancePad' end
+					if ModCustom.InputType[1]==3 then P1Difficulty = 'Keyboard' end
+				else
+					if ModCustom.InputType[1]==2 then P1Difficulty = P1Difficulty..' | DancePad' end
+					if ModCustom.InputType[1]==3 then P1Difficulty = P1Difficulty..' | Keyboard' end
+				end
+				ModInputTypeSave()
+			end"
 		/>
 		<Layer 
 			Font="_misobold small"
@@ -100,13 +108,21 @@
 			Type="ScreenGameplay DifficultyMeterP2"
 			OnCommand="playcommand,Update"
 			UpdateCommand="%function(self) 
-					if GAMESTATE:GetCurrentTrail(PLAYER_2) then 
-						self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_2)) 
-					else
-						self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2))
-					end
-					P2Difficulty = self:GetChild('Difficulty'):GetText()
-				end"
+				if GAMESTATE:GetCurrentTrail(PLAYER_2) then 
+					self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_2)) 
+				else
+					self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2))
+				end
+				P2Difficulty = self:GetChild('Difficulty'):GetText()
+				if P2Difficulty=='' then
+					if ModCustom.InputType[2]==2 then P2Difficulty = 'DancePad' end
+					if ModCustom.InputType[2]==3 then P2Difficulty = 'Keyboard' end
+				else
+					if ModCustom.InputType[2]==2 then P2Difficulty = 'DancePad | '..P2Difficulty end
+					if ModCustom.InputType[2]==3 then P2Difficulty = 'Keyboard | '..P2Difficulty end
+				end
+				-- ModInputTypeSave(2)
+			end"
 		/>
 		<Layer 
 			Font="_misobold small"

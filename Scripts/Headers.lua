@@ -224,6 +224,30 @@ ScreenTitleMenuTexts = { -- see Graphics/ScreenTitleMenu scroll choice1.xml
   'obama\'s... last name........... is........\n.....................................................................................joe',
   'LOADING?\nLOAFING??',
   'not enough memory \not enough memory  ',
+  "\
+I really love SHAME. Like, a lot. Like, a whole lot. You have no   \n\
+idea. I love her so much that it is inexplicable, and I'm ninety-  \n\
+nine percent sure that I have an unhealthy obsession. I will never \n\
+get tired of listening that sweet, angelic voice of hers. It is my \n\
+life goal to meet up her with her in real life and just say hello  \n\
+to her. I fall asleep at night dreaming of her holding a personal  \n\
+SRT for me, and then she would be sorry tired that she comes and   \n\
+cuddles up to me while we sleep together. If I could just hold her \n\
+hand for a brief moment, I could die happy. If given the           \n\
+opportunity, I would lightly nibble on her ear just to hear what   \n\
+kind of sweet moans she would let out. Then, I would hug her while \n\
+she clings to my body hoping that I would stop, but I only continue"--[[
+as she moans louder and louder. I would give up almost anything    
+just for her to look in my general direction. No matter what I do, 
+I am constantly thinking of her. When I wake up, she is the first  
+thing on my mind. When I go to school, I can only focus on her.    
+When I go come home, I go on the computer so that I can listen to  
+her beautiful voice. When I go to sleep, I dream of her and I      
+living a happy life together. She is my pride, passion, and joy. If
+she were to call me \"Onii-chan,\" I would probably get diabetes from
+her sweetness and die. I wish for nothing but her happiness. If it 
+were for her, I would give my life without any second thoughts.    
+Without her, my life would serve no purpose. I really love SHAME.  ]],
 }
 
 function ScreenTitleMenuTextSet(self)

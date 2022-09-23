@@ -13,7 +13,7 @@ rateModsFree =  {"1.0x","1.05x","1.1x","1.15x","1.2x","1.25x","1.3x","1.35x","1.
 
 screenList = { Gameplay = 'ScreenStage' , SelectMusic = 'ScreenSelectMusic' , PlayerOptions = 'ScreenPlayerOptions' , TitleMenu = ScreenTitleBranch  , NameEntry = 'ScreenNameEntryTraditional' , Evaluation = SelectEvaluationScreen , Summary = 'Summary' , Ending = SelectEndingScreen }
 
-playerOptions[1] = { 'SpeedType','SpeedNumber','Mini','Perspective','NoteSkin','Turn','JudgmentFont','Voice','Rate' }
+playerOptions[1] = { 'SpeedType','SpeedNumber','Mini','Perspective','NoteSkin','Turn','JudgmentFont','InputType','Rate' }
 playerOptions[2] = { 'MetaMods1','MetaMods2','MetaMods3','Accel','Scroll','Effect','Appearance','Handicap','InsertTaps','InsertOther','Hide','Ghost','Compare','Measure','LifeBar' }
 
 function CompareTextFormat(self,n) self:zoom(.3) end -- This is added on top of the base positioning etc.
@@ -35,6 +35,69 @@ end
 
 function Decents() if math.abs(PREFSMAN:GetPreference('JudgeWindowSecondsGood') - 0.135) < .001 then return true end end
 function WayOffs() if math.abs(PREFSMAN:GetPreference('JudgeWindowSecondsBoo') - 0.180) < .001 then return true end end
+
+-- Input Type Option: Choose Pad or Key!
+ModsMaster.InputType = { fnctn = 'InputTypeOption' }
+function InputTypeOption()
+	local t = OptionRowBase('Input Type',{'Off','DancePad','Keyboard'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list, pn)
+		ModInputTypeCheck()
+		list[ModCustom.InputType[pn+1]] = true
+	end
+	t.SaveSelections = function(self, list, pn)
+		if list[1] then ModCustom.InputType[pn+1]=1 end
+		if list[2] then ModCustom.InputType[pn+1]=2 end
+		if list[3] then ModCustom.InputType[pn+1]=3 end
+		ModInputTypeApply()
+	end
+	return t
+end
+
+function ModInputTypeCheck()
+	if not ModCustom.InputType then
+		if OatProfile().OATDefaultInputType==1 then ModCustom.InputType={1,1} end
+		if OatProfile().OATDefaultInputType==2 then ModCustom.InputType={2,2} end
+		if OatProfile().OATDefaultInputType==3 then ModCustom.InputType={3,3} end
+		if OatProfile().OATDefaultInputType==4 then
+			-- Auto(Card)
+			ModCustom.InputType={3,3}
+			local NumPL=GAMESTATE:GetNumPlayersEnabled()
+			for i=1,NumPL do if PROFILEMAN:IsPersistentProfile(i-1) then 
+				ModCustom.InputType={2,2}
+				break
+			end end
+		end
+		if OatProfile().OATDefaultInputType==5 then
+			-- Auto(Connect)
+			ModCustom.InputType={3,3}
+			local devices=INPUTMAN:GetDescriptions()
+			for i=1,#devices do if string.find(string.lower(devices[i]),"gamepad") or
+								   string.find(string.lower(devices[i]),"controller") then
+				ModCustom.InputType={2,2}
+				break
+			end end
+		end
+	end
+end
+
+function ModInputTypeApply()
+	if ModCustom.InputType[1]==2 and OatProfile().OATInputTypeOffset2~='' then
+		PREFSMAN:SetPreference('GlobalOffsetSeconds',tonumber(OatProfile().OATInputTypeOffset2)+.0)
+	end
+	if ModCustom.InputType[1]==3 and OatProfile().OATInputTypeOffset3~='' then
+		PREFSMAN:SetPreference('GlobalOffsetSeconds',tonumber(OatProfile().OATInputTypeOffset3)+.0)
+	end
+end
+
+function ModInputTypeSave()
+	if ModCustom.InputType[1]==2 then
+		OatProfile().OATInputTypeOffset2=tostring(PREFSMAN:GetPreference('GlobalOffsetSeconds'))
+	end
+	if ModCustom.InputType[1]==3 then
+		OatProfile().OATInputTypeOffset3=tostring(PREFSMAN:GetPreference('GlobalOffsetSeconds'))
+	end
+end
 
 -- not even used, but whatever.
 function wrap(val,max,min)
