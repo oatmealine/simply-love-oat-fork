@@ -210,24 +210,16 @@ end"><children>
 	<Layer Type="ActorFrame" OnCommand="xy,SCREEN_WIDTH*0.5-157,SCREEN_HEIGHT*0.5+72-14;hidden,1"
 	StepP1LeftPressMessageCommand="%function(self)
 		local pn = 1
-		if oplot_hidden[pn] == 1 then
-			self:hidden(0)
-		else
-			self:hidden(1)
-		end
 		curcard[pn] = 0;
-		oplot_hidden[pn] = oplot_hidden[pn]*-1
+		oplot_hidden[pn] = 1-oplot_hidden[pn]
+		self:hidden(oplot_hidden[pn])
 		MESSAGEMAN:Broadcast( 'UpdateSpellDisplayP1' );
 	end"
 	StepP2LeftPressMessageCommand="%function(self)
 		local pn = 1
-		if oplot_hidden[pn] == 1 then
-			self:hidden(0)
-		else
-			self:hidden(1)
-		end
 		curcard[pn] = 0;
-		oplot_hidden[pn] = oplot_hidden[pn]*-1
+		oplot_hidden[pn] = 1-oplot_hidden[pn]
+		self:hidden(oplot_hidden[pn])
 		MESSAGEMAN:Broadcast( 'UpdateSpellDisplayP1' );
 	end"
 	StepP1UpPressMessageCommand="%function(self)
@@ -237,9 +229,9 @@ end"><children>
 			curcard[pn] = curcard[pn]-1
 			
 			if oplot_hidden[pn] == 1 then
-				self:hidden(0)
 				curcard[pn] = 0
-				oplot_hidden[pn] = -1
+				oplot_hidden[pn] = 0
+				self:hidden(0)
 			end
 			
 			if curcard[pn] < 0 then
@@ -255,9 +247,9 @@ end"><children>
 			curcard[pn] = curcard[pn]+1
 			
 			if oplot_hidden[pn] == 1 then
-				self:hidden(0)
 				curcard[pn] = 0
-				oplot_hidden[pn] = -1
+				oplot_hidden[pn] = 0
+				self:hidden(0)
 			end
 			if curcard[pn] > table.getn(oplot_spellCards[pn]) then
 				curcard[pn] = 0
@@ -268,22 +260,32 @@ end"><children>
 	StepP1MenuSelectMessageCommand="%function(self)
 		if BX_DisplayedGraph == 'Life' then
 			BX_DisplayedGraph = 'Timing'
-			BX_CustomLifeGraph_2:hidden(1)
-			BX_CustomLifeGraph_2bg:hidden(1)
 			BX_CustomLifeGraph_1:hidden(1)
 			BX_CustomLifeGraph_1bg:hidden(1)
-			BX_CustomTimingGraph1:hidden(0)
-			BX_CustomTimingGraph2:hidden(0)
+			BX_CustomTimingGraph1:hidden(curcard[1])
+			BX_CustomLifeGraph_2:hidden(1)
+			BX_CustomLifeGraph_2bg:hidden(1)
+			BX_CustomTimingGraph2:hidden(curcard[2])
 		else
 			BX_DisplayedGraph = 'Life'
-			BX_CustomLifeGraph_2:hidden(0)
-			BX_CustomLifeGraph_2bg:hidden(0)
-			BX_CustomLifeGraph_1:hidden(0)
-			BX_CustomLifeGraph_1bg:hidden(0)
+			BX_CustomLifeGraph_1:hidden(curcard[1])
+			BX_CustomLifeGraph_1bg:hidden(curcard[1])
 			BX_CustomTimingGraph1:hidden(1)
+			BX_CustomLifeGraph_2:hidden(curcard[2])
+			BX_CustomLifeGraph_2bg:hidden(curcard[2])
 			BX_CustomTimingGraph2:hidden(1)
 		end
-		--SCREENMAN:SystemMessage('Scatterplot Now Displays Custom '..BX_DisplayedGraph..' Graph')
+	end"
+	UpdateSpellDisplayP1MessageCommand="%function(self)
+		if BX_DisplayedGraph == 'Life' then
+			BX_CustomLifeGraph_1:hidden(curcard[1])
+			BX_CustomLifeGraph_1bg:hidden(curcard[1])
+			BX_CustomTimingGraph1:hidden(1)
+		else
+			BX_CustomLifeGraph_1:hidden(1)
+			BX_CustomLifeGraph_1bg:hidden(1)
+			BX_CustomTimingGraph1:hidden(curcard[1])
+		end
 	end"
 	><children>
 	
@@ -445,20 +447,6 @@ end"><children>
 		<Layer Type="Polygon" DrawMode="quadstrip" 
 		Var="BX_CustomLifeGraph_1bg" 
 		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 1
-			if curcard[pn] == 0 then
-				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph_1bg:hidden(0)
-					BX_CustomTimingGraph1:hidden(1)
-				else
-					BX_CustomLifeGraph_1bg:hidden(1)
-					BX_CustomTimingGraph1:hidden(0)
-				end
-			else
-				self:hidden(1)
-			end
-		end"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -531,20 +519,6 @@ end"><children>
 		<Layer Type="Polygon" DrawMode="LineStrip" 
 		Var="BX_CustomLifeGraph_1"
 		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 1
-			if curcard[pn] == 0 then
-				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph_1:hidden(0)
-					BX_CustomTimingGraph1:hidden(1)
-				else
-					BX_CustomLifeGraph_1:hidden(1)
-					BX_CustomTimingGraph1:hidden(0)
-				end
-			else
-				self:hidden(1)
-			end
-		end"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -887,28 +861,6 @@ end"><children>
 		<Layer Type="Polygon" DrawMode="LineStrip" 
 		Var="BX_CustomTimingGraph1" 
 		OnCommand="hidden,1;sleep,0;queuecommand,MakeAndUpdate"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 1
-			if curcard[pn] == 0 then
-				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph_2:hidden(0)
-					BX_CustomLifeGraph_2bg:hidden(0)
-					BX_CustomLifeGraph_1:hidden(0)
-					BX_CustomLifeGraph_1bg:hidden(0)
-					BX_CustomTimingGraph1:hidden(1)
-					BX_CustomTimingGraph2:hidden(1)
-				else
-					BX_CustomLifeGraph_2:hidden(1)
-					BX_CustomLifeGraph_2bg:hidden(1)
-					BX_CustomLifeGraph_1:hidden(1)
-					BX_CustomLifeGraph_1bg:hidden(1)
-					BX_CustomTimingGraph1:hidden(0)
-					BX_CustomTimingGraph2:hidden(0)
-				end
-			else
-				self:hidden(1)
-			end
-		end"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 			--Trace('HEY! P1 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
@@ -978,7 +930,8 @@ end"><children>
 					t:Draw()
 				end
 			end)
-		end"><children>
+		end"
+		UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
 			<Layer Type="BitmapText" File="_misoreg small" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
@@ -1117,24 +1070,16 @@ end"><children>
 	<Layer Type="ActorFrame" OnCommand="xy,SCREEN_WIDTH*0.5+157,SCREEN_HEIGHT*0.5+72-14;hidden,1"
 	StepP1RightPressMessageCommand="%function(self)
 		local pn = 2
-		if oplot_hidden[pn] == 1 then
-			self:hidden(0)
-		else
-			self:hidden(1)
-		end
 		curcard[pn] = 0;
-		oplot_hidden[pn] = oplot_hidden[pn]*-1
+		oplot_hidden[pn] = 1-oplot_hidden[pn]
+		self:hidden(oplot_hidden[pn])
 		MESSAGEMAN:Broadcast( 'UpdateSpellDisplayP2' );
 	end"
 	StepP2RightPressMessageCommand="%function(self)
 		local pn = 2
-		if oplot_hidden[pn] == 1 then
-			self:hidden(0)
-		else
-			self:hidden(1)
-		end
 		curcard[pn] = 0;
-		oplot_hidden[pn] = oplot_hidden[pn]*-1
+		oplot_hidden[pn] = 1-oplot_hidden[pn]
+		self:hidden(oplot_hidden[pn])
 		MESSAGEMAN:Broadcast( 'UpdateSpellDisplayP2' );
 	end"
 	StepP2UpPressMessageCommand="%function(self)
@@ -1144,9 +1089,9 @@ end"><children>
 			curcard[pn] = curcard[pn]-1
 			
 			if oplot_hidden[pn] == 1 then
-				self:hidden(0)
 				curcard[pn] = 0
-				oplot_hidden[pn] = -1
+				oplot_hidden[pn] = 0
+				self:hidden(0)
 			end
 			
 			if curcard[pn] < 0 then
@@ -1162,14 +1107,25 @@ end"><children>
 			curcard[pn] = curcard[pn]+1
 			
 			if oplot_hidden[pn] == 1 then
-				self:hidden(0)
 				curcard[pn] = 0
-				oplot_hidden[pn] = -1
+				oplot_hidden[pn] = 0
+				self:hidden(0)
 			end
 			if curcard[pn] > table.getn(oplot_spellCards[pn]) then
 				curcard[pn] = 0
 			end
 			MESSAGEMAN:Broadcast( 'UpdateSpellDisplayP2' );
+		end
+	end"
+	UpdateSpellDisplayP2MessageCommand="%function(self)
+		if BX_DisplayedGraph == 'Life' then
+			BX_CustomLifeGraph_2:hidden(curcard[2])
+			BX_CustomLifeGraph_2bg:hidden(curcard[2])
+			BX_CustomTimingGraph2:hidden(1)
+		else
+			BX_CustomLifeGraph_2:hidden(1)
+			BX_CustomLifeGraph_2bg:hidden(1)
+			BX_CustomTimingGraph2:hidden(curcard[2])
 		end
 	end"
 	><children>
@@ -1335,20 +1291,6 @@ end"><children>
 		<Layer Type="Polygon" DrawMode="quadstrip" 
 		Var="BX_CustomLifeGraph_2bg" 
 		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 2
-			if curcard[pn] == 0 then
-				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph_2bg:hidden(0)
-					BX_CustomTimingGraph2:hidden(1)
-				else
-					BX_CustomLifeGraph_2bg:hidden(1)
-					BX_CustomTimingGraph2:hidden(0)
-				end
-			else
-				self:hidden(1)
-			end
-		end"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -1421,20 +1363,6 @@ end"><children>
 		<Layer Type="Polygon" DrawMode="LineStrip" 
 		Var="BX_CustomLifeGraph_2"
 		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 2
-			if curcard[pn] == 0 then
-				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph_2:hidden(0)
-					BX_CustomTimingGraph2:hidden(1)
-				else
-					BX_CustomLifeGraph_2:hidden(1)
-					BX_CustomTimingGraph2:hidden(0)
-				end
-			else
-				self:hidden(1)
-			end
-		end"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -1771,28 +1699,6 @@ end"><children>
 		<Layer Type="Polygon" DrawMode="LineStrip" 
 		Var="BX_CustomTimingGraph2" 
 		OnCommand="hidden,1;sleep,0;queuecommand,MakeAndUpdate"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 2
-			if curcard[pn] == 0 then
-				if BX_DisplayedGraph == 'Life' then
-					BX_CustomLifeGraph_2:hidden(0)
-					BX_CustomLifeGraph_2bg:hidden(0)
-					BX_CustomLifeGraph_1:hidden(0)
-					BX_CustomLifeGraph_1bg:hidden(0)
-					BX_CustomTimingGraph1:hidden(1)
-					BX_CustomTimingGraph2:hidden(1)
-				else
-					BX_CustomLifeGraph_2:hidden(1)
-					BX_CustomLifeGraph_2bg:hidden(1)
-					BX_CustomLifeGraph_1:hidden(1)
-					BX_CustomLifeGraph_1bg:hidden(1)
-					BX_CustomTimingGraph1:hidden(0)
-					BX_CustomTimingGraph2:hidden(0)
-				end
-			else
-				self:hidden(1)
-			end
-		end"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 			--Trace('HEY! P2 SCATTERPLOT IS SUPPOSED TO DO SOMETHING')
@@ -1862,7 +1768,8 @@ end"><children>
 					t:Draw()
 				end
 			end)
-		end"><children>
+		end"
+		UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
 			<Layer Type="BitmapText" File="_misoreg small" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
