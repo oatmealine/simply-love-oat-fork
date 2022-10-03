@@ -7,8 +7,6 @@
 		Type="BitmapText"
 		Text="(3 ROUNDS)"
 		File="_misobold small"
-		InitCommand="xy,16,-26;zoom,.5;shadowlength,0"
-		OnCommand="%function(self) self:diffuse(TextOnColor(-1)) end"
-		OffCommand="linear,0.2;diffusealpha,0"
+		InitCommand="horizalign,left;xy,-14,-26;zoom,.5;shadowlength,0"
 	/>
 </children> </ActorFrame>
