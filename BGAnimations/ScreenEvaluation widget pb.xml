@@ -48,7 +48,8 @@ end"> <children>
 					
 				end
 				
-			end" 
+			end"
+			UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"
 		/>
 	
 	</children> </Layer>
@@ -88,7 +89,8 @@ end"> <children>
 					
 				end
 				
-			end" 
+			end"
+			UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"
 		/>
 
 	</children> </Layer>

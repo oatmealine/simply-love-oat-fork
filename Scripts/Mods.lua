@@ -590,6 +590,8 @@ function InitializeMods()
 	ResetScores()
 	TimedSet.Reset()
 	LoadFromProfile()
+	ModInputTypeCheck()
+	ModInputTypeApply()
 	if Profile(0).TimedSets and not GAMESTATE:IsEventMode() then GAMESTATE:SetTemporaryEventMode(true) end
 	GAMESTATE:SetEnv('Mods',1)
 end
