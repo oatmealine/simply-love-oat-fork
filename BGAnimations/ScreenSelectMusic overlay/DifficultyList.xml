@@ -1,5 +1,5 @@
 <ActorFrame><children>
-	<ActorFrame UpdateCommand="%DifficultyList" />
+	<ActorFrame InitCommand="%DifficultyList" UpdateCommand="%DifficultyList" />
 	<Layer Type="ActorFrame" InitCommand="spin;effectmagnitude,180,0,0;effectperiod,1.0;effectclock,bgm" UpdateCommand="y,(listPointerY[1]-1)*19.3"><children>
 		<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" File="cursor p1" Command="x,-34;zoom,.8;bounce;effectmagnitude,-8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm" />
 	</children></Layer>
