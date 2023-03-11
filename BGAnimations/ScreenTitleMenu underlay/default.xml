@@ -604,7 +604,7 @@
 			<AutoActor
 				Type="BitmapText"
 				Text="Happy Birthday Spartan!"
-				Condition="DayOfMonth() == 11 and MonthOfYear() == 3"
+				Condition="DayOfMonth() == 12 and MonthOfYear() == 3"
 				Font="_wendy white"
 				OnCommand="rainbow"
 				OffCommand="accelerate,1;diffusealpha,0"
