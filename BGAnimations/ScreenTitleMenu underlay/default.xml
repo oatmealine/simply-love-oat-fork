@@ -735,6 +735,24 @@
 				OffCommand="accelerate,1;diffusealpha,0"
 			/>
 			-->
+			<!-- StarUndrscre -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday StarUndrscre!"
+				Condition="DayOfMonth() == 8 and MonthOfYear() == 7"
+				Font="_wendy white"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
+			<!-- Ryoko/Subpar/A-Saph (par why do you have so many aliases ~star_) -->
+			<AutoActor
+				Type="BitmapText"
+				Text="Happy Birthday Subpar!"
+				Condition="DayOfMonth() == 21 and MonthOfYear() == 9"
+				Font="_wendy white"
+				OnCommand="rainbow"
+				OffCommand="accelerate,1;diffusealpha,0"
+			/>
 			<!-- New Year -->
 			<AutoActor
 				Type="BitmapText"
